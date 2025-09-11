@@ -1,0 +1,54 @@
+"use client";
+import React from "react";
+import { ContainerScroll } from "../ui/container-scroll-animation";
+import Image from "next/image";
+import { Button } from "../ui/button";
+import { Play } from "lucide-react";
+import { Syncopate } from "next/font/google"
+
+const syncopate = Syncopate({
+  weight: ["400","700"],
+  variable: "--font-syncopate",
+  subsets: ["latin"],
+})
+
+export function VideoSection() {
+  return (
+    <div className="flex flex-col mt-10 items-center justify-center overflow-hidden">
+      <ContainerScroll
+        titleComponent={
+          <>
+          <div className="h-100">
+            <div className='w-full  p-8 flex flex-col items-center justify-center'>
+              <h2 className={`${syncopate.className} text-2xl w-3xl text-center font-bold text-black dark:text-white mb-4`}>
+                  Are you ready to change the world with us at your service?
+              </h2>
+              <h2 className={`${syncopate.className} text-2xl w-3xl text-center font-bold text-black dark:text-white`}>
+                  Watch the showreel below to answer that question.
+              </h2>
+            </div>
+          </div>
+          </>
+        }
+      >
+        <div className="flex w-full h-full flex-col  items-center justify-center">
+          <Image
+            // eslint-disable-next-line @typescript-eslint/no-require-imports
+            src={require("../../assets/thumbnail.png")}
+            alt="hero"
+            height={800}
+            width={1800}
+            className="mx-auto rounded-2xl object-cover h-full object-left-top"
+            draggable={false}
+          />
+          <div className="absolute">
+            <Button variant="default" className="relative bottom-0 h-fit w-fit rounded-full">
+              <h2 className="text-white">Watch the showreel</h2>
+              <Play fill="white" className="w-6 h-6 text-white" />
+            </Button>
+          </div>
+        </div>
+      </ContainerScroll>
+    </div>
+  );
+}

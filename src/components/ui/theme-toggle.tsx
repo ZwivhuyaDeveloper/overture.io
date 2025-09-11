@@ -14,7 +14,7 @@ export function ThemeToggle({ className }: { className?: string }) {
       onClick={toggleTheme}
       className={cn(
         "relative h-9 w-9 rounded-full flex items-center justify-center",
-        "bg-gray-100/50 dark:bg-gray-900/20 backdrop-blur-sm hover:bg-gray-200 dark:hover:bg-gray-800",
+        "bg-gray-100/30 dark:bg-gray-900/20 backdrop-blur-sm hover:bg-gray-200 dark:hover:bg-gray-800",
         "focus:outline-none focus:ring-0 focus:ring-offset-0",
         "focus:ring-primary/50 dark:focus:ring-primary/50",
         "focus:ring-offset-white dark:focus:ring-offset-gray-900",

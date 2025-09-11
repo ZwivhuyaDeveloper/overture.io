@@ -4,6 +4,7 @@ import { Anta, Syncopate, Tektur } from 'next/font/google';
 import { TextGenerateEffect } from '../ui/text-generate-effect';
 import { Button } from '../ui/button';
 import { ArrowRightIcon, ArrowUpRight } from 'lucide-react';
+import { BackgroundBeams } from '../ui/background-beams';
 
 const tektur = Tektur({
   weight: ["700","400"],
@@ -65,7 +66,7 @@ export function Hero({
               <Button variant="default" className='bg-white text-black font-semibold rounded-full'>Book a call</Button>
               <Button variant="default" className='bg-white text-black rounded-full pt-2 flex items-center justify-center w-9 h-9'><ArrowUpRight className="w-6 h-6" /></Button>
             </div>
-            <Button variant="outline" className='bg-white font-semibold text-white rounded-full'>Portfolio</Button>
+            <Button variant="outline" className='bg-white/10 dark:bg-white/10 font-semibold text-white rounded-full'>Portfolio</Button>
           </div>
 
         </div>

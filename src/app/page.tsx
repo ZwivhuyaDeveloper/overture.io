@@ -5,6 +5,12 @@ import { useEffect, useState } from "react";
 
 import { ArrowUpIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { AboutUs } from "@/components/home/about-us";
+import { Vision } from "@/components/home/vision";
+import { Partners } from "@/components/home/our-partners";
+import { BackgroundBeams } from "@/components/ui/background-beams";
+import { FirstText } from "@/components/home/section-text";
+import { VideoSection } from "@/components/home/video-section";
 
 
 
@@ -33,8 +39,8 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen">
-      <div className="min-h-screen">
+    <main className="min-h-screen w-full">
+      <div className="min-h-screen w-full">
         {showScrollTop && (
           <Button
             onClick={scrollToTop}
@@ -50,10 +56,16 @@ export default function Home() {
           />
         </section>
         <section className="">
-
+          <AboutUs />
         </section>
+        <div className="w-full h-[40rem] flex items-center justify-center">
+          <Partners />
+        </div>
         <section className="mb-10">
-
+          <Vision />
+        </section>
+        <section>
+          <VideoSection />
         </section>
       </div>
     </main>

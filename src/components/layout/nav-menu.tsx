@@ -17,7 +17,7 @@ export function NavMenu({ className }: { className?: string }) {
       <Menu setActive={setActive}>
 
         <div className="flex items-center h-[40px] gap-25 justify-between">
-        <MenuItem setActive={setActive} active={active} item="About us">
+        <MenuItem setActive={setActive} active={active} item="About">
           <div className="flex flex-col space-y-4 text-sm">
             <HoveredLink href="/hobby">Hobby</HoveredLink>
             <HoveredLink href="/individual">Individual</HoveredLink>
@@ -61,7 +61,7 @@ export function NavMenu({ className }: { className?: string }) {
             />
           </div>
         </MenuItem>
-        <div className="w-full h-full flex flex-row gap-5  items-center container  justify-start">
+        <div className="w-full h-full relative left-5 flex flex-row gap-5 items-center container justify-start">
             <Link href="/" className="flex items-center flex-row gap-4 w-full justify-start">
                   <img
                     src={overtureLogo.src}
@@ -71,7 +71,7 @@ export function NavMenu({ className }: { className?: string }) {
                     className=" object-cover w-6 h-6"
                   />
                   <div className="flex flex-col items-start w-full">
-                  <span className="text-black text-left dark:text-white text-sm tracking-widest">Overture</span>
+                  <span className="text-white text-left dark:text-white text-sm tracking-widest">Overture</span>
                   </div>
               </Link>
           </div>
@@ -91,9 +91,8 @@ export function NavMenu({ className }: { className?: string }) {
             <HoveredLink href="/enterprise">Enterprise</HoveredLink>
           </div>
         </MenuItem>
-          <div className="flex gap-3 items-center">
-            <ThemeToggle />
-            <div className="bg-white dark:bg-black p-3 px-4 rounded-full">
+          <div className="flex gap-3 w-fit items-center">
+            <div className="bg-white/30 dark:bg-black/30 p-2 px-3 rounded-full">
               <MenuItem setActive={setActive} active={active} item="Contact">
               <div className="flex flex-col space-y-4 text-sm">
                 <HoveredLink href="/contact">Send an Email</HoveredLink>
@@ -102,6 +101,7 @@ export function NavMenu({ className }: { className?: string }) {
               </div>
             </MenuItem>
             </div>
+            <ThemeToggle />
           </div>
         </div>
       </Menu>

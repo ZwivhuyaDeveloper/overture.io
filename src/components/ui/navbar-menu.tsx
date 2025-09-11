@@ -35,7 +35,7 @@ export const MenuItem = ({
     <div onMouseEnter={() => setActive(item)} className="relative ">
       <motion.p
         transition={{ duration: 0.3 }}
-        className="cursor-pointer text-black  font-normal text-sm hover:opacity-[0.9] dark:text-white"
+        className="cursor-pointer font-normal text-sm hover:opacity-[0.9] text-white"
       >
         {item}
       </motion.p>
@@ -77,7 +77,7 @@ export const Menu = ({
   return (
     <nav
       onMouseLeave={() => setActive(null)} // resets the state
-      className={`${cn(tektur.className)} relative rounded-full border border-transparent dark:bg-black/10 backdrop-blur-lg dark:border-white/[0.2] bg-white/10 shadow-input flex justify-center space-x-4 px-8 py-4 `}
+      className={`${cn(tektur.className)} relative rounded-full border border-transparent dark:bg-black/10 backdrop-blur-lg dark:border-white/[0.2] bg-black/20 shadow-input flex justify-center space-x-4 px-8 py-4 `}
     >
       {children}
     </nav>
@@ -105,7 +105,7 @@ export const ProductItem = ({
         className="shrink-0 rounded-md shadow-2xl"
       />
       <div>
-        <h4 className="text-xl font-bold mb-1 text-black dark:text-white">
+        <h4 className="text-xl font-bold mb-1 text-white">
           {title}
         </h4>
         <p className="text-neutral-700 text-sm max-w-[10rem] dark:text-neutral-300">
