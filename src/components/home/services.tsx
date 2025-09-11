@@ -1,19 +1,9 @@
 "use client";
-
-import { Hero } from "@/components/home/hero";
-import { useEffect, useState } from "react";
-
-import { ArrowUpIcon } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { AboutUs } from "@/components/home/about-us";
-import { Vision } from "@/components/home/vision";
-import { Partners } from "@/components/home/our-partners";
-import { BackgroundBeams } from "@/components/ui/background-beams";
-import { VideoSection } from "@/components/home/video-section";
-import { Services } from "@/components/home/services";
-import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
-import { Syncopate } from "next/font/google";
+import React from "react";
+import { StickyScroll } from "../ui/sticky-scroll-reveal";
 import Image from "next/image";
+import { Syncopate } from "next/font/google"
+import { div } from "motion/react-client";
 
 const syncopate = Syncopate({
   weight: ["400","700"],
@@ -69,67 +59,14 @@ const content = [
     ),
   },
 ];
-
-export default function Home() {
-  const [isVisible, setIsVisible] = useState(false)
-  const [showScrollTop, setShowScrollTop] = useState(false);
-  
-  useEffect(() => {
-    setIsVisible(true)
-
-    const handleScroll = () => {
-      setShowScrollTop(window.scrollY > 500)
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
-
+export function Services() {
   return (
-    <main className="min-h-screen w-full">
-      <div className="min-h-screen w-full">
-        {showScrollTop && (
-          <Button
-            onClick={scrollToTop}
-            className="fixed bottom-4 right-4 z-50 p-4 bg-black rounded-full shadow-lg"
-          >
-            <ArrowUpIcon className="w-6 h-6" />
-          </Button>
-        )}
-        <section>
-          <Hero
-            title="Bring Ideas to life with out creative magic"
-            description="Join us in our pursuit of innovation and creativity"
-          />
-        </section>
-        <section className="">
-          <AboutUs />
-        </section>
-        <div className="w-full h-[20rem] flex items-center justify-center">
-          <Partners />
+    <div className="py-4">
+        <div className="w-full h-[20rem] flex flex-col items-center justify-center">
+            <h1 className={`${syncopate.className} text-2xl font-bold`}>Services</h1>
+            <h2 className={`${syncopate.className} text-2xl font-bold`}>What we offer</h2>
         </div>
-        <section className="mb-10">
-          <Vision />
-        </section>
-        <section>
-          <VideoSection />
-        </section>
-        <section className="py-4 w-full h-full">
-          <StickyScroll content={content} />
-        </section> 
-        <section className="mb-10">
-          <Vision />
-        </section> 
-      </div>
-    </main>
+        <StickyScroll content={content} />
+    </div>
   );
 }

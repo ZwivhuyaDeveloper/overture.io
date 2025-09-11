@@ -19,12 +19,12 @@ export function VideoSection() {
         titleComponent={
           <>
           <div className="h-100">
-            <div className='w-full  p-8 flex flex-col items-center justify-center'>
-              <h2 className={`${syncopate.className} text-2xl w-3xl text-center font-bold text-black dark:text-white mb-4`}>
-                  Are you ready to change the world with us at your service?
+            <div className='w-full p-8 gap-4 flex flex-col items-center justify-center'>
+              <h2 className={`${syncopate.className} text-2xl w-2xl text-center font-bold text-black dark:text-white mb-4`}>
+                  &ldquo;Are you ready to change the world with us at your service?&rdquo;
               </h2>
-              <h2 className={`${syncopate.className} text-2xl w-3xl text-center font-bold text-black dark:text-white`}>
-                  Watch the showreel below to answer that question.
+              <h2 className={`${syncopate.className} text-2xl w-2xl text-center font-bold text-black dark:text-white`}>
+                  &ldquo;Watch the showreel below to answer that question.&rdquo;
               </h2>
             </div>
           </div>
