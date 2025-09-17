@@ -1,11 +1,18 @@
 "use client";
 import React from "react";
 import { BackgroundBeams } from "../ui/background-beams";
-import { Syncopate, Tektur, Archivo } from "next/font/google";
+import { Syncopate, Tektur, Archivo,Afacad } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
-import background2 from "@/assets/overture-blue.png";
+import render from "@/assets/overture_render1.png";
+import { DirectionAwareHover } from '../ui/direction-aware-hover';
+
+const afacad = Afacad({
+  weight: ["400","500","600","700"],
+  variable: "--font-afacad",
+  subsets: ["latin"],
+})
 
 const archivo = Archivo({
   weight: ["100","200","300","400","500","600","700","800","900"],
@@ -25,6 +32,8 @@ const tektur = Tektur({
   variable: "--font-tektur",
   subsets: ["latin"],
 });
+
+const imageUrl = "/overture_render1.png";
 
 export function AboutUs({ className }: { className?: string }) {
   return (
@@ -81,7 +90,7 @@ export function AboutUs({ className }: { className?: string }) {
                                         <div className="w-full h-full bg-zinc-200 rounded-[4px]"/>
                                         <div className="w-full h-full bg-zinc-200 rounded-[4px]"/>
                                     </div>
-                                    <div className="w-full h-3 bg-blue-500 rounded-[3px]"/>
+                                    <div className="w-full h-5 bg-blue-500 rounded-[3px]"/>
                                 </div>
                                 <div className="absolute justify-center top-7 right-45 flex flex-col gap-1 shadow-lg bg-white w-15 h-20 p-1 rounded-md z-10">
                                     <div className="w-full h-3 bg-zinc-200 rounded-[3px]"/>
@@ -89,19 +98,19 @@ export function AboutUs({ className }: { className?: string }) {
                                         <div className="w-full h-full bg-zinc-200 rounded-[4px]"/>
                                         <div className="w-full h-full bg-zinc-200 rounded-[4px]"/>
                                     </div>
-                                    <div className="w-full h-3 bg-blue-500 rounded-[3px]"/>
+                                    <div className="w-full h-3 bg-purple-500 rounded-[3px]"/>
                                 </div>
                             </div>
                             <p className="w-full">and apps.</p>
                         </h1>
                     </div>
-                    <p className={`${archivo.className} 
-                    tracking-widest relative text-left text-black w-full max-w-full text-base mt-20 my-2 z-10`}>With a team of experienced developers and designers, we are dedicated to delivering high-quality solutions that meet your needs. We use the latest technologies and best practices to ensure that your project is completed on time and to the highest standard.</p>
+                    <p className={`${tektur.className} 
+                    tracking-wide relative text-left text-black w-full max-w-full text-base mt-20 my-2 z-10`}>With a team of experienced developers and designers, we are dedicated to delivering high-quality solutions that meet your needs. We use the latest technologies and best practices to ensure that your project is completed on time and to the highest standard.</p>
                 </CardContent>
             </Card>
-            <Card className="w-full h-[60vh] z-10 p-0 bg-transparent border-none shadow-none">
-                <Image src={background2} width={1000} height={1000} quality={100} alt="linear demo image" className=" object-cover w-full h-full rounded-2xl" />
-            </Card>
+            <DirectionAwareHover imageUrl={imageUrl} className="w-[60vh] h-[60vh] z-10 p-0 bg-transparent border-none shadow-none">
+
+            </DirectionAwareHover>
         </div>
       </div>
     </div>

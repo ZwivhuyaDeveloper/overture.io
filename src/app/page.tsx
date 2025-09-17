@@ -14,6 +14,12 @@ import { Services } from "@/components/home/services";
 import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
 import { Syncopate } from "next/font/google";
 import Image from "next/image";
+import FeaturesSectionDemo2 from "@/components/features-section-demo-2";
+import FeaturesSectionDemo3 from "@/components/features-section-demo-3";
+import FeaturesSectionDemo1 from "@/components/features-section-demo-1";
+import PortfolioSection from "@/components/home/portfolio-section";
+import ExpandableCardDemo from "@/components/expandable-card-demo-grid";
+import { ServicesSection } from "@/components/home/services-section";
 
 const syncopate = Syncopate({
   weight: ["400","700"],
@@ -107,28 +113,37 @@ export default function Home() {
         )}
         <section>
           <Hero
-            title="Bring Ideas to life with out creative magic"
+            title="Bring Ideas to life with our creative magic"
             description="Join us in our pursuit of innovation and creativity"
           />
         </section>
         <section className="">
           <AboutUs />
         </section>
-        <div className="w-full h-[20rem] flex items-center justify-center">
+        <section className="w-full h-full flex items-center justify-center">
           <Partners />
-        </div>
+        </section>
         <section className="mb-10">
           <Vision />
         </section>
         <section>
           <VideoSection />
         </section>
-        <section className="py-4 w-full h-full">
-          <StickyScroll content={content} />
+        <section>
+          <ServicesSection />
         </section> 
         <section className="mb-10">
-          <Vision />
+          <PortfolioSection />
         </section> 
+        <section className="w-full h-full flex items-center justify-center">
+          <Partners />
+        </section>
+        <section className="py-4 w-full h-full">
+          <FeaturesSectionDemo1 />
+        </section>
+        <section className="mb-10">
+          <FeaturesSectionDemo2 />
+        </section>
       </div>
     </main>
   );

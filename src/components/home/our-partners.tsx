@@ -18,7 +18,7 @@ const tektur = Tektur({
 
 export function Partners() {
   return (
-    <div className="h-[40rem] rounded-md flex gap-8 flex-col antialiased bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
+    <div className="h-[540px] rounded-md flex gap-8 flex-col antialiased bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
 
       <div className="w-fit h-fit p-2 bg-zinc-200 rounded-full px-4">
         <h2 className={`${tektur.className} 

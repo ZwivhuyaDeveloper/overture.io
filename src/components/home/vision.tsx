@@ -31,9 +31,9 @@ const syncopate = Syncopate({
 
 export function Vision() {
   return (
-    <div className="gap-12 flex flex-col items-center">
+    <div className="gap-16 flex flex-col items-center">
         <div className="w-full gap-4 flex flex-col items-center justify-center max-w-7xl mx-auto">
-            <div className="w-fit h-fit p-2 bg-zinc-200 rounded-full px-4">
+          <div className="w-fit h-fit p-2 bg-zinc-200 rounded-full px-4">
             <h2 className={`${tektur.className} 
                 tracking-widest relative text-left z-10 text-md sm:text-sm text-black`}>
                 Vision  
