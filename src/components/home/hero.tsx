@@ -1,6 +1,6 @@
 import React from 'react';
 import { cn } from '@/lib/utils';
-import { Anta, Syncopate, Tektur } from 'next/font/google';
+import { Afacad, Anta, Syncopate, Tektur } from 'next/font/google';
 import { TextGenerateEffect } from '../ui/text-generate-effect';
 import { Button } from '../ui/button';
 import { ArrowRightIcon, ArrowUpRight } from 'lucide-react';
@@ -15,6 +15,12 @@ const tektur = Tektur({
 const syncopate = Syncopate({
   weight: ["400","700"],
   variable: "--font-syncopate",
+  subsets: ["latin"],
+});
+
+const afacad = Afacad({
+  weight: ["400","500","600","700",],
+  variable: "--font-afacad",
   subsets: ["latin"],
 });
 
@@ -51,13 +57,13 @@ export function Hero({
           <h1 className={`${syncopate.className} mb-8`}>
             <TextGenerateEffect words={title} />
           </h1>
-          <p className={`${tektur.className} text-md px-6 w-1/2 sm:text-lg tracking-widest text-white/90 mb-6`}>
+          <h2 className={`${afacad.className} text-xl px-8 w-1/2 tracking-widest text-white/90 mb-6`}>
             {description}
-          </p>
+          </h2>
         </div>
         <div className='flex flex-col gap-10 items-center'>
 
-          <h1 className={`${tektur.className} mb-8 text-lg tracking-widest w-1/2`}>
+          <h1 className={`${afacad.className} mb-8 text-xl tracking-widest w-1/2`}>
             With every project we infuse magic every step of the way
           </h1>
 

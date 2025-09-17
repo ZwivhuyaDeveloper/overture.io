@@ -20,6 +20,8 @@ import FeaturesSectionDemo1 from "@/components/features-section-demo-1";
 import PortfolioSection from "@/components/home/portfolio-section";
 import ExpandableCardDemo from "@/components/expandable-card-demo-grid";
 import { ServicesSection } from "@/components/home/services-section";
+import infoCards from '../components/home/info-cards';
+import InfoCards from "../components/home/info-cards";
 
 const syncopate = Syncopate({
   weight: ["400","700"],

@@ -3,11 +3,17 @@
 import React from "react";
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
-import { Tektur } from "next/font/google";
+import { Afacad, Tektur } from "next/font/google";
 
 const tektur = Tektur({
   weight: ["700"],
   variable: "--font-tektur",
+  subsets: ["latin"],
+});
+
+const afacad = Afacad({
+  weight: ["700","400","500","600"],
+  variable: "--font-afacad",
   subsets: ["latin"],
 });
 
@@ -35,7 +41,7 @@ export const MenuItem = ({
     <div onMouseEnter={() => setActive(item)} className="relative ">
       <motion.p
         transition={{ duration: 0.3 }}
-        className="cursor-pointer font-normal text-sm hover:opacity-[0.9] text-white"
+        className="cursor-pointer font-normal text-lg hover:opacity-[0.9] text-white"
       >
         {item}
       </motion.p>
@@ -77,7 +83,7 @@ export const Menu = ({
   return (
     <nav
       onMouseLeave={() => setActive(null)} // resets the state
-      className={`${cn(tektur.className)} relative rounded-full border border-transparent dark:bg-black/10 backdrop-blur-lg dark:border-white/[0.2] bg-black/20 shadow-input flex justify-center space-x-4 px-8 py-4 `}
+      className={`${cn(afacad.className)}  relative rounded-full border border-transparent dark:bg-black/10 backdrop-blur-lg dark:border-white/[0.2] bg-black/20 shadow-input flex justify-center space-x-4 px-8 py-4 `}
     >
       {children}
     </nav>

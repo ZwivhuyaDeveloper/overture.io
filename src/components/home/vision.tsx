@@ -7,7 +7,7 @@ import { BackgroundBeams } from "../ui/background-beams";
 import web from "@/assets/web1.png";
 import web2 from "@/assets/web2.png";
 import Image from "next/image";
-import { Tektur, Syncopate, Archivo } from "next/font/google";
+import { Tektur, Syncopate, Archivo, Afacad } from "next/font/google";
 import { Meteors } from "../ui/meteors";
 import { Button } from "../ui/button";
 
@@ -20,6 +20,12 @@ const archivo = Archivo({
 const tektur = Tektur({
   weight: ["700","400"],
   variable: "--font-tektur",
+  subsets: ["latin"],
+});
+
+const afacad = Afacad({
+  weight: ["400","500","600","700"],
+  variable: "--font-afacad",
   subsets: ["latin"],
 });
 
@@ -55,8 +61,8 @@ export function Vision() {
           tracking-widest relative text-left z-10 text-md sm:text-xl font-bold text-black`}>
           Your next BIG step on the web
           </h2>
-          <p className={`${tektur.className} 
-          tracking-widest relative text-left z-10 text-md sm:text-md text-black`}>
+          <p className={`${afacad.className} 
+          tracking-normal relative text-left z-10 text-lg sm:text-xl text-black`}>
           Beyond pixels and code, our designs are built on a foundation of empathy and understanding. Explore our work to see how we create digital experiences that resonate with users.
           </p>
           <Button variant="default" className="w-fit rounded-full">View our work</Button>
@@ -70,16 +76,20 @@ export function Vision() {
         />
       </WobbleCard>
       {/*card 2*/}
-      <WobbleCard containerClassName="col-span-1 gap-6 flex items-center justify-center flex-col bg-blue-700 min-h-[300px]">
-        <h2 className={`${syncopate.className} 
-        tracking-widest relative text-left z-10 text-md sm:text-xl font-bold text-white`}>
-          Explore our Pricing
-        </h2>
-        <p className={`${tektur.className} 
-        tracking-widest relative text-left z-10 text-md sm:text-md text-white`}>
-          Our pricing is transparent and flexible, designed to fit your budget.
-        </p>
-        <Button variant="default" className="w-fit bg-white text-black rounded-full">View our pricing</Button>
+      <WobbleCard containerClassName="col-span-1 space-y-4 gap-6 flex items-center justify-between flex-col bg-blue-700 min-h-[300px]">
+        <div className="flex flex-col gap-4 w-full h-full">
+          <h2 className={`${syncopate.className} 
+          tracking-widest relative text-left z-10 text-md mb-5 sm:text-xl font-bold text-white`}>
+            Explore our Pricing
+          </h2>
+          <p className={`${afacad.className} 
+          tracking-normal relative text-left z-10 text-md mb-10 sm:text-xl text-white`}>
+            Our pricing is transparent and flexible, designed to fit your budget.
+          </p>
+        </div>
+        <div className="flex items-center w-full">
+          <Button variant="default" className="w-fit bg-white text-black rounded-full">View our pricing</Button>
+        </div>
       </WobbleCard>
       {/*card 3*/}
       <WobbleCard containerClassName="col-span-1 gap-4 flex flex-col bg-orange-700 min-h-[300px]">
@@ -87,8 +97,8 @@ export function Vision() {
         tracking-widest relative text-left z-10 text-md sm:text-xl font-bold text-white`}>
           Our Services
         </h2>
-        <p className={`${tektur.className} 
-        tracking-widest relative text-left z-10 text-md sm:text-md text-white`}>
+        <p className={`${afacad.className} 
+        tracking-normal relative text-left z-10 text-md sm:text-xl text-white`}>
           Our services are designed to help you achieve your goals and create a successful business.
         </p>
       </WobbleCard>
@@ -102,8 +112,8 @@ export function Vision() {
           tracking-widest relative text-left z-10 text-md sm:text-xl font-bold text-black`}>
           Your next BIG step on the web
           </h2>
-          <p className={`${tektur.className} 
-          tracking-widest relative text-left z-10 text-md sm:text-md text-black`}>
+          <p className={`${afacad.className} 
+          tracking-normal relative text-left z-10 text-md sm:text-xl text-black`}>
           Beyond pixels and code, our designs are built on a foundation of empathy and understanding. Explore our work to see how we create digital experiences that resonate with users.
           </p>
         </div>
@@ -123,8 +133,8 @@ export function Vision() {
             Signup for blazing-fast cutting-edge state of the art Gippity AI
             wrapper today!
           </h2>
-          <p className={`${tektur.className} 
-          tracking-widest relative text-left z-10 text-md sm:text-md text-black`}>
+          <p className={`${afacad.className} 
+          tracking-normal relative text-left z-10 text-md sm:text-xl text-black`}>
             With over 100,000 mothly active bot users, Gippity AI is the most
             popular AI platform for developers.
           </p>
