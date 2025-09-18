@@ -6,6 +6,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { useOutsideClick } from "@/hooks/use-outside-click";
 import { Tektur, Syncopate, Afacad } from 'next/font/google'
 import Image from "next/image";
+import AnimatedContent from "../AnimatedContent";
 
 const tektur = Tektur({ weight: ['400', '700'], variable: '--font-tektur', subsets: ['latin'] })
 const syncopate = Syncopate({ weight: ['400', '700'], variable: '--font-syncopate', subsets: ['latin'] })
@@ -140,11 +141,38 @@ export function ServicesSection() {
                 Features  
             </h2>
           </div>
-          <h1 className={`${syncopate.className} 
+          <AnimatedContent
+            distance={100}
+            direction="vertical"
+            reverse={false}
+            duration={0.8}
+            ease="power3.out"
+            initialOpacity={0.2}
+            animateOpacity
+            scale={0}
+            threshold={0.1}
+            delay={0}
+            onComplete={() => {}}
+          >
+            <h1 className={`${syncopate.className} 
                 tracking-widest relative text-center w-2xl z-10 text-md sm:text-xl font-bold text-black dark:text-white`}>
                 Our Features: Pioneering the Future of Digital Innovation
-          </h1>
+            </h1>
+          </AnimatedContent>
         </div>
+        <AnimatedContent
+          distance={100}
+          direction="vertical"
+          reverse={false}
+          duration={0.8}
+          ease="power3.out"
+          initialOpacity={0.2}
+          animateOpacity
+          scale={0}
+          threshold={0.1}
+          delay={0}
+          onComplete={() => {}}
+        >
         {cards.map((card, index) => (
           <motion.div
             layoutId={`card-${card.title}-${id}`}
@@ -186,6 +214,7 @@ export function ServicesSection() {
             </motion.button>
           </motion.div>
         ))}
+        </AnimatedContent>
       </ul>
     </>
   );
@@ -229,21 +258,16 @@ const cards = [
     description: "WEB DEVELOPMENT",
     title: "Web Development",
     src: "/overture_render3.png",
-    ctaText: "View",
-    ctaLink: "https://ui.aceternity.com/templates",
+    ctaText: "Learn More",
+    ctaLink: "/projects",
     content: () => {
       return (
         <p>
-          Lana Del Rey, an iconic American singer-songwriter, is celebrated for
-          her melancholic and cinematic music style. Born Elizabeth Woolridge
-          Grant in New York City, she has captivated audiences worldwide with
-          her haunting voice and introspective lyrics. <br /> <br /> Her songs
-          often explore themes of tragic romance, glamour, and melancholia,
-          drawing inspiration from both contemporary and vintage pop culture.
-          With a career that has seen numerous critically acclaimed albums, Lana
-          Del Rey has established herself as a unique and influential figure in
-          the music industry, earning a dedicated fan base and numerous
-          accolades.
+          We create stunning, responsive websites that captivate your audience and drive results. 
+          Our web development services include custom website design, e-commerce solutions, 
+          content management systems, and progressive web apps. <br /> <br /> Using the latest 
+          technologies like React, Next.js, and modern CSS frameworks, we build fast, secure, 
+          and scalable websites that provide exceptional user experiences across all devices.
         </p>
       );
     },
@@ -252,20 +276,16 @@ const cards = [
     description: "NATIVE APP DEVELOPMENT",
     title: "Native App Development",
     src: "/overture_render3.png",
-    ctaText: "View",
-    ctaLink: "https://ui.aceternity.com/templates",
+    ctaText: "Learn More",
+    ctaLink: "/projects",
     content: () => {
       return (
         <p>
-          Babu Maan, a legendary Punjabi singer, is renowned for his soulful
-          voice and profound lyrics that resonate deeply with his audience. Born
-          in the village of Khant Maanpur in Punjab, India, he has become a
-          cultural icon in the Punjabi music industry. <br /> <br /> His songs
-          often reflect the struggles and triumphs of everyday life, capturing
-          the essence of Punjabi culture and traditions. With a career spanning
-          over two decades, Babu Maan has released numerous hit albums and
-          singles that have garnered him a massive fan following both in India
-          and abroad.
+          Transform your ideas into powerful mobile applications with our native app development 
+          services. We specialize in creating high-performance iOS and Android apps that deliver 
+          seamless user experiences. <br /> <br /> Our expertise includes Swift for iOS, Kotlin for 
+          Android, and cross-platform solutions using React Native and Flutter. From concept to 
+          deployment, we handle every aspect of the app development lifecycle.
         </p>
       );
     },
@@ -275,20 +295,16 @@ const cards = [
     description: "UI/UX DESIGN",
     title: "UI/UX Design Services",
     src: "/overture_render3.png",
-    ctaText: "View",
-    ctaLink: "https://ui.aceternity.com/templates",
+    ctaText: "Learn More",
+    ctaLink: "/projects",
     content: () => {
       return (
         <p>
-          Metallica, an iconic American heavy metal band, is renowned for their
-          powerful sound and intense performances that resonate deeply with
-          their audience. Formed in Los Angeles, California, they have become a
-          cultural icon in the heavy metal music industry. <br /> <br /> Their
-          songs often reflect themes of aggression, social issues, and personal
-          struggles, capturing the essence of the heavy metal genre. With a
-          career spanning over four decades, Metallica has released numerous hit
-          albums and singles that have garnered them a massive fan following
-          both in the United States and abroad.
+          Design experiences that users love with our comprehensive UI/UX design services. 
+          We combine aesthetics with functionality to create intuitive interfaces that engage 
+          and delight your users. <br /> <br /> Our design process includes user research, 
+          wireframing, prototyping, and usability testing. We ensure your digital products 
+          are not only beautiful but also accessible, responsive, and optimized for conversion.
         </p>
       );
     },
@@ -297,19 +313,16 @@ const cards = [
     description: "BRAND IDENTITY & MARKETING",
     title: "Brand Identity & Marketing",
     src: "/overture_render3.png",
-    ctaText: "View",
-    ctaLink: "https://ui.aceternity.com/templates",
+    ctaText: "Learn More",
+    ctaLink: "/projects",
     content: () => {
       return (
         <p>
-          Led Zeppelin, a legendary British rock band, is renowned for their
-          innovative sound and profound impact on the music industry. Formed in
-          London in 1968, they have become a cultural icon in the rock music
-          world. <br /> <br /> Their songs often reflect a blend of blues, hard
-          rock, and folk music, capturing the essence of the 1970s rock era.
-          With a career spanning over a decade, Led Zeppelin has released
-          numerous hit albums and singles that have garnered them a massive fan
-          following both in the United Kingdom and abroad.
+          Build a powerful brand presence that resonates with your target audience. Our brand 
+          identity and marketing services help you establish a unique market position and create 
+          lasting connections with customers. <br /> <br /> We offer logo design, brand guidelines, 
+          marketing strategy, content creation, and digital marketing campaigns. Let us help you 
+          tell your story and grow your business in the digital landscape.
         </p>
       );
     },
@@ -318,20 +331,16 @@ const cards = [
     description: "CONSULTING",
     title: "Consulting Services",
     src: "/overture_render3.png",
-    ctaText: "View",
-    ctaLink: "https://ui.aceternity.com/templates",
+    ctaText: "Learn More",
+    ctaLink: "/projects",
     content: () => {
       return (
         <p>
-          &quot;Aawarapan&quot;, a Bollywood movie starring Emraan Hashmi, is
-          renowned for its intense storyline and powerful performances. Directed
-          by Mohit Suri, the film has become a significant work in the Indian
-          film industry. <br /> <br /> The movie explores themes of love,
-          redemption, and sacrifice, capturing the essence of human emotions and
-          relationships. With a gripping narrative and memorable music,
-          &quot;Aawarapan&quot; has garnered a massive fan following both in
-          India and abroad, solidifying Emraan Hashmi&apos;s status as a
-          versatile actor.
+          Leverage our expertise to make informed technology decisions and drive your business 
+          forward. Our consulting services provide strategic guidance on digital transformation, 
+          technology stack selection, and process optimization. <br /> <br /> We work closely with 
+          your team to understand your business goals, identify opportunities for improvement, 
+          and implement solutions that enhance efficiency, scalability, and competitive advantage.
         </p>
       );
     },
