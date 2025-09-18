@@ -228,7 +228,7 @@ const cards = [
   {
     description: "WEB DEVELOPMENT",
     title: "Web Development",
-    src: "/overture-blue.png",
+    src: "/overture_render1.png",
     ctaText: "View",
     ctaLink: "https://ui.aceternity.com/templates",
     content: () => {
@@ -251,7 +251,7 @@ const cards = [
   {
     description: "NATIVE APP DEVELOPMENT",
     title: "Native App Development",
-    src: "/overture-blue.png",
+    src: "/overture_render1.png",
     ctaText: "View",
     ctaLink: "https://ui.aceternity.com/templates",
     content: () => {
@@ -274,7 +274,7 @@ const cards = [
   {
     description: "UI/UX DESIGN",
     title: "UI/UX Design Services",
-    src: "/overture-blue.png",
+    src: "/overture_render1.png",
     ctaText: "View",
     ctaLink: "https://ui.aceternity.com/templates",
     content: () => {
@@ -296,7 +296,7 @@ const cards = [
   {
     description: "BRAND IDENTITY & MARKETING",
     title: "Brand Identity & Marketing",
-    src: "/overture-blue.png",
+    src: "/overture_render1.png",
     ctaText: "View",
     ctaLink: "https://ui.aceternity.com/templates",
     content: () => {
@@ -317,7 +317,7 @@ const cards = [
   {
     description: "CONSULTING",
     title: "Consulting Services",
-    src: "/overture-blue.png",
+    src: "/overture_render1.png",
     ctaText: "View",
     ctaLink: "https://ui.aceternity.com/templates",
     content: () => {

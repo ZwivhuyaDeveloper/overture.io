@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 import { Card } from '../ui/card'
-import background2 from '@/assets/overture-blue.png'
+import background2 from '@/assets/overture_render2.png'
 import { Tektur, Syncopate, Afacad } from 'next/font/google'
 
 const tektur = Tektur({ weight: ['400', '700'], variable: '--font-tektur', subsets: ['latin'] })

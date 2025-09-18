@@ -9,6 +9,7 @@ import render from "@/assets/overture_render1.png";
 import { DirectionAwareHover } from '../ui/direction-aware-hover';
 import { Button } from "../ui/button";
 import { AnimatedTooltipPreview } from "../team";
+import AnimatedContent from "../AnimatedContent";
 
 const afacad = Afacad({
   weight: ["400","500","600","700"],
@@ -52,74 +53,211 @@ export function AboutUs({ className }: { className?: string }) {
         <div className="grid grid-cols-2 gap-4 mt-0">
             <Card className="w-full h-[60vh] z-10 shadow-none border-none bg-transparent">
                 <CardContent>
+                <AnimatedContent
+                    distance={100}
+                    direction="vertical"
+                    reverse={false}
+                    duration={0.8}
+                    ease="power3.out"
+                    initialOpacity={0.2}
+                    animateOpacity
+                    scale={1}
+                    threshold={0.1}
+                    delay={0}
+                >
                     <div className="relative items-center flex flex-row">
                         <h1 className={`${syncopate.className} 
                         tracking-widest relative text-left font-bold bg-clip-text bg-gradient-to-r from-black dark:from-white via-zinc-500 dark:via-zinc-300 to-zinc-400 dark:to-zinc-400  text-transparent   w-full max-w-full text-2xl my-2 z-10`}>
                             Design studio focused on 
                         </h1>
                     </div>
-                    <div className="relative items-center flex flex-row">
+                </AnimatedContent>
+
+                <div className="relative items-center flex flex-row">
                         <h1 className={`${syncopate.className} 
                         tracking-widest flex flex-row items-center gap-4 relative text-left font-bold text-black w-full max-w-full text-2xl my-2 z-10`}>
-                            <p className="bg-clip-text bg-gradient-to-r from-black dark:from-white via-zinc-600 dark:via-zinc-300 to-zinc-500 dark:to-zinc-400  text-transparent">crafting</p> 
-                                <div className="relative flex flex-col gap-1 shadow-lg bg-white rotate-25  w-25 h-15 p-1 rounded-md z-10">
-                                    <div className="w-full h-3 bg-blue-500 rounded-[3px]"/>
-                                    <div className="w-full h-2 bg-zinc-200 rounded-[3px]"/>
-                                    <div className="h-full w-full flex flex-row gap-1">
-                                        <div className="w-full h-full bg-zinc-200 rounded-[4px]"/>
-                                        <div className="w-full h-full bg-zinc-200 rounded-[4px]"/>
-                                    </div>
-                                </div> 
-                            <p className="bg-clip-text bg-gradient-to-r from-black dark:from-white via-zinc-600 dark:via-zinc-300 to-zinc-500 dark:to-zinc-400  text-transparent">websites,</p>
-                        </h1> 
-                    </div>
-                    <div>
-                        <h1 className={`${syncopate.className} 
-                        tracking-widest relative flex flex-row gap-3 text-left font-bold bg-clip-text bg-gradient-to-r from-black dark:from-white via-zinc-600 dark:via-zinc-300 to-zinc-500 dark:to-zinc-400  text-transparent w-full max-w-full text-2xl my-2 z-10`}>
-                            <div className="relative -left-5 flex flex-col gap-1 shadow-lg bg-white -rotate-25  w-60 h-15 p-1 rounded-md z-10">
-                                <div className="w-full h-3 bg-orange-500 rounded-[3px]"/>
+                        <AnimatedContent
+                            distance={100}
+                            direction="vertical"
+                            reverse={false}
+                            duration={0.8}
+                            ease="power3.out"
+                            initialOpacity={0.2}
+                            animateOpacity
+                            scale={1}
+                            threshold={0.1}
+                            delay={0}
+                        >
+                        <p className="bg-clip-text bg-gradient-to-r from-black dark:from-white via-zinc-600 dark:via-zinc-300 to-zinc-500 dark:to-zinc-400  text-transparent">crafting</p> 
+                        </AnimatedContent>
+                        
+                        <AnimatedContent
+                            distance={100}
+                            direction="vertical"
+                            reverse={true}
+                            duration={0.8}
+                            ease="power3.out"
+                            initialOpacity={0.2}
+                            animateOpacity={true}
+                            scale={0}
+                            threshold={0.1}
+                            delay={0.5}
+                        >
+                            <div className="relative flex flex-col gap-1 shadow-lg bg-white rotate-25  w-25 h-15 p-1 rounded-md z-10">
+                                <div className="w-full h-3 bg-blue-500 rounded-[3px]"/>
                                 <div className="w-full h-2 bg-zinc-200 rounded-[3px]"/>
                                 <div className="h-full w-full flex flex-row gap-1">
                                     <div className="w-full h-full bg-zinc-200 rounded-[4px]"/>
                                     <div className="w-full h-full bg-zinc-200 rounded-[4px]"/>
                                 </div>
-                            </div>
-                            <p>software</p> 
-                            <div className=" gap-2">
-                                <div className="relative flex flex-col gap-1 shadow-lg bg-white w-15 h-20 p-1 rounded-md z-10">
-                                    <div className="w-full h-full bg-zinc-200 rounded-[3px]"/>
-                                    <div className="h-full w-full flex flex-row gap-1">
-                                        <div className="w-full h-full bg-zinc-200 rounded-[4px]"/>
-                                        <div className="w-full h-full bg-zinc-200 rounded-[4px]"/>
-                                    </div>
-                                    <div className="w-full h-5 bg-blue-500 rounded-[3px]"/>
-                                </div>
-                                <div className="absolute justify-center top-7 right-45 flex flex-col gap-1 shadow-lg bg-white w-15 h-20 p-1 rounded-md z-10">
-                                    <div className="w-full h-3 bg-zinc-200 rounded-[3px]"/>
-                                    <div className="h-full w-full flex flex-row gap-1">
-                                        <div className="w-full h-full bg-zinc-200 rounded-[4px]"/>
-                                        <div className="w-full h-full bg-zinc-200 rounded-[4px]"/>
-                                    </div>
-                                    <div className="w-full h-3 bg-purple-500 rounded-[3px]"/>
-                                </div>
-                            </div>
-                            <p className="w-full">and apps.</p>
-                        </h1>
+                            </div> 
+                        </AnimatedContent>
+
+                        <AnimatedContent
+                            distance={100}
+                            direction="vertical"
+                            reverse={false}
+                            duration={0.8}
+                            ease="power3.out"
+                            initialOpacity={0.2}
+                            animateOpacity={true}
+                            scale={1}
+                            threshold={0.1}
+                            delay={0}
+                        >
+                            <p className="bg-clip-text bg-gradient-to-r from-black dark:from-white via-zinc-600 dark:via-zinc-300 to-zinc-500 dark:to-zinc-400  text-transparent">websites,</p>
+                        </AnimatedContent>
+                        </h1> 
                     </div>
-                    <p className={`${afacad.className} 
-                    tracking-wide relative text-left text-black w-full max-w-full text-2xl mt-20 my-2 z-10`}>With a team of experienced developers and designers, we are dedicated to delivering high-quality solutions that meet your needs. 
-                    We use the latest technologies and best practices to ensure that your project is completed on time and to the highest standard.
-                    </p>
+
+                    <div className="flex items-center items-center w-full justify-center">
+                        <AnimatedContent
+                            distance={100}
+                            direction="vertical"
+                            reverse={false}
+                            duration={0.8}
+                            ease="power3.out"
+                            initialOpacity={0.2}
+                            animateOpacity
+                            scale={1}
+                            threshold={0.1}
+                            delay={0}
+                        >
+                            <h1 className={`${syncopate.className} 
+                            tracking-widest relative flex flex-row gap-4 w-full text-left  font-bold bg-clip-text bg-gradient-to-r from-black dark:from-white via-zinc-600 dark:via-zinc-300 to-zinc-500 dark:to-zinc-400  text-transparent max-w-full text-2xl my-2 z-10`}>
+                                <AnimatedContent
+                                    distance={100}
+                                    direction="horizontal"
+                                    reverse={true}
+                                    duration={0.8}
+                                    ease="power3.out"
+                                    initialOpacity={0.2}
+                                    animateOpacity
+                                    scale={0}
+                                    threshold={0.1}
+                                    delay={0}
+                                >
+                                    <div className="relative -left-5 flex flex-col gap-1 shadow-lg bg-white -rotate-25  w-25 h-15 p-1 rounded-md z-10">
+                                        <div className="w-full h-3 bg-orange-500 rounded-[3px]"/>
+                                        <div className="w-full h-2 bg-zinc-200 rounded-[3px]"/>
+                                        <div className="h-full w-full flex flex-row gap-1">
+                                            <div className="w-full h-full bg-zinc-200 rounded-[4px]"/>
+                                            <div className="w-full h-full bg-zinc-200 rounded-[4px]"/>
+                                        </div>
+                                    </div>
+                                </AnimatedContent>
+                                
+                                <div className=" flex items-center w-fit justify-center">
+                                    <p className="text-left w-fit">software</p> 
+                                </div>
+
+                                <div className=" gap-2">
+                                    <AnimatedContent
+                                        distance={100}
+                                        direction="vertical"
+                                        reverse={true}
+                                        duration={0.8}
+                                        ease="power3.out"
+                                        initialOpacity={0.2}
+                                        animateOpacity
+                                        scale={0}
+                                        threshold={0.1}
+                                        delay={0}                                    
+                                    >
+                                        <div className="relative flex flex-col gap-1 shadow-lg bg-white w-15 h-20 p-1 rounded-md z-10">
+                                            <div className="w-full h-full bg-zinc-200 rounded-[3px]"/>
+                                            <div className="h-full w-full flex flex-row gap-1">
+                                                <div className="w-full h-full bg-zinc-200 rounded-[4px]"/>
+                                                <div className="w-full h-full bg-zinc-200 rounded-[4px]"/>
+                                            </div>
+                                            <div className="w-full h-5 bg-blue-500 rounded-[3px]"/>
+                                        </div>
+                                    </AnimatedContent>
+                                    <AnimatedContent
+                                        distance={100}
+                                        direction="horizontal"
+                                        reverse={false}
+                                        duration={0.8}
+                                        ease="power3.out"
+                                        initialOpacity={0}
+                                        animateOpacity
+                                        scale={0}
+                                        threshold={0}
+                                        delay={0.2}
+                                    >
+                                        <div className="absolute justify-center -top-11 -right-8 flex flex-col gap-1 shadow-lg bg-white w-15 h-20 p-1 rounded-md z-10">
+                                            <div className="w-full h-3 bg-zinc-200 rounded-[3px]"/>
+                                            <div className="h-full w-full flex flex-row gap-1">
+                                                <div className="w-full h-full bg-zinc-200 rounded-[4px]"/>
+                                                <div className="w-full h-full bg-zinc-200 rounded-[4px]"/>
+                                            </div>
+                                            <div className="w-full h-3 bg-purple-500 rounded-[3px]"/>
+                                        </div>   
+                                    </AnimatedContent>
+                                </div>
+                                <div className="flex items-center w-full h-full justify-center">
+                                    <p className="w-full h-full flex text-center ">and apps.</p>
+                                </div>
+                            </h1>
+                        </AnimatedContent>
+
+                    </div>
+                    <AnimatedContent 
+c
+                    >
+                        <p className={`${afacad.className} 
+                        tracking-wide relative text-left text-black w-full max-w-full text-2xl mt-20 my-2 z-10`}>With a team of experienced developers and designers, we are dedicated to delivering high-quality solutions that meet your needs. 
+                        We use the latest technologies and best practices to ensure that your project is completed on time and to the highest standard.
+                        </p>
+                    </AnimatedContent>
                     <div className="w-full h-fit items-center justify-between flex flex-row gap-10 mt-15 ">
                         <AnimatedTooltipPreview />
                         <Button variant="outline" className={`${afacad.className} bg-blue-500 text-white dark:bg-white text-lg  dark:text-black rounded-3xl`}>Meet the Team!</Button>
                     </div>
                 </CardContent>
             </Card>
-            <DirectionAwareHover imageUrl={imageUrl} className="w-[60vh] h-[60vh] z-10 p-0 bg-transparent border-none shadow-none">
-
-            </DirectionAwareHover>
+            <AnimatedContent
+                distance={150}
+                direction="vertical"
+                reverse={false}
+                duration={1.2}
+                ease="power3.out"
+                initialOpacity={0.2}
+                animateOpacity
+                scale={0.8}
+                threshold={0.2}
+                delay={0.5}
+            >
+                <div className="relative z-30 flex">
+                    <DirectionAwareHover imageUrl={imageUrl} className="w-[60vh] h-[60vh] z-30 flex p-0 bg-transparent border-none shadow-none">
+                        <p></p>
+                    </DirectionAwareHover>
+                </div>
+            </AnimatedContent>
         </div>
+      </div>
+      <div className="z-10">
+        <BackgroundBeams />
       </div>
     </div>
   );

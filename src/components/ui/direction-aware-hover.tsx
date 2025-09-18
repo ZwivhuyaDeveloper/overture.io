@@ -77,7 +77,7 @@ export const DirectionAwareHover = ({
           whileHover={direction}
           exit="exit"
         >
-          <motion.div className="group-hover/card:block hidden absolute inset-0 w-full h-full dark:bg-black/20 bg-white/20 z-10 transition duration-500" />
+          <motion.div className="group-hover/card:block hidden absolute inset-0 w-full h-full bg-black/20 z-10 transition duration-500" />
           <motion.div
             variants={variants}
             className="h-full w-full relative bg-gray-50 dark:bg-black"
