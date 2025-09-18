@@ -85,10 +85,10 @@ export function NavMenu({ className }: { className?: string }) {
         </MenuItem>
         <MenuItem setActive={setActive} active={active} item="Insights">
           <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/hobby">Hobby</HoveredLink>
-            <HoveredLink href="/individual">Individual</HoveredLink>
-            <HoveredLink href="/team">Team</HoveredLink>
-            <HoveredLink href="/enterprise">Enterprise</HoveredLink>
+            <HoveredLink href="/blog">Newsletter</HoveredLink>
+            <HoveredLink href="/reports">Reports</HoveredLink>
+            <HoveredLink href="/resources">Resources</HoveredLink>
+            <HoveredLink href="/webinars">Webinars</HoveredLink>
           </div>
         </MenuItem>
           <div className="flex gap-3 w-fit items-center">

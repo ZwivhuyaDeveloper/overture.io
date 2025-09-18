@@ -1,3 +1,5 @@
+import type { PortableTextBlock } from '@portabletext/types';
+
 export interface Author {
   _id: string;
   name: string;
@@ -21,6 +23,22 @@ export interface Category {
     current: string;
   };
   description?: string;
+}
+
+// Table types
+export interface TableCell {
+  content: PortableTextBlock[][]; // Array of block arrays for cell content
+  isHeader: boolean;
+}
+
+export interface TableRow {
+  cells: TableCell[];
+}
+
+export interface Table {
+  _type: 'table';
+  rows: TableRow[];
+  caption?: string;
 }
 
 export interface Post {
@@ -52,7 +70,7 @@ export interface Post {
   };
   categories?: Category[];
   publishedAt: string;
-  body: any; // Portable text content
+  body: PortableTextBlock[]; // Portable text content
   excerpt?: string;
 }
 
