@@ -41,7 +41,7 @@ const imageUrl = "/overture_render1.png";
 export function AboutUs({ className }: { className?: string }) {
   return (
     <div className={cn("h-[1080px} w-full rounded-md dark:bg-neutral-950 bg-white relative flex flex-col  justify-center antialiased", className)}>
-      <div className="max-w-7xl items-center h-full my-45 gap-6 flex flex-col w-full mx-auto">
+      <div className="max-w-7xl items-center h-full my-45 gap-6 z-30 flex flex-col w-full mx-auto">
         <div className="w-fit h-fit p-2 bg-zinc-200 rounded-full px-4">
             <h2 className={`${tektur.className} 
                 tracking-widest relative text-left z-10 text-md sm:text-sm text-black`}>
@@ -61,9 +61,10 @@ export function AboutUs({ className }: { className?: string }) {
                     ease="power3.out"
                     initialOpacity={0.2}
                     animateOpacity
-                    scale={1}
+                    scale={0}
                     threshold={0.1}
                     delay={0}
+                    onComplete={() => {}}
                 >
                     <div className="relative items-center flex flex-row">
                         <h1 className={`${syncopate.className} 
@@ -84,9 +85,10 @@ export function AboutUs({ className }: { className?: string }) {
                             ease="power3.out"
                             initialOpacity={0.2}
                             animateOpacity
-                            scale={1}
+                            scale={0}
                             threshold={0.1}
                             delay={0}
+                            onComplete={() => {}}
                         >
                         <p className="bg-clip-text bg-gradient-to-r from-black dark:from-white via-zinc-600 dark:via-zinc-300 to-zinc-500 dark:to-zinc-400  text-transparent">crafting</p> 
                         </AnimatedContent>
@@ -102,6 +104,7 @@ export function AboutUs({ className }: { className?: string }) {
                             scale={0}
                             threshold={0.1}
                             delay={0.5}
+                            onComplete={() => {}}
                         >
                             <div className="relative flex flex-col gap-1 shadow-lg bg-white rotate-25  w-25 h-15 p-1 rounded-md z-10">
                                 <div className="w-full h-3 bg-blue-500 rounded-[3px]"/>
@@ -121,9 +124,10 @@ export function AboutUs({ className }: { className?: string }) {
                             ease="power3.out"
                             initialOpacity={0.2}
                             animateOpacity={true}
-                            scale={1}
+                            scale={0}
                             threshold={0.1}
                             delay={0}
+                            onComplete={() => {}}
                         >
                             <p className="bg-clip-text bg-gradient-to-r from-black dark:from-white via-zinc-600 dark:via-zinc-300 to-zinc-500 dark:to-zinc-400  text-transparent">websites,</p>
                         </AnimatedContent>
@@ -139,9 +143,10 @@ export function AboutUs({ className }: { className?: string }) {
                             ease="power3.out"
                             initialOpacity={0.2}
                             animateOpacity
-                            scale={1}
+                            scale={0}
                             threshold={0.1}
                             delay={0}
+                            onComplete={() => {}}
                         >
                             <h1 className={`${syncopate.className} 
                             tracking-widest relative flex flex-row gap-4 w-full text-left  font-bold bg-clip-text bg-gradient-to-r from-black dark:from-white via-zinc-600 dark:via-zinc-300 to-zinc-500 dark:to-zinc-400  text-transparent max-w-full text-2xl my-2 z-10`}>
@@ -156,6 +161,7 @@ export function AboutUs({ className }: { className?: string }) {
                                     scale={0}
                                     threshold={0.1}
                                     delay={0}
+                                    onComplete={() => {}}
                                 >
                                     <div className="relative -left-5 flex flex-col gap-1 shadow-lg bg-white -rotate-25  w-25 h-15 p-1 rounded-md z-10">
                                         <div className="w-full h-3 bg-orange-500 rounded-[3px]"/>
@@ -183,6 +189,7 @@ export function AboutUs({ className }: { className?: string }) {
                                         scale={0}
                                         threshold={0.1}
                                         delay={0}                                    
+                                        onComplete={() => {}}
                                     >
                                         <div className="relative flex flex-col gap-1 shadow-lg bg-white w-15 h-20 p-1 rounded-md z-10">
                                             <div className="w-full h-full bg-zinc-200 rounded-[3px]"/>
@@ -204,6 +211,7 @@ export function AboutUs({ className }: { className?: string }) {
                                         scale={0}
                                         threshold={0}
                                         delay={0.2}
+                                        onComplete={() => {}}
                                     >
                                         <div className="absolute justify-center -top-11 -right-8 flex flex-col gap-1 shadow-lg bg-white w-15 h-20 p-1 rounded-md z-10">
                                             <div className="w-full h-3 bg-zinc-200 rounded-[3px]"/>
@@ -223,7 +231,17 @@ export function AboutUs({ className }: { className?: string }) {
 
                     </div>
                     <AnimatedContent 
-c
+                        distance={100}
+                        direction="horizontal"
+                        reverse={false}
+                        duration={0.8}
+                        ease="power3.out"
+                        initialOpacity={0}
+                        animateOpacity
+                        scale={0}
+                        threshold={0}
+                        delay={0.2}
+                        onComplete={() => {}}
                     >
                         <p className={`${afacad.className} 
                         tracking-wide relative text-left text-black w-full max-w-full text-2xl mt-20 my-2 z-10`}>With a team of experienced developers and designers, we are dedicated to delivering high-quality solutions that meet your needs. 
@@ -242,11 +260,12 @@ c
                 reverse={false}
                 duration={1.2}
                 ease="power3.out"
-                initialOpacity={0.2}
+                initialOpacity={0}
                 animateOpacity
                 scale={0.8}
                 threshold={0.2}
-                delay={0.5}
+                delay={0}
+                onComplete={() => {}}
             >
                 <div className="relative z-30 flex">
                     <DirectionAwareHover imageUrl={imageUrl} className="w-[60vh] h-[60vh] z-30 flex p-0 bg-transparent border-none shadow-none">

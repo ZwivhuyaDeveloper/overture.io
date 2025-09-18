@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { InfiniteMovingCards } from "../ui/infinite-moving-cards";
 import { Tektur } from "next/font/google";
 import { Syncopate } from "next/font/google";
+import AnimatedContent from "../AnimatedContent";
 
 const syncopate = Syncopate({
   weight: ["400","700"],
@@ -26,15 +27,43 @@ export function Partners() {
             Our Partners
         </h2>
       </div>
-      <h1 className={`${syncopate.className} 
+      <AnimatedContent
+        distance={100}
+        direction="vertical"
+        reverse={true}
+        duration={0.8}
+        ease="power3.out"
+        initialOpacity={0}
+        animateOpacity
+        scale={0.5}
+        threshold={0.2}
+        delay={0}
+        onComplete={() => {}}
+      >
+        <h1 className={`${syncopate.className} 
             tracking-widest relative text-left z-10 text-md sm:text-xl font-bold text-black`}>
             Our Partners Across the Globe
-      </h1>
-      <InfiniteMovingCards
-        items={testimonials}
-        direction="right"
-        speed="slow"
-      />
+        </h1>
+      </AnimatedContent>
+        <AnimatedContent
+        distance={100}
+        direction="vertical"
+        reverse={false}
+        duration={0.8}
+        ease="power3.out"
+        initialOpacity={0.2}
+        animateOpacity
+        scale={0.5}
+        threshold={0.1}
+        delay={0}
+        onComplete={() => {}}
+      >
+        <InfiniteMovingCards
+          items={testimonials}
+          direction="right"
+          speed="slow"
+        />
+    </AnimatedContent>
     </div>
   );
 }
