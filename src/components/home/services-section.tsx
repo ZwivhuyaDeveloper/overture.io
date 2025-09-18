@@ -9,7 +9,7 @@ import Image from "next/image";
 
 const tektur = Tektur({ weight: ['400', '700'], variable: '--font-tektur', subsets: ['latin'] })
 const syncopate = Syncopate({ weight: ['400', '700'], variable: '--font-syncopate', subsets: ['latin'] })
-const afacad = Afacad({ weight: ['400', '700'], variable: '--font-afacad', subsets: ['latin'] })
+const afacad = Afacad({ weight: ['400', '500', '600', '700'], variable: '--font-afacad', subsets: ['latin'] })
 
 export function ServicesSection() {
   const [active, setActive] = useState<(typeof cards)[number] | boolean | null>(
@@ -75,7 +75,7 @@ export function ServicesSection() {
             <motion.div
               layoutId={`card-${active.title}-${id}`}
               ref={ref}
-              className="w-full max-w-[500px]  h-full md:h-fit md:max-h-[90%]  flex flex-col bg-white dark:bg-neutral-900 sm:rounded-3xl overflow-hidden"
+              className="w-full max-w-[700px]  h-full md:h-fit md:max-h-[90%]  flex flex-col bg-white dark:bg-neutral-900 sm:rounded-3xl overflow-hidden"
             >
               <motion.div layoutId={`image-${active.title}-${id}`}>
                 <Image
@@ -93,13 +93,13 @@ export function ServicesSection() {
                   <div className="">
                     <motion.h3
                       layoutId={`title-${active.title}-${id}`}
-                      className={`${syncopate.className} font-bold text-neutral-700 dark:text-neutral-200`}
+                      className={`${syncopate.className} font-bold text-lg text-neutral-700 dark:text-neutral-200`}
                     >
                       {active.title}
                     </motion.h3>
                     <motion.p
                       layoutId={`lowercase-description-${active.description}-${id}`}
-                      className={`${tektur.className} text-neutral-600 dark:text-neutral-400 lowercase`}
+                      className={`${tektur.className} text-neutral-600 text-lg dark:text-neutral-400 lowercase`}
                     >
                       {active.description}
                     </motion.p>
@@ -109,7 +109,7 @@ export function ServicesSection() {
                     layoutId={`button-${active.title}-${id}`}
                     href={active.ctaLink}
                     target="_blank"
-                    className={`${afacad.className} px-4 py-3 text-sm rounded-full font-bold bg-green-500 text-white`}
+                    className={`${afacad.className} text-sm px-4 py-3 rounded-full font-bold bg-blue-500 dark:bg-blue-400 text-white`}
                   >
                     {active.ctaText}
                   </motion.a>
@@ -120,7 +120,7 @@ export function ServicesSection() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className={`${afacad.className} text-neutral-600 text-xs md:text-sm lg:text-base h-40 md:h-fit pb-10 flex flex-col items-start gap-4 overflow-auto dark:text-neutral-400 [mask:linear-gradient(to_bottom,white,white,transparent)] [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch]`}
+                    className={`${afacad.className}  text-neutral-600 text-sm md:text-lg lg:text-lg h-40 md:h-fit pb-10 flex flex-col items-start gap-4 overflow-auto dark:text-neutral-400 [mask:linear-gradient(to_bottom,white,white,transparent)] [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch]`}
                   >
                     {typeof active.content === "function"
                       ? active.content()
@@ -132,7 +132,7 @@ export function ServicesSection() {
           </div>
         ) : null}
       </AnimatePresence>
-      <ul className="max-w-4xl mx-auto w-full gap-4 my-20 py-20">
+      <ul className="max-w-6xl mx-auto w-full gap-4 my-20 py-20">
       <div className="w-full gap-4 flex flex-col items-center justify-center mb-20   max-w-7xl mx-auto">
           <div className="w-fit h-fit p-2 bg-zinc-200 rounded-full px-4">
             <h2 className={`${tektur.className} 
@@ -141,7 +141,7 @@ export function ServicesSection() {
             </h2>
           </div>
           <h1 className={`${syncopate.className} 
-                tracking-widest relative text-center w-2xl z-10 text-md sm:text-xl font-bold text-black`}>
+                tracking-widest relative text-center w-2xl z-10 text-md sm:text-xl font-bold text-black dark:text-white`}>
                 Our Features: Pioneering the Future of Digital Innovation
           </h1>
         </div>
@@ -150,7 +150,7 @@ export function ServicesSection() {
             layoutId={`card-${card.title}-${id}`}
             key={`card-${card.title}-${id}`}
             onClick={() => setActive(card)}
-            className="p-4 flex flex-col md:flex-row justify-between items-center hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-xl cursor-pointer"
+            className="p-4 flex flex-col md:flex-row space-y-1  mt-2  justify-between items-center bg-zinc-100 hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-xl cursor-pointer"
           >
             <div className="flex gap-4 flex-col md:flex-row ">
               <motion.div layoutId={`image-${card.title}-${id}`}>
@@ -160,13 +160,13 @@ export function ServicesSection() {
                   src={card.src}
                   alt={card.title}
                   quality={100}
-                  className="h-40 w-40 md:h-14 md:w-14 rounded-lg object-cover object-top"
+                  className="h-60 w-60 md:h-20 md:w-20 rounded-lg object-cover object-top"
                 />
               </motion.div>
               <div className="">
                 <motion.h3
                   layoutId={`title-${card.title}-${id}`}
-                  className={`${syncopate.className} font-bold text-neutral-800 dark:text-neutral-200 text-center md:text-left`}
+                  className={`${syncopate.className} font-bold text-neutral-800 text-lg dark:text-neutral-200 text-center md:text-left`}
                 >
                   {card.title}
                 </motion.h3>
@@ -180,7 +180,7 @@ export function ServicesSection() {
             </div>
             <motion.button
               layoutId={`button-${card.title}-${id}`}
-              className="px-4 py-2 text-sm rounded-full font-bold bg-gray-100 hover:bg-green-500 hover:text-white text-black mt-4 md:mt-0"
+              className="px-4 py-2 text-sm rounded-full font-bold bg-white dark:bg-blue-500 hover:bg-blue-500 hover:text-white text-black mt-4 md:mt-0"
             >
               {card.ctaText}
             </motion.button>
@@ -228,7 +228,7 @@ const cards = [
   {
     description: "WEB DEVELOPMENT",
     title: "Web Development",
-    src: "/overture_render1.png",
+    src: "/overture_render3.png",
     ctaText: "View",
     ctaLink: "https://ui.aceternity.com/templates",
     content: () => {
@@ -251,7 +251,7 @@ const cards = [
   {
     description: "NATIVE APP DEVELOPMENT",
     title: "Native App Development",
-    src: "/overture_render1.png",
+    src: "/overture_render3.png",
     ctaText: "View",
     ctaLink: "https://ui.aceternity.com/templates",
     content: () => {
@@ -274,7 +274,7 @@ const cards = [
   {
     description: "UI/UX DESIGN",
     title: "UI/UX Design Services",
-    src: "/overture_render1.png",
+    src: "/overture_render3.png",
     ctaText: "View",
     ctaLink: "https://ui.aceternity.com/templates",
     content: () => {
@@ -296,7 +296,7 @@ const cards = [
   {
     description: "BRAND IDENTITY & MARKETING",
     title: "Brand Identity & Marketing",
-    src: "/overture_render1.png",
+    src: "/overture_render3.png",
     ctaText: "View",
     ctaLink: "https://ui.aceternity.com/templates",
     content: () => {
@@ -317,7 +317,7 @@ const cards = [
   {
     description: "CONSULTING",
     title: "Consulting Services",
-    src: "/overture_render1.png",
+    src: "/overture_render3.png",
     ctaText: "View",
     ctaLink: "https://ui.aceternity.com/templates",
     content: () => {

@@ -22,6 +22,8 @@ import ExpandableCardDemo from "@/components/expandable-card-demo-grid";
 import { ServicesSection } from "@/components/home/services-section";
 import infoCards from '../components/home/info-cards';
 import InfoCards from "../components/home/info-cards";
+import { NavMenu } from "@/components/layout/nav-menu";
+import { BlogPreview } from "@/components/blog/BlogPreview";
 
 const syncopate = Syncopate({
   weight: ["400","700"],
@@ -103,12 +105,15 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen w-full">
+    <main className="min-h-screen w-full gap-0 ">
+      <div className="w-full">
+        <NavMenu/>
+      </div>
       <div className="min-h-screen w-full">
         {showScrollTop && (
           <Button
             onClick={scrollToTop}
-            className="fixed bottom-4 right-4 z-50 p-4 bg-black rounded-full shadow-lg"
+            className="fixed bottom-4 right-4 z-50 p-4 bg-white dark:bg-zinc-900 rounded-full shadow-lg"
           >
             <ArrowUpIcon className="w-6 h-6" />
           </Button>
@@ -146,6 +151,7 @@ export default function Home() {
         <section className="mb-10">
           <FeaturesSectionDemo2 />
         </section>
+        <BlogPreview />
       </div>
     </main>
   );

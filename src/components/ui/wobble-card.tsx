@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
+import AnimatedContent from "../AnimatedContent";
 
 export const WobbleCard = ({
   children,
@@ -23,6 +24,7 @@ export const WobbleCard = ({
     setMousePosition({ x, y });
   };
   return (
+
     <motion.section
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovering(true)}

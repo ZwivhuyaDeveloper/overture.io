@@ -49,9 +49,7 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} ${tektur.variable} ${syncopate.variable} ${archivo.variable} font-sans min-h-screen transition-colors duration-200`}>
         <ThemeProvider>
           <div className="min-h-screen flex flex-col">
-            <div className="w-full">
-              <NavMenu/>
-            </div>
+
             <main className="flex-1 pt-20">
               {children}
             </main>

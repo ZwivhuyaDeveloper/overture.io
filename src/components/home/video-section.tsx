@@ -5,6 +5,8 @@ import Image from "next/image";
 import { Button } from "../ui/button";
 import { Play } from "lucide-react";
 import { Syncopate } from "next/font/google"
+import ScrollReveal from "../ScrollReveal";
+import AnimatedContent from "../AnimatedContent";
 
 const syncopate = Syncopate({
   weight: ["400","700"],
@@ -14,18 +16,46 @@ const syncopate = Syncopate({
 
 export function VideoSection() {
   return (
-    <div className="flex flex-col mt-10 items-center justify-center overflow-hidden">
+    <div className="flex flex-col mt-10 items-center bg-white dark:bg-zinc-900 justify-center overflow-hidden">
       <ContainerScroll
         titleComponent={
           <>
           <div className="h-100">
             <div className='w-full p-8 gap-4 flex flex-col items-center justify-center'>
+              <AnimatedContent
+                    distance={200}
+                    direction="vertical"
+                    reverse={true}
+                    duration={0.8}
+                    ease="power3.out"
+                    initialOpacity={0}
+                    animateOpacity
+                    scale={1}
+                    threshold={0.1}
+                    delay={0}
+                    onComplete={() => {}}
+              >
               <h2 className={`${syncopate.className} text-2xl w-2xl text-center font-bold text-black dark:text-white mb-4`}>
                   &ldquo;Are you ready to change the world with us at your service?&rdquo;
               </h2>
+              </AnimatedContent>
+              <AnimatedContent
+                    distance={200}
+                    direction="vertical"
+                    reverse={true}
+                    duration={0.8}
+                    ease="power3.out"
+                    initialOpacity={0}
+                    animateOpacity
+                    scale={1}
+                    threshold={0.1}
+                    delay={0}
+                    onComplete={() => {}}
+              >
               <h2 className={`${syncopate.className} text-2xl w-2xl text-center font-bold text-black dark:text-white`}>
                   &ldquo;Watch the showreel below to answer that question.&rdquo;
               </h2>
+              </AnimatedContent>
             </div>
           </div>
           </>

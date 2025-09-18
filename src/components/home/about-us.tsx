@@ -40,8 +40,8 @@ const imageUrl = "/overture_render1.png";
 
 export function AboutUs({ className }: { className?: string }) {
   return (
-    <div className={cn("h-[1080px} w-full rounded-md dark:bg-neutral-950 bg-white relative flex flex-col  justify-center antialiased", className)}>
-      <div className="max-w-7xl items-center h-full my-45 gap-6 z-30 flex flex-col w-full mx-auto">
+    <div className={cn("min-h-[1080px] w-full rounded-md dark:bg-zinc-900 bg-white relative flex flex-col justify-center antialiased", className)}>
+      <div className="max-w-7xl items-center h-full my-8 md:my-45 gap-6 z-30 flex flex-col w-full mx-auto px-4 md:px-0">
         <div className="w-fit h-fit p-2 bg-zinc-200 rounded-full px-4">
             <h2 className={`${tektur.className} 
                 tracking-widest relative text-left z-10 text-md sm:text-sm text-black`}>
@@ -50,8 +50,8 @@ export function AboutUs({ className }: { className?: string }) {
         </div>
         <div>
         </div>
-        <div className="grid grid-cols-2 gap-4 mt-0">
-            <Card className="w-full h-[60vh] z-10 shadow-none border-none bg-transparent">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 mt-0">
+            <Card className="w-full h-auto md:h-[60vh] z-10 shadow-none border-none bg-transparent">
                 <CardContent>
                 <AnimatedContent
                     distance={100}
@@ -68,7 +68,7 @@ export function AboutUs({ className }: { className?: string }) {
                 >
                     <div className="relative items-center flex flex-row">
                         <h1 className={`${syncopate.className} 
-                        tracking-widest relative text-left font-bold bg-clip-text bg-gradient-to-r from-black dark:from-white via-zinc-500 dark:via-zinc-300 to-zinc-400 dark:to-zinc-400  text-transparent   w-full max-w-full text-2xl my-2 z-10`}>
+                        tracking-widest relative text-left font-bold bg-clip-text bg-gradient-to-r from-black dark:from-white via-zinc-500 dark:via-zinc-300 to-zinc-400 dark:to-zinc-400  text-transparent   w-full max-w-full text-xl md:text-2xl my-2 z-10`}>
                             Design studio focused on 
                         </h1>
                     </div>
@@ -76,7 +76,7 @@ export function AboutUs({ className }: { className?: string }) {
 
                 <div className="relative items-center flex flex-row">
                         <h1 className={`${syncopate.className} 
-                        tracking-widest flex flex-row items-center gap-4 relative text-left font-bold text-black w-full max-w-full text-2xl my-2 z-10`}>
+                        tracking-widest flex flex-row items-center gap-4 relative text-left font-bold text-black w-full max-w-full text-xl md:text-2xl my-2 z-10`}>
                         <AnimatedContent
                             distance={100}
                             direction="vertical"
@@ -108,7 +108,7 @@ export function AboutUs({ className }: { className?: string }) {
                         >
                             <div className="relative flex flex-col gap-1 shadow-lg bg-white rotate-25  w-25 h-15 p-1 rounded-md z-10">
                                 <div className="w-full h-3 bg-blue-500 rounded-[3px]"/>
-                                <div className="w-full h-2 bg-zinc-200 rounded-[3px]"/>
+                                <div className="w-full h-2 bg-zinc-200 dark:b rounded-[3px]"/>
                                 <div className="h-full w-full flex flex-row gap-1">
                                     <div className="w-full h-full bg-zinc-200 rounded-[4px]"/>
                                     <div className="w-full h-full bg-zinc-200 rounded-[4px]"/>
@@ -149,7 +149,7 @@ export function AboutUs({ className }: { className?: string }) {
                             onComplete={() => {}}
                         >
                             <h1 className={`${syncopate.className} 
-                            tracking-widest relative flex flex-row gap-4 w-full text-left  font-bold bg-clip-text bg-gradient-to-r from-black dark:from-white via-zinc-600 dark:via-zinc-300 to-zinc-500 dark:to-zinc-400  text-transparent max-w-full text-2xl my-2 z-10`}>
+                            tracking-widest relative flex flex-row gap-4 w-full text-left  font-bold bg-clip-text bg-gradient-to-r from-black dark:from-white via-zinc-600 dark:via-zinc-300 to-zinc-500 dark:to-zinc-400  text-transparent max-w-full text-xl md:text-2xl my-2 z-10`}>
                                 <AnimatedContent
                                     distance={100}
                                     direction="horizontal"
@@ -244,13 +244,13 @@ export function AboutUs({ className }: { className?: string }) {
                         onComplete={() => {}}
                     >
                         <p className={`${afacad.className} 
-                        tracking-wide relative text-left text-black w-full max-w-full text-2xl mt-20 my-2 z-10`}>With a team of experienced developers and designers, we are dedicated to delivering high-quality solutions that meet your needs. 
+                        tracking-wide relative text-left text-black dark:text-white w-full max-w-full text-lg md:text-2xl mt-12 md:mt-20 my-2 z-10`}>With a team of experienced developers and designers, we are dedicated to delivering high-quality solutions that meet your needs. 
                         We use the latest technologies and best practices to ensure that your project is completed on time and to the highest standard.
                         </p>
                     </AnimatedContent>
-                    <div className="w-full h-fit items-center justify-between flex flex-row gap-10 mt-15 ">
+                    <div className="w-full h-fit items-center justify-between flex flex-col md:flex-row gap-6 md:gap-10 mt-8 md:mt-15">
                         <AnimatedTooltipPreview />
-                        <Button variant="outline" className={`${afacad.className} bg-blue-500 text-white dark:bg-white text-lg  dark:text-black rounded-3xl`}>Meet the Team!</Button>
+                        <Button variant="outline" className={`${afacad.className} bg-blue-500 text-white dark:bg-white text-base md:text-lg dark:text-black rounded-3xl px-6 py-2 md:px-8`}>Meet the Team!</Button>
                     </div>
                 </CardContent>
             </Card>
@@ -267,8 +267,8 @@ export function AboutUs({ className }: { className?: string }) {
                 delay={0}
                 onComplete={() => {}}
             >
-                <div className="relative z-30 flex">
-                    <DirectionAwareHover imageUrl={imageUrl} className="w-[60vh] h-[60vh] z-30 flex p-0 bg-transparent border-none shadow-none">
+                <div className="relative z-30 flex justify-center">
+                    <DirectionAwareHover imageUrl={imageUrl} className="w-[50vh] h-[50vh] md:w-[60vh] md:h-[60vh] z-30 flex p-0 bg-transparent border-none shadow-none">
                         <p></p>
                     </DirectionAwareHover>
                 </div>
