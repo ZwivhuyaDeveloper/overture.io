@@ -109,7 +109,7 @@ export default function Home() {
       <div className="w-full">
         <NavMenu/>
       </div>
-      <div className="min-h-screen w-full">
+      <div className="w-full">
         {showScrollTop && (
           <Button
             onClick={scrollToTop}

@@ -44,14 +44,28 @@ export function Vision() {
         <div className="w-full gap-4 flex flex-col items-center justify-center max-w-7xl mx-auto">
           <div className="w-fit h-fit p-2 bg-zinc-200 dark:bg-zinc-800 rounded-full px-4">
             <h2 className={`${tektur.className} 
-                tracking-widest relative text-left z-10 text-md sm:text-sm text-black dark:text-white`}>
+                tracking-widest relative text-left z-10 text-md font-semibold sm:text-sm text-black dark:text-white`}>
                 Vision  
             </h2>
           </div>
+          <AnimatedContent
+            distance={200}
+            direction="vertical"
+            reverse={true}
+            duration={0.8}
+            ease="power3.out"
+            initialOpacity={0}
+            animateOpacity
+            scale={0}
+            threshold={0.2}
+            delay={0.1}
+            onComplete={() => {}}
+          >
           <h1 className={`${syncopate.className} 
                 tracking-widest relative text-center w-2xl z-10 text-md sm:text-xl font-bold text-black dark:text-white`}>
                 Our Vision:  the Future oPioneeringf Digital Innovation
           </h1>
+          </AnimatedContent>
         </div>
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 max-w-7xl mx-auto w-full h-full mb-20">
       {/*card 1*/}
@@ -123,7 +137,7 @@ export function Vision() {
       </WobbleCard>
 
       {/*card 2*/}
-      <WobbleCard containerClassName="col-span-1 space-y-4 gap-6 flex items-center justify-between flex-col bg-blue-700 min-h-[300px]">
+      <WobbleCard containerClassName="col-span-1 space-y-4 gap-6 flex items-center justify-between flex-col bg-blue-500 dark:bg-blue-700 min-h-[300px]">
         <AnimatedContent
           distance={100}
           direction="vertical"
@@ -153,7 +167,7 @@ export function Vision() {
         </AnimatedContent>
       </WobbleCard>
       {/*card 3*/}
-      <WobbleCard containerClassName="col-span-1 gap-4 flex flex-col bg-orange-700 min-h-[300px]">
+      <WobbleCard containerClassName="col-span-1 gap-4 flex flex-col bg-orange-500 dark:bg-orange-700 min-h-[300px]">
         <AnimatedContent
           distance={100}
           direction="vertical"
@@ -224,7 +238,7 @@ export function Vision() {
         </AnimatedContent>
       </WobbleCard>
       {/*card 5*/}
-      <WobbleCard containerClassName="col-span-1 lg:col-span-3 bg-zinc-200 dark:bg-zinc-800 min-h-[500px] lg:min-h-[600px] xl:min-h-[300px]">
+      <WobbleCard containerClassName="col-span-1 lg:col-span-3 bg-purple-500 dark:bg-purple-700 min-h-[500px] lg:min-h-[600px] xl:min-h-[300px]">
         <AnimatedContent
           distance={100}
           direction="vertical"
@@ -240,18 +254,18 @@ export function Vision() {
         >
         <div className="max-w-sm">
           <h2 className={`${syncopate.className} 
-          tracking-widest relative text-left z-10 text-md sm:text-xl font-bold text-black dark:text-white`}>
+          tracking-widest relative text-left z-10 text-md sm:text-xl font-bold text-white dark:text-white`}>
             Signup for blazing-fast cutting-edge state of the art Gippity AI
             wrapper today!
           </h2>
           <p className={`${afacad.className} 
-          tracking-normal relative text-left z-10 text-md sm:text-xl text-black dark:text-white`}>
+          tracking-normal relative text-left z-10 text-md sm:text-xl text-white dark:text-white`}>
             With over 100,000 mothly active bot users, Gippity AI is the most
             popular AI platform for developers.
           </p>
         </div>
         <Image
-          src={web5}
+          src={web}
           width={500}
           height={500}
           alt="linear demo image"

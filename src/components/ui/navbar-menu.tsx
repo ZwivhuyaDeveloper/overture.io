@@ -83,7 +83,8 @@ export const Menu = ({
   return (
     <nav
       onMouseLeave={() => setActive(null)} // resets the state
-      className={`${cn(afacad.className)}  relative rounded-full border border-transparent dark:bg-black/10 backdrop-blur-lg dark:border-white/[0.2] bg-black/20 shadow-input flex justify-center space-x-4 px-8 py-4 `}
+      className={`${cn(afacad.className)}  relative rounded-full border border-transparent dark:bg-black/10 backdrop-blur-lg
+         dark:border-white/[0.2] bg-black/10 shadow-input flex justify-center space-x-4 px-8 py-4 `}
     >
       {children}
     </nav>

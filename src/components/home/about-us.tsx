@@ -42,9 +42,9 @@ export function AboutUs({ className }: { className?: string }) {
   return (
     <div className={cn("min-h-[1080px] w-full rounded-md dark:bg-zinc-900 bg-white relative flex flex-col justify-center antialiased", className)}>
       <div className="max-w-7xl items-center h-full my-8 md:my-45 gap-6 z-30 flex flex-col w-full mx-auto px-4 md:px-0">
-        <div className="w-fit h-fit p-2 bg-zinc-200 rounded-full px-4">
+        <div className="w-fit h-fit p-2 bg-zinc-200 dark:bg-zinc-800 rounded-full px-4">
             <h2 className={`${tektur.className} 
-                tracking-widest relative text-left z-10 text-md sm:text-sm text-black`}>
+                tracking-widest relative text-left z-10 text-md font-semibold sm:text-sm text-black dark:text-white`}>
                 About Us
             </h2>
         </div>
@@ -106,12 +106,12 @@ export function AboutUs({ className }: { className?: string }) {
                             delay={0.5}
                             onComplete={() => {}}
                         >
-                            <div className="relative flex flex-col gap-1 shadow-lg bg-white rotate-25  w-25 h-15 p-1 rounded-md z-10">
+                            <div className="relative flex flex-col gap-1 shadow-lg bg-white dark:bg-zinc-800 rotate-25  w-25 h-15 p-1 rounded-md z-10">
                                 <div className="w-full h-3 bg-blue-500 rounded-[3px]"/>
-                                <div className="w-full h-2 bg-zinc-200 dark:b rounded-[3px]"/>
+                                <div className="w-full h-2 bg-zinc-200 dark:bg-zinc-700 rounded-[3px]"/>
                                 <div className="h-full w-full flex flex-row gap-1">
-                                    <div className="w-full h-full bg-zinc-200 rounded-[4px]"/>
-                                    <div className="w-full h-full bg-zinc-200 rounded-[4px]"/>
+                                    <div className="w-full h-full bg-zinc-200 dark:bg-zinc-700 rounded-[4px]"/>
+                                    <div className="w-full h-full bg-zinc-200 dark:bg-zinc-700 rounded-[4px]"/>
                                 </div>
                             </div> 
                         </AnimatedContent>
@@ -163,12 +163,12 @@ export function AboutUs({ className }: { className?: string }) {
                                     delay={0}
                                     onComplete={() => {}}
                                 >
-                                    <div className="relative -left-5 flex flex-col gap-1 shadow-lg bg-white -rotate-25  w-25 h-15 p-1 rounded-md z-10">
+                                    <div className="relative -left-5 flex flex-col gap-1 shadow-lg bg-white dark:bg-zinc-800 -rotate-25  w-25 h-15 p-1 rounded-md z-10">
                                         <div className="w-full h-3 bg-orange-500 rounded-[3px]"/>
-                                        <div className="w-full h-2 bg-zinc-200 rounded-[3px]"/>
+                                        <div className="w-full h-2 bg-zinc-200 dark:bg-zinc-700 rounded-[3px]"/>
                                         <div className="h-full w-full flex flex-row gap-1">
-                                            <div className="w-full h-full bg-zinc-200 rounded-[4px]"/>
-                                            <div className="w-full h-full bg-zinc-200 rounded-[4px]"/>
+                                            <div className="w-full h-full bg-zinc-200 dark:bg-zinc-700 rounded-[4px]"/>
+                                            <div className="w-full h-full bg-zinc-200 dark:bg-zinc-700 rounded-[4px]"/>
                                         </div>
                                     </div>
                                 </AnimatedContent>
@@ -191,11 +191,11 @@ export function AboutUs({ className }: { className?: string }) {
                                         delay={0}                                    
                                         onComplete={() => {}}
                                     >
-                                        <div className="relative flex flex-col gap-1 shadow-lg bg-white w-15 h-20 p-1 rounded-md z-10">
-                                            <div className="w-full h-full bg-zinc-200 rounded-[3px]"/>
+                                        <div className="relative flex flex-col gap-1 shadow-lg bg-white dark:bg-zinc-800 w-15 h-20 p-1 rounded-md z-10">
+                                            <div className="w-full h-full bg-zinc-200 dark:bg-zinc-700 rounded-[3px]"/>
                                             <div className="h-full w-full flex flex-row gap-1">
-                                                <div className="w-full h-full bg-zinc-200 rounded-[4px]"/>
-                                                <div className="w-full h-full bg-zinc-200 rounded-[4px]"/>
+                                                <div className="w-full h-full bg-zinc-200 dark:bg-zinc-700 rounded-[4px]"/>
+                                                <div className="w-full h-full bg-zinc-200 dark:bg-zinc-700 rounded-[4px]"/>
                                             </div>
                                             <div className="w-full h-5 bg-blue-500 rounded-[3px]"/>
                                         </div>
@@ -213,11 +213,11 @@ export function AboutUs({ className }: { className?: string }) {
                                         delay={0.2}
                                         onComplete={() => {}}
                                     >
-                                        <div className="absolute justify-center -top-11 -right-8 flex flex-col gap-1 shadow-lg bg-white w-15 h-20 p-1 rounded-md z-10">
-                                            <div className="w-full h-3 bg-zinc-200 rounded-[3px]"/>
+                                        <div className="absolute justify-center -top-11 -right-8 flex flex-col gap-1 shadow-lg bg-white dark:bg-zinc-800 w-15 h-20 p-1 rounded-md z-10">
+                                            <div className="w-full h-3 bg-zinc-200 dark:bg-zinc-700 rounded-[3px]"/>
                                             <div className="h-full w-full flex flex-row gap-1">
-                                                <div className="w-full h-full bg-zinc-200 rounded-[4px]"/>
-                                                <div className="w-full h-full bg-zinc-200 rounded-[4px]"/>
+                                                <div className="w-full h-full bg-zinc-200 dark:bg-zinc-700 rounded-[4px]"/>
+                                                <div className="w-full h-full bg-zinc-200 dark:bg-zinc-700 rounded-[4px]"/>
                                             </div>
                                             <div className="w-full h-3 bg-purple-500 rounded-[3px]"/>
                                         </div>   
@@ -250,7 +250,7 @@ export function AboutUs({ className }: { className?: string }) {
                     </AnimatedContent>
                     <div className="w-full h-fit items-center justify-between flex flex-col md:flex-row gap-6 md:gap-10 mt-8 md:mt-15">
                         <AnimatedTooltipPreview />
-                        <Button variant="outline" className={`${afacad.className} bg-blue-500 text-white dark:bg-white text-base md:text-lg dark:text-black rounded-3xl px-6 py-2 md:px-8`}>Meet the Team!</Button>
+                        <Button variant="outline" className={`${afacad.className} bg-blue-500 text-white dark:bg-blue-600 dark:text-white text-base md:text-lg rounded-3xl px-6 py-2 md:px-8`}>Meet the Team!</Button>
                     </div>
                 </CardContent>
             </Card>

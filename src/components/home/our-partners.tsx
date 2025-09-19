@@ -19,11 +19,11 @@ const tektur = Tektur({
 
 export function Partners() {
   return (
-    <div className="h-[540px] rounded-md w-full flex gap-8 flex-col antialiased bg-white dark:bg-zinc-900 dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
+    <div className="h-[540px] rounded-md my-20 w-full flex gap-8 flex-col antialiased bg-white dark:bg-zinc-900 dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
 
-      <div className="w-fit h-fit p-2 bg-zinc-200 rounded-full px-4">
+      <div className="w-fit h-fit p-2 bg-zinc-200 dark:bg-zinc-800 rounded-full px-4">
         <h2 className={`${tektur.className} 
-            tracking-widest relative text-left z-10 text-md sm:text-sm text-black dark:text-white`}>
+            tracking-widest relative font-semibold text-left z-10 text-md sm:text-sm text-black dark:text-white`}>
             Our Partners
         </h2>
       </div>
@@ -41,7 +41,10 @@ export function Partners() {
         onComplete={() => {}}
       >
         <h1 className={`${syncopate.className} 
-            tracking-widest relative text-left z-10 text-md sm:text-xl font-bold text-black dark:text-white`}>
+            tracking-widest relative text-left z-10 text-lg sm:text-2xl font-bold pb-10 
+            bg-clip-text bg-gradient-to-r from-black dark:from-white via-zinc-500 dark:via-zinc-300 to-zinc-400 dark:to-zinc-400  text-transparent
+            
+            `}>
             Our Partners Across the Globe
         </h1>
       </AnimatedContent>

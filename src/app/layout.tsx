@@ -46,7 +46,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning className="light">
-      <body className={`${geistSans.variable} ${geistMono.variable} ${tektur.variable} ${syncopate.variable} ${archivo.variable} font-sans min-h-screen transition-colors duration-200`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} ${tektur.variable} ${syncopate.variable} ${archivo.variable} 
+        font-sans min-h-screen transition-colors duration-200
+        bg-white dark:bg-zinc-900
+        `}>
         <ThemeProvider>
           <div className="min-h-screen flex flex-col">
 
