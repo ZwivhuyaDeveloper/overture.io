@@ -7,7 +7,8 @@ import {authorType} from './authorType'
 import {projectCategoryType} from './projectCategoryType'
 import {projectType} from './projectType'
 import {projectTechnologyType} from './projectTechnologyType'
+import {projectContributorType} from './projectContributorType'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [blockContentType, categoryType, postType, authorType, projectCategoryType, projectType, projectTechnologyType],
+  types: [blockContentType, categoryType, postType, authorType, projectCategoryType, projectType, projectTechnologyType, projectContributorType],
 }

@@ -1,5 +1,28 @@
 import type { PortableTextBlock } from '@portabletext/types';
 
+export interface ProjectContributor {
+  _id: string;
+  _type: 'projectContributor';
+  name: string;
+  slug?: {
+    current: string;
+  };
+  image?: {
+    asset: {
+      _ref: string;
+      _type: string;
+    };
+    alt?: string;
+  };
+  bio?: PortableTextBlock[];
+  role?: string;
+  skills?: string[];
+  website?: string;
+  github?: string;
+  linkedin?: string;
+  email?: string;
+}
+
 export interface ProjectCategory {
   _id: string;
   title: string;
@@ -15,6 +38,8 @@ export interface ProjectCategory {
     alt?: string;
   };
   color?: string;
+  leadContributor?: ProjectContributor;
+  teamExpertise?: ProjectContributor[];
 }
 
 export interface ProjectTechnology {
@@ -33,6 +58,8 @@ export interface ProjectTechnology {
   };
   description?: string;
   website?: string;
+  expertContributors?: ProjectContributor[];
+  implementationTeam?: ProjectContributor[];
 }
 
 export interface ProjectFeature {
@@ -82,6 +109,7 @@ export interface Project {
   demoUrl?: string;
   categories: ProjectCategory[];
   technologies: ProjectTechnology[];
+  contributors: ProjectContributor[];
   startDate?: string;
   endDate?: string;
   status: string;
@@ -101,6 +129,7 @@ export interface ProjectPreview {
   mainImage: ProjectImage;
   categories: ProjectCategory[];
   technologies: ProjectTechnology[];
+  contributors: ProjectContributor[];
   status: string;
   featured: boolean;
   order?: number;

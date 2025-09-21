@@ -1,5 +1,5 @@
 import {TagIcon} from '@sanity/icons'
-import {defineField, defineType} from 'sanity'
+import {defineArrayMember, defineField, defineType} from 'sanity'
 
 export const projectCategoryType = defineType({
   name: 'projectCategory',
@@ -37,6 +37,18 @@ export const projectCategoryType = defineType({
       name: 'color',
       type: 'string',
       description: 'Hex color code for category theming (e.g., #3B82F6)',
+    }),
+    defineField({
+      name: 'leadContributor',
+      type: 'reference',
+      to: [{type: 'projectContributor'}],
+      description: 'Lead contributor or expert for this category',
+    }),
+    defineField({
+      name: 'teamExpertise',
+      type: 'array',
+      of: [defineArrayMember({type: 'reference', to: {type: 'projectContributor'}})],
+      description: 'Team members with expertise in this category',
     }),
   ],
   preview: {

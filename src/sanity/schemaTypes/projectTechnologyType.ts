@@ -1,5 +1,5 @@
 import {CodeIcon} from '@sanity/icons'
-import {defineField, defineType} from 'sanity'
+import {defineArrayMember, defineField, defineType} from 'sanity'
 
 export const projectTechnologyType = defineType({
   name: 'projectTechnology',
@@ -54,6 +54,18 @@ export const projectTechnologyType = defineType({
       name: 'website',
       type: 'url',
       description: 'Official website URL',
+    }),
+    defineField({
+      name: 'expertContributors',
+      type: 'array',
+      of: [defineArrayMember({type: 'reference', to: {type: 'projectContributor'}})],
+      description: 'Team members who are experts in this technology',
+    }),
+    defineField({
+      name: 'implementationTeam',
+      type: 'array',
+      of: [defineArrayMember({type: 'reference', to: {type: 'projectContributor'}})],
+      description: 'Team members experienced in implementing this technology',
     }),
   ],
   preview: {

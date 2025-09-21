@@ -1,134 +1,127 @@
-import Image from 'next/image'
-import React from 'react'
-import { Card } from '../ui/card'
-import background2 from '@/assets/overture_render2.png'
-import { Tektur, Syncopate, Afacad } from 'next/font/google'
+'use client';
+
+import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { Button } from '../ui/button';
+import { getAllProjects } from '@/lib/project';
+import { HomeProjectCard } from './HomeProjectCard';
+import { Tektur, Syncopate } from 'next/font/google';
+import { ArrowRight } from 'lucide-react';
+import type { ProjectPreview } from '@/types/project';
 
 const tektur = Tektur({ weight: ['400', '700'], variable: '--font-tektur', subsets: ['latin'] })
 const syncopate = Syncopate({ weight: ['400', '700'], variable: '--font-syncopate', subsets: ['latin'] })
-const afacad = Afacad({ weight: ['400', '700'], variable: '--font-afacad', subsets: ['latin'] })
 
-export default function portfolioSection() {
+export default function PortfolioSection() {
+  const [projects, setProjects] = useState<ProjectPreview[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        setLoading(true);
+        const projectsData = await getAllProjects();
+        // Take only the first 4 projects for the portfolio section
+        setProjects(projectsData.slice(0, 4));
+        setError(null);
+      } catch (err) {
+        console.error('Error fetching projects:', err);
+        setError('Failed to load projects. Please try again later.');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProjects();
+  }, []);
+
   return (
     <div className='flex flex-col items-center justify-center gap-5'>
-
-        <div className="w-full gap-4 flex flex-col items-center justify-center mb-20 max-w-7xl mx-auto">
-          <div className="w-fit h-fit p-2 bg-zinc-200 rounded-full px-4">
-            <h2 className={`${tektur.className} 
-                tracking-widest relative text-left z-10 text-md sm:text-sm text-black`}>
-                Portfolio  
-            </h2>
-          </div>
-          <h1 className={`${syncopate.className} 
-                tracking-widest relative text-center w-2xl z-10 text-md sm:text-xl font-bold text-black`}>
-                Our Portfolio: projects that speak for themselves
-          </h1>
+      {/* Header Section */}
+      <div className="w-full gap-4 flex flex-col items-center justify-center mb-20 max-w-7xl mx-auto">
+        <div className="w-fit h-fit p-2 bg-zinc-200 rounded-full px-4">
+          <h2 className={`${tektur.className} 
+              tracking-widest relative text-left z-10 text-md sm:text-sm text-black`}>
+              Portfolio  
+          </h2>
         </div>
+        <h1 className={`${syncopate.className} 
+              tracking-widest relative text-center w-2xl z-10 text-md sm:text-xl font-bold text-black`}>
+              Our Portfolio: projects that speak for themselves
+        </h1>
+      </div>
 
-        <section className='flex flex-row items-center gap-2 justify-center w-full h-full px-80'>
-            <div className='flex flex-col items-start h-full w-full justify-center'>
-                <h1 className={`${tektur.className} tracking-wide py-2 relative text-left z-10 text-lg sm:text-lg text-black`}>
-                    <span className="text-primary font-bold">FUSE</span> - A well designed ecommerce website.
-                </h1>
-                <div className='grid grid-cols-2 items-center gap-2 h-full w-full justify-center'>
-                    <Card className="w-full h-full z-10 p-0 bg-transparent border-none shadow-none">
-                        <Image src={background2} width={1000} height={1000} quality={100} alt="linear demo image" className=" object-cover w-100 h-70 rounded-2xl" />
-                    </Card>
-                    <Card className='flex flex-col items-center w-full h-full justify-between rounded-3xl border-none bg-zinc-100 p-5 py-6'>
-                        <h1 className={`${syncopate.className} text-black text-left w-full font-bold text-xl capitalize`}>FUSE</h1>
-                        <h2 className={`${afacad.className} text-black text-sm w-full capitalize`}>
-                            Our portfolio showcases a fusion of art and science, where aesthetics meet unparalleled user experience. 
-                            Discover how we craft digital solutions that not only look stunning but also drive results.
-                        </h2>
-                        <div className='w-full h-fit flex items-center gap-2 justify-start flex-row'>
-                            <div className='w-8 h-8 rounded-3xl bg-zinc-300'/>
-                            <div>
-                                <h3 className='text-black text-xs font-medium'>Areohone Matodzi</h3>
-                                <h4 className='text-black text-xs font-medium'>CEO, Areohone Matodzi</h4>
-                            </div>
-                        </div>
-                    </Card>
-                </div>
-            </div>
-            <div className='flex flex-col items-start h-full w-full justify-center'>
-                <h1 className={`${tektur.className} tracking-wide py-2 relative text-left z-10 text-lg sm:text-lg text-black`}>
-                    <span className="text-primary font-bold">FUSE</span> - A well designed ecommerce website.
-                </h1>
-                <div className='grid grid-cols-2 items-center gap-2 h-full w-full justify-center'>
-                    <Card className="w-full h-full z-10 p-0 bg-transparent border-none shadow-none">
-                        <Image src={background2} width={1000} height={1000} quality={100} alt="linear demo image" className=" object-cover w-100 h-70 rounded-2xl" />
-                    </Card>
-                    <Card className='flex flex-col items-center w-full h-full justify-between rounded-3xl border-none bg-zinc-100 p-5 py-6'>
-                        <h1 className={`${syncopate.className} text-black text-left w-full font-bold text-xl capitalize`}>FUSE</h1>
-                        <h2 className={`${afacad.className} text-black text-sm w-full capitalize`}>
-                            Our portfolio showcases a fusion of art and science, where aesthetics meet unparalleled user experience. 
-                            Discover how we craft digital solutions that not only look stunning but also drive results.
-                        </h2>
-                        <div className='w-full h-fit flex items-center gap-2 justify-start flex-row'>
-                            <div className='w-8 h-8 rounded-3xl bg-zinc-300'/>
-                            <div>
-                                <h3 className='text-black text-xs font-medium'>Areohone Matodzi</h3>
-                                <h4 className='text-black text-xs font-medium'>CEO, Areohone Matodzi</h4>
-                            </div>
-                        </div>
-                    </Card>
-                </div>
-            </div>
-        </section>
-        <section className='flex flex-row items-center gap-1 justify-center w-full h-full px-80'>
-            <div className='flex flex-col items-start h-full w-full justify-center'>
-                <h1 className={`${tektur.className} tracking-wide py-2 relative text-left z-10 text-lg sm:text-lg text-black`}>
-                    <span className="text-primary font-bold">FUSE</span> - A well designed ecommerce website.
-                </h1>
-                <div className='grid grid-cols-2 items-center gap-2 h-full w-full justify-center'>
-                    <Card className="w-full h-full z-10 p-0 bg-transparent border-none shadow-none">
-                        <Image src={background2} width={1000} height={1000} quality={100} alt="linear demo image" className=" object-cover w-100 h-70 rounded-2xl" />
-                    </Card>
-                    <Card className='flex flex-col items-center w-full h-full justify-between rounded-3xl border-none bg-zinc-100 p-5 py-6'>
-                        <h1 className={`${syncopate.className} text-black text-left w-full font-bold text-xl capitalize`}>FUSE</h1>
-                        <h2 className={`${afacad.className} text-black text-sm w-full capitalize`}>
-                            Our portfolio showcases a fusion of art and science, where aesthetics meet unparalleled user experience. 
-                            Discover how we craft digital solutions that not only look stunning but also drive results.
-                        </h2>
-                        <div className='w-full h-fit flex items-center gap-2 justify-start flex-row'>
-                            <div className='w-8 h-8 rounded-3xl bg-zinc-300'/>
-                            <div>
-                                <h3 className='text-black text-xs font-medium'>Areohone Matodzi</h3>
-                                <h4 className='text-black text-xs font-medium'>CEO, Areohone Matodzi</h4>
-                            </div>
-                        </div>
-                    </Card>
-                </div>
-            </div>
-            <div className='flex flex-col items-start h-full w-full justify-center'>
-                <h1 className={`${tektur.className} tracking-wide py-2 relative text-left z-10 text-lg sm:text-lg text-black`}>
-                    <span className="text-primary font-bold">FUSE</span> - A well designed ecommerce website.
-                </h1>
-                <div className='grid grid-cols-2 items-center gap-2 h-full w-full justify-center'>
-                    <Card className="w-full h-full z-10 p-0 bg-transparent border-none shadow-none">
-                        <Image src={background2} width={1000} height={1000} quality={100} alt="linear demo image" className=" object-cover w-100 h-70 rounded-2xl" />
-                    </Card>
-                    <Card className='flex flex-col items-center w-full h-full justify-between rounded-3xl border-none bg-zinc-100 p-5 py-6'>
-                        <h1 className={`${syncopate.className} text-black text-left w-full font-bold text-xl capitalize`}>FUSE</h1>
-                        <h2 className={`${afacad.className} text-black text-sm w-full capitalize`}>
-                            Our portfolio showcases a fusion of art and science, where aesthetics meet unparalleled user experience. 
-                            Discover how we craft digital solutions that not only look stunning but also drive results.
-                        </h2>
-                        <div className='w-full h-fit flex items-center gap-2 justify-start flex-row'>
-                            <div className='w-8 h-8 rounded-3xl bg-zinc-300'/>
-                            <div>
-                                <h3 className='text-black text-xs font-medium'>Areohone Matodzi</h3>
-                                <h4 className='text-black text-xs font-medium'>CEO, Areohone Matodzi</h4>
-                            </div>
-                        </div>
-                    </Card>
-                </div>
-            </div>
-        </section>
-        <section className="mb-10">
+      {/* Projects Grid */}
+      <div className='w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+        {loading ? (
+          <div className="flex items-center justify-center h-64">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+          </div>
+        ) : error ? (
+          <div className="text-center py-12">
+            <p className="text-red-600 mb-4">{error}</p>
+            <Button 
+              onClick={() => window.location.reload()} 
+              variant="outline"
+              className="text-black border-black hover:bg-black hover:text-white"
+            >
+              Try Again
+            </Button>
+          </div>
+        ) : projects.length === 0 ? (
+          <div className="text-center py-12">
+            <p className="text-gray-600">No projects available at the moment.</p>
+          </div>
+        ) : (
+          <div className='flex flex-col gap-8 w-full'>
+            {/* First row - 2 projects */}
+            <section className='flex flex-row items-center gap-2 justify-center w-full h-full'>
+              {projects.slice(0, 2).map((project) => (
+                <Link 
+                  key={project._id} 
+                  href={`/projects/${project.slug.current}`}
+                  className="block w-full"
+                >
+                  <div className="hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <HomeProjectCard project={project} />
+                  </div>
+                </Link>
+              ))}
+            </section>
+            
+            {/* Second row - remaining 2 projects */}
+            {projects.length > 2 && (
+              <section className='flex flex-row items-center gap-1 justify-center w-full h-full'>
+                {projects.slice(2, 4).map((project) => (
+                  <Link 
+                    key={project._id} 
+                    href={`/projects/${project.slug.current}`}
+                    className="block w-full"
+                  >
+                    <div className="hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                      <HomeProjectCard project={project} />
+                    </div>
+                  </Link>
+                ))}
+              </section>
+            )}
+          </div>
+        )}
 
-        </section>
-
+        {/* View All Projects Button */}
+        <div className="text-center mt-12">
+          <Link href="/projects">
+            <Button 
+              variant="outline" 
+              className="text-black border-black hover:bg-black hover:text-white group"
+            >
+              View All Projects
+              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Button>
+          </Link>
+        </div>
+      </div>
     </div>
   )
 }

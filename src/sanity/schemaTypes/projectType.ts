@@ -157,6 +157,13 @@ export const projectType = defineType({
       validation: (Rule) => Rule.required().min(1),
     }),
     defineField({
+      name: 'contributors',
+      type: 'array',
+      of: [defineArrayMember({type: 'reference', to: {type: 'projectContributor'}})],
+      description: 'Team members who contributed to this project',
+      validation: (Rule) => Rule.required().min(1),
+    }),
+    defineField({
       name: 'startDate',
       type: 'date',
       description: 'Project start date',
