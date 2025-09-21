@@ -35,7 +35,7 @@ export function VideoSection() {
                     delay={0}
                     onComplete={() => {}}
               >
-              <h2 className={`${syncopate.className} text-2xl w-2xl text-center font-bold text-black dark:text-white mb-4`}>
+              <h2 className={`${syncopate.className} text-3xl w-2xl text-center font-bold text-black dark:text-white mb-4`}>
                   &ldquo;Are you ready to change the world with us at your service?&rdquo;
               </h2>
               </AnimatedContent>
@@ -52,7 +52,7 @@ export function VideoSection() {
                     delay={0}
                     onComplete={() => {}}
               >
-              <h2 className={`${syncopate.className} text-2xl w-2xl text-center font-bold text-black dark:text-white`}>
+              <h2 className={`${syncopate.className} text-3xl w-2xl text-center font-bold text-black dark:text-white`}>
                   &ldquo;Watch the showreel below to answer that question.&rdquo;
               </h2>
               </AnimatedContent>

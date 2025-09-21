@@ -5,12 +5,15 @@ import Link from 'next/link';
 import { Button } from '../ui/button';
 import { getAllProjects } from '@/lib/project';
 import { HomeProjectCard } from './HomeProjectCard';
-import { Tektur, Syncopate } from 'next/font/google';
+import { Tektur, Syncopate, Afacad } from 'next/font/google';
 import { ArrowRight } from 'lucide-react';
 import type { ProjectPreview } from '@/types/project';
+import AnimatedContent from '../AnimatedContent';
+
 
 const tektur = Tektur({ weight: ['400', '700'], variable: '--font-tektur', subsets: ['latin'] })
 const syncopate = Syncopate({ weight: ['400', '700'], variable: '--font-syncopate', subsets: ['latin'] })
+const afacad = Afacad({ weight: ['400', '700'], variable: '--font-afacad', subsets: ['latin'] })
 
 export default function PortfolioSection() {
   const [projects, setProjects] = useState<ProjectPreview[]>([]);
@@ -46,10 +49,29 @@ export default function PortfolioSection() {
               Portfolio  
           </h2>
         </div>
+        <AnimatedContent
+          distance={200}
+          direction="vertical"
+          reverse={true}
+          duration={0.8}
+          ease="power3.out"
+          initialOpacity={0}
+          animateOpacity
+          scale={1}
+          threshold={0.2}
+          delay={0.1}
+          onComplete={() => {}}
+        >
+        <div className="flex flex-col justify-center mt-5 items-center gap-4">
         <h1 className={`${syncopate.className} 
-              tracking-widest relative text-center w-2xl z-10 text-md sm:text-xl font-bold text-black`}>
-              Our Portfolio: projects that speak for themselves
+              tracking-widest relative text-center w-2xl z-10 text-md sm:text-3xl font-bold text-black`}>
+              Projects that speak for themselves
         </h1>
+        <p className={`${afacad.className} text-2xl justify-self-center text-center text-gray-500 max-w-3xl mx-auto`}>
+            We showcase our portfolio to highlight our expertise in creating innovative and impactful digital experiences.
+        </p>
+        </div>
+      </AnimatedContent>
       </div>
 
       {/* Projects Grid */}
@@ -83,7 +105,7 @@ export default function PortfolioSection() {
                   href={`/projects/${project.slug.current}`}
                   className="block w-full"
                 >
-                  <div className="hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                  <div className="transition-all duration-300 transform hover:-translate-y-1">
                     <HomeProjectCard project={project} />
                   </div>
                 </Link>
@@ -99,7 +121,7 @@ export default function PortfolioSection() {
                     href={`/projects/${project.slug.current}`}
                     className="block w-full"
                   >
-                    <div className="hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div className="transition-all duration-300 transform hover:-translate-y-1">
                       <HomeProjectCard project={project} />
                     </div>
                   </Link>
@@ -113,11 +135,11 @@ export default function PortfolioSection() {
         <div className="text-center mt-12">
           <Link href="/projects">
             <Button 
-              variant="outline" 
-              className="text-black border-black hover:bg-black hover:text-white group"
+              variant="default" 
+              className="text-white p-2 rounded-full gap-2"
             >
               View All Projects
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              <ArrowRight strokeWidth={3} className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Button>
           </Link>
         </div>

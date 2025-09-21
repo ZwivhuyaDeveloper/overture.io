@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { client } from '@/sanity/lib/client';
 import imageUrlBuilder from '@sanity/image-url';
 import type { Project, ProjectPreview, ProjectCategory, ProjectTechnology } from '@/types/project';
@@ -17,6 +18,7 @@ export const projectsQuery = `
     client,
     projectType,
     excerpt,
+    cardDescription,
     mainImage,
     categories[]->{
       _id,
@@ -48,6 +50,7 @@ export const projectBySlugQuery = `
     client,
     projectType,
     excerpt,
+    cardDescription,
     description,
     challenge,
     solution,

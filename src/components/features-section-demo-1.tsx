@@ -1,6 +1,13 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from "react";
 import { useId } from "react";
-import { Tektur, Syncopate } from "next/font/google";
+import { Tektur, Syncopate, Afacad } from "next/font/google";
+import AnimatedContent from "./AnimatedContent";
+
+const afacad = Afacad({
+  weight: ["700","400","600","500"],
+  subsets: ["latin"],
+});
 
 const tektur = Tektur({
   weight: ["700","400"],
@@ -14,8 +21,8 @@ const syncopate = Syncopate({
 
 export default function FeaturesSectionDemo1() {
   return (
-    <div className="py-20 lg:py-40">
-        <div className="w-full gap-4 flex flex-col items-center justify-center mb-20 max-w-7xl mx-auto">
+    <div className="py-30 lg:py-50">
+        <div className="w-full gap-4 flex flex-col items-center justify-center mb-30 max-w-7xl mx-auto">
           <div className="w-fit h-fit p-2 bg-zinc-200 rounded-full px-4">
             <h2 className={`${tektur.className} 
                 tracking-widest relative text-left z-10 text-md sm:text-sm text-black`}>
@@ -23,9 +30,12 @@ export default function FeaturesSectionDemo1() {
             </h2>
           </div>
           <h1 className={`${syncopate.className} 
-                tracking-widest relative text-center w-2xl z-10 text-md sm:text-xl font-bold text-black`}>
-                Our Features: Pioneering the Future of Digital Innovation
+                tracking-widest relative text-center w-2xl z-10 text-md sm:text-3xl font-bold text-black`}>
+                Our Digital Toolbox
           </h1>
+          <h3 className={`${afacad.className} text-2xl justify-center font-regular flex text-center text-gray-500 max-w-xl mx-auto`}>
+            Every project is unique, but they all start with a foundation of powerful, user-centric features. 
+          </h3>
         </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 md:gap-2 max-w-7xl mx-auto">
         {grid.map((feature) => (
@@ -33,13 +43,27 @@ export default function FeaturesSectionDemo1() {
             key={feature.title}
             className="relative bg-gradient-to-b dark:from-neutral-900 from-neutral-100 dark:to-neutral-950 to-white p-6 rounded-3xl overflow-hidden"
           >
+            <AnimatedContent
+              distance={100}
+              direction="vertical"
+              reverse={false}
+              duration={0.8}
+              ease="power3.out"
+              initialOpacity={0.0}
+              animateOpacity
+              scale={0.5}
+              threshold={0.2}
+              delay={0}
+              onComplete={() => {}}
+            >
             <Grid size={20} />
-            <p className="text-base font-bold text-neutral-800 dark:text-white relative z-20">
+            <h3 className={`${syncopate.className} text-sm tracking-tight font-bold text-neutral-800 dark:text-white relative z-20`}>
               {feature.title}
-            </p>
-            <p className="text-neutral-600 dark:text-neutral-400 mt-4 text-base font-normal relative z-20">
+            </h3>
+            <h4 className={`${afacad.className} text-neutral-600 dark:text-neutral-400 mt-4 text-base font-normal relative z-20`}>
               {feature.description}
-            </p>
+            </h4>
+            </AnimatedContent>
           </div>
         ))}
       </div>
@@ -49,44 +73,44 @@ export default function FeaturesSectionDemo1() {
 
 const grid = [
   {
-    title: "HIPAA and SOC2 Compliant",
+    title: "1. AI-Powered Personalization Engine",
     description:
-      "Our applications are HIPAA and SOC2 compliant, your data is safe with us, always.",
+      "We integrate machine learning algorithms to analyze user behavior and preferences, delivering a unique experience for everyone. This can include custom content feeds, intelligent product recommendations, predictive search, and automated workflows tailored to individual user patterns.",
   },
   {
-    title: "Automated Social Media Posting",
+    title: "2. Real-Time Collaborative Environments",
     description:
-      "Schedule and automate your social media posts across multiple platforms to save time and maintain a consistent online presence.",
+      "Allow multiple users to work together seamlessly, as if they were in the same room. We build features like live co-editing documents, synchronized project dashboards, shared digital whiteboards, and live chat/commenting, all updated instantaneously using technologies like WebSockets.",
   },
   {
-    title: "Advanced Analytics",
+    title: "3. Advanced Data Visualization Dashboards",
     description:
-      "Gain insights into your social media performance with detailed analytics and reporting tools to measure engagement and ROI.",
+      "Transform complex data into clear, actionable insights. We build interactive dashboards with dynamic charts, graphs, and maps that allow users to filter, drill down, and analyze their metrics in real-time. Perfect for admin panels, financial apps, and analytics platforms.",
   },
   {
-    title: "Content Calendar",
+    title: "4. Progressive Web App (PWA) Functionality",
     description:
-      "Plan and organize your social media content with an intuitive calendar view, ensuring you never miss a post.",
+      "We build applications that blur the line between website and native app. PWAs offer an app-like experience directly from a browser, including offline functionality, push notifications, and the ability to be installed on a user's device home screen without going through an app store.",
   },
   {
-    title: "Audience Targeting",
+    title: "5. Biometric Authentication & Security",
     description:
-      "Reach the right audience with advanced targeting options, including demographics, interests, and behaviors.",
+      "Enhance security and simplify logins. We implement modern authentication methods like fingerprint scanning, facial recognition, and two-factor authentication (2FA) to ensure user accounts are protected without sacrificing convenience.",
   },
   {
-    title: "Social Listening",
+    title: "6. Automated Workflow & Integration Hub",
     description:
-      "Monitor social media conversations and trends to stay informed about what your audience is saying and respond in real-time.",
+      " We create systems that do the work for you. Build automated triggers and actions (e.g., When X happens, do Y) and seamlessly connect your app to other critical tools (like CRM, email, payment gateways) via APIs, creating a central hub that streamlines business operations.",
   },
   {
-    title: "Customizable Templates",
+    title: "7. Microinteractions & Enhanced UX Feedback",
     description:
-      "Create stunning social media posts with our customizable templates, designed to fit your brand's unique style and voice.",
+      "The devil is in the details. We craft subtle animations and visual cues—like a satisfying like animation, a smooth loading bar, or helpful hover tooltips—that guide users, provide immediate feedback, and make the application feel polished, responsive, and engaging.",
   },
   {
-    title: "Collaboration Tools",
+    title: "8. Voice-Enabled Navigation & Control",
     description:
-      "Work seamlessly with your team using our collaboration tools, allowing you to assign tasks, share drafts, and provide feedback in real-time.",
+      "Make your application more accessible and hands-free. We integrate voice recognition APIs to allow users to navigate, search, input data, and control key functions using simple voice commands, catering to the growing trend of voice-assisted technology.",
   },
 ];
 

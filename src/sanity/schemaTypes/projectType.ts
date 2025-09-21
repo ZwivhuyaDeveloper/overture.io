@@ -48,6 +48,12 @@ export const projectType = defineType({
       validation: (Rule) => Rule.required().max(200),
     }),
     defineField({
+      name: 'cardDescription',
+      type: 'blockContent',
+      description: 'Short description specifically for home project cards',
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
       name: 'description',
       type: 'blockContent',
       description: 'Detailed project description',

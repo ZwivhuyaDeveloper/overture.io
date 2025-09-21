@@ -98,6 +98,7 @@ export interface Project {
   client?: string;
   projectType: string;
   excerpt: string;
+  cardDescription?: PortableTextBlock[];
   description: PortableTextBlock[];
   challenge?: PortableTextBlock[];
   solution?: PortableTextBlock[];
@@ -126,6 +127,7 @@ export interface ProjectPreview {
   client?: string;
   projectType: string;
   excerpt: string;
+  cardDescription?: PortableTextBlock[];
   mainImage: ProjectImage;
   categories: ProjectCategory[];
   technologies: ProjectTechnology[];

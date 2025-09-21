@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Anta, Audiowide, Tektur, Syncopate, Archivo } from "next/font/google";
+import { Geist, Geist_Mono, Anta, Audiowide, Tektur, Syncopate, Archivo, Afacad } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/contexts/Themecontext";
 import { NavMenu } from "@/components/layout/nav-menu";
@@ -34,6 +34,12 @@ const archivo = Archivo({
   subsets: ["latin"],
 });
 
+const afacad = Afacad({
+  weight: [ "400","500","600","700"],
+  variable: "--font-afacad",
+  subsets: ["latin"],
+});
+
 export const metadata: Metadata = {
   title: "Overture Agency",
   description: "A modern Next.js application with dark mode support",
@@ -46,8 +52,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning className="light">
-      <body className={`${geistSans.variable} ${geistMono.variable} ${tektur.variable} ${syncopate.variable} ${archivo.variable} 
-        font-sans min-h-screen transition-colors duration-200
+      <body className={`${afacad.variable} 
         bg-white dark:bg-zinc-900
         `}>
         <ThemeProvider>

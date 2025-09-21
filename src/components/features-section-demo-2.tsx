@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 import { cn } from "@/lib/utils";
 import {
   IconAdjustmentsBolt,
@@ -12,6 +13,7 @@ import {
 import { div } from "motion/react-client";
 
 import { Tektur, Syncopate } from "next/font/google";
+import AnimatedContent from "./AnimatedContent";
 
 const tektur = Tektur({
   weight: ["700","400"],
@@ -86,8 +88,23 @@ export default function FeaturesSectionDemo2() {
         </h1>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  relative z-10 py-10 max-w-7xl mx-auto">
+        
         {features.map((feature, index) => (
+          <AnimatedContent
+            distance={100}
+            direction="vertical"
+            reverse={false}
+            duration={0.8}
+            ease="power3.out"
+            initialOpacity={0.0}
+            animateOpacity
+            scale={0.5}
+            threshold={0.2}
+            delay={0}
+            onComplete={() => {}}
+          >
           <Feature key={feature.title} {...feature} index={index} />
+          </AnimatedContent>
         ))}
       </div>
     </div>

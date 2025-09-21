@@ -6,6 +6,13 @@ import { cn } from "@/lib/utils";
 import overtureLogo from "@/assets/OVERTURE LOGO.png";
 import Link from 'next/link';
 import { ThemeToggle } from "@/components/ui/theme-toggle";
+import { Syncopate } from "next/font/google";
+
+const syncopate = Syncopate({
+  weight: ["400","700"],
+  variable: "--font-syncopate",
+  subsets: ["latin"],
+});
 
 
 export function NavMenu({ className }: { className?: string }) {
@@ -71,7 +78,7 @@ export function NavMenu({ className }: { className?: string }) {
                     className=" object-cover w-6 h-6"
                   />
                   <div className="flex flex-col items-start w-full">
-                  <span className="text-white text-left dark:text-white text-sm tracking-widest">Overture</span>
+                  <span className={`${syncopate.className} text-white text-left dark:text-white font-bold text-sm tracking-widest`}>Overture</span>
                   </div>
               </Link>
           </div>

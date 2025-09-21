@@ -7,7 +7,7 @@ import { ArrowUpIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AboutUs } from "@/components/home/about-us";
 import { Vision } from "@/components/home/vision";
-import { Partners } from "@/components/home/our-partners";
+import { TechStack } from "@/components/home/our-techstack";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import { VideoSection } from "@/components/home/video-section";
 import { Services } from "@/components/home/services";
@@ -24,6 +24,8 @@ import infoCards from '../components/home/info-cards';
 import InfoCards from "../components/home/info-cards";
 import { NavMenu } from "@/components/layout/nav-menu";
 import { BlogPreview } from "@/components/blog/BlogPreview";
+import Footer from "@/components/home/footer";
+import Pricing from "@/components/home/pricing";
 
 const syncopate = Syncopate({
   weight: ["400","700"],
@@ -128,7 +130,7 @@ export default function Home() {
           <AboutUs />
         </section>
         <section className="w-full h-full flex items-center justify-center">
-          <Partners />
+          <TechStack />
         </section>
         <section className="mb-10">
           <Vision />
@@ -136,22 +138,27 @@ export default function Home() {
         <section>
           <VideoSection />
         </section>
-        <section>
-          <ServicesSection />
-        </section> 
+        <section className="py-4 w-full h-full">
+          <FeaturesSectionDemo1 />
+        </section>  
         <section className="mb-10">
           <PortfolioSection />
         </section> 
-        <section className="w-full h-full flex items-center justify-center">
-          <Partners />
+        <section>
+          <ServicesSection />
         </section>
-        <section className="py-4 w-full h-full">
-          <FeaturesSectionDemo1 />
+        <section>
+          <Pricing />
         </section>
         <section className="mb-10">
           <FeaturesSectionDemo2 />
         </section>
-        <BlogPreview />
+        <section>
+          <BlogPreview />
+        </section>
+        <section>
+          <Footer />
+        </section>
       </div>
     </main>
   );

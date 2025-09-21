@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import React, { useEffect, useId, useRef, useState } from "react";
@@ -12,12 +11,44 @@ const tektur = Tektur({ weight: ['400', '700'], variable: '--font-tektur', subse
 const syncopate = Syncopate({ weight: ['400', '700'], variable: '--font-syncopate', subsets: ['latin'] })
 const afacad = Afacad({ weight: ['400', '500', '600', '700'], variable: '--font-afacad', subsets: ['latin'] })
 
+// Function to generate colors based on orange, blue, and purple theme
+const generateRandomColors = (count: number) => {
+  const colors = [];
+  
+  // Define base hues for our theme colors
+  const baseHues = [
+    30,   // Orange
+    210,  // Blue  
+    270   // Purple
+  ];
+  
+  for (let i = 0; i < count; i++) {
+    // Select a base hue and create variations
+    const baseHue = baseHues[i % baseHues.length];
+    
+    // Create variations by adding/subtracting up to 30 degrees for gradient shades
+    const hueVariation = (i % 7) - 3; // -3 to +3
+    const hue = (baseHue + hueVariation * 10 + 360) % 360;
+    
+    // Vary saturation and lightness for more variety
+    const saturation = 70 + (i % 4) * 8;  // 70-102% (capped at 100%)
+    const lightness = 60 + (i % 3) * 8;   // 45-61% (darker range)
+    
+    colors.push(`hsla(${hue}, ${saturation}%, ${lightness}%, 1)`);
+  }
+  
+  return colors;
+};
+
 export function ServicesSection() {
   const [active, setActive] = useState<(typeof cards)[number] | boolean | null>(
     null
   );
   const ref = useRef<HTMLDivElement>(null);
   const id = useId();
+  
+  // Generate colors for the current number of cards
+  const cardColors = generateRandomColors(cards.length);
 
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
@@ -133,12 +164,12 @@ export function ServicesSection() {
           </div>
         ) : null}
       </AnimatePresence>
-      <ul className="max-w-6xl mx-auto w-full gap-4 my-20 py-20">
+      <div className="max-w-6xl mx-auto w-full gap-4 my-20 py-20">
       <div className="w-full gap-4 flex flex-col items-center justify-center mb-20   max-w-7xl mx-auto">
           <div className="w-fit h-fit p-2 bg-zinc-200 rounded-full px-4">
             <h2 className={`${tektur.className} 
                 tracking-widest relative text-left z-10 text-md sm:text-sm text-black`}>
-                Features  
+                Services  
             </h2>
           </div>
           <AnimatedContent
@@ -154,10 +185,16 @@ export function ServicesSection() {
             delay={0}
             onComplete={() => {}}
           >
-            <h1 className={`${syncopate.className} 
-                tracking-widest relative text-center w-2xl z-10 text-md sm:text-xl font-bold text-black dark:text-white`}>
-                Our Features: Pioneering the Future of Digital Innovation
-            </h1>
+            <div className="justify-center items-center mt-5 mb-10 gap-5 flex flex-col">
+              <h1 className={`${syncopate.className} 
+                  tracking-widest relative text-center w-4xl z-10 text-md sm:text-3xl font-bold text-black dark:text-white`}>
+                  Comprehensive Digital Solutions for Modern Businesses
+              </h1>
+              <p className="text-xl justify-self-center text-center text-gray-500 max-w-3xl mx-auto">
+                From concept to execution, we deliver end-to-end digital services that transform your ideas into powerful, scalable, 
+                and engaging experiences that captivate your audience and drive measurable business results.
+              </p>
+            </div>
           </AnimatedContent>
         </div>
         <AnimatedContent
@@ -178,7 +215,10 @@ export function ServicesSection() {
             layoutId={`card-${card.title}-${id}`}
             key={`card-${card.title}-${id}`}
             onClick={() => setActive(card)}
-            className="p-4 flex flex-col md:flex-row space-y-1  mt-2  justify-between items-center bg-zinc-100 hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-xl cursor-pointer"
+            className="p-4 flex flex-col md:flex-row space-y-1  mt-2  justify-between items-center rounded-xl cursor-pointer transition-all duration-300 relative overflow-hidden"
+            style={{
+              background: `linear-gradient(60deg, ${cardColors[index]} 90%, rgba(255, 255, 255, 0.1) 100%)`
+            }}
           >
             <div className="flex gap-4 flex-col md:flex-row ">
               <motion.div layoutId={`image-${card.title}-${id}`}>
@@ -194,13 +234,13 @@ export function ServicesSection() {
               <div className="">
                 <motion.h3
                   layoutId={`title-${card.title}-${id}`}
-                  className={`${syncopate.className} font-bold text-neutral-800 text-lg dark:text-neutral-200 text-center md:text-left`}
+                  className={`${syncopate.className} font-bold text-white text-lg dark:text-neutral-200 text-center md:text-left`}
                 >
                   {card.title}
                 </motion.h3>
                 <motion.p
                   layoutId={`description-${card.description}-${id}`}
-                  className={`${tektur.className} text-neutral-600 dark:text-neutral-400  text-center md:text-left`}
+                  className={`${afacad.className} normal-case text-white text-lg dark:text-neutral-400  text-center md:text-left`}
                 >
                   {card.description}
                 </motion.p>
@@ -208,14 +248,14 @@ export function ServicesSection() {
             </div>
             <motion.button
               layoutId={`button-${card.title}-${id}`}
-              className="px-4 py-2 text-sm rounded-full font-bold bg-white dark:bg-blue-500 hover:bg-blue-500 hover:text-white text-black mt-4 md:mt-0"
+              className="px-4 py-2 text-sm rounded-full font-bold bg-white/90 hover:bg-white text-gray-800 backdrop-blur-sm border border-white/30 mt-4 md:mt-0 shadow-md"
             >
               {card.ctaText}
             </motion.button>
           </motion.div>
         ))}
         </AnimatedContent>
-      </ul>
+      </div>
     </>
   );
 }
@@ -255,7 +295,7 @@ export const CloseIcon = () => {
 
 const cards = [
   {
-    description: "WEB DEVELOPMENT",
+    description: "Web Development",
     title: "Web Development",
     src: "/overture_render3.png",
     ctaText: "Learn More",
@@ -273,7 +313,7 @@ const cards = [
     },
   },
   {
-    description: "NATIVE APP DEVELOPMENT",
+    description: "Native App Development",
     title: "Native App Development",
     src: "/overture_render3.png",
     ctaText: "Learn More",
@@ -292,7 +332,7 @@ const cards = [
   },
 
   {
-    description: "UI/UX DESIGN",
+    description: "UI/UX Design",
     title: "UI/UX Design Services",
     src: "/overture_render3.png",
     ctaText: "Learn More",
@@ -310,7 +350,7 @@ const cards = [
     },
   },
   {
-    description: "BRAND IDENTITY & MARKETING",
+    description: "Brand Identity & Marketing",
     title: "Brand Identity & Marketing",
     src: "/overture_render3.png",
     ctaText: "Learn More",
@@ -328,7 +368,7 @@ const cards = [
     },
   },
   {
-    description: "CONSULTING",
+    description: "Consulting",
     title: "Consulting Services",
     src: "/overture_render3.png",
     ctaText: "Learn More",
