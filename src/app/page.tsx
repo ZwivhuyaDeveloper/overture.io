@@ -107,19 +107,21 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen w-full gap-0 ">
-      <div className="w-full">
+    <main className="h-screen w-full gap-0 ">
+      <div className="w-fit">
         <NavMenu/>
       </div>
       <div className="w-full">
-        {showScrollTop && (
-          <Button
-            onClick={scrollToTop}
-            className="fixed bottom-4 right-4 z-50 p-4 bg-white dark:bg-zinc-900 rounded-full shadow-lg"
-          >
-            <ArrowUpIcon className="w-6 h-6" />
-          </Button>
-        )}
+        <div className="hidden lg:block">
+          {showScrollTop && (
+            <Button
+              onClick={scrollToTop}
+              className="fixed hidden lg:block bottom-4 right-4 z-50 p-4 bg-white dark:bg-zinc-900 rounded-full shadow-lg"
+            >
+              <ArrowUpIcon className="w-6 h-6" />
+            </Button>
+          )}
+        </div>
         <section>
           <Hero
             title="Bring Ideas to life with our creative magic"

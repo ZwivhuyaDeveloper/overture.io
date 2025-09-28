@@ -6,26 +6,59 @@ import { cn } from "@/lib/utils";
 import overtureLogo from "@/assets/OVERTURE LOGO.png";
 import Link from 'next/link';
 import { ThemeToggle } from "@/components/ui/theme-toggle";
-import { Syncopate } from "next/font/google";
+import { Tektur } from "next/font/google";
+import { Menu as MenuIcon, X } from "lucide-react";
+import { Button } from "../ui/button";
 
-const syncopate = Syncopate({
-  weight: ["400","700"],
-  variable: "--font-syncopate",
+const tektur = Tektur({
+  variable: "--font-tektur",
   subsets: ["latin"],
 });
 
 
 export function NavMenu({ className }: { className?: string }) {
   const [active, setActive] = useState<string | null>(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   return (
     <div
-      className={cn("fixed top-10 inset-x-0 max-w-full mx-auto z-50 flex items-center justify-center px-1", className)}
+      className={cn("fixed top-4 md:top-10 inset-x-0 w-full mx-auto z-50 flex items-center justify-center px-4 md:px-1", className)}
     >
-      <Menu setActive={setActive}>
+      {/* Mobile Menu Button and logo */}
+      <div className="md:hidden flex flex-row items-center justify-start gap-48 w-full max-w-md ">
+        <Link href="/" className="flex items-center flex-row gap-3">
+              <img
+                src={overtureLogo.src}
+                alt="Overture Logo"
+                width={50}
+                height={50}
+                className=" object-cover w-6 h-6"
+              />
+              <div className="flex flex-col items-start">
+              <span className={`${tektur.className} text-white text-left dark:text-white font-semibold text-base md:text-md tracking-widest`}>Overture</span>
+              </div>
+          </Link>
+        <Button
+          variant="ghost"
+          size="icon"
+          className="md:hidden z-50 p-2 rounded-lg bg-black/20 backdrop-blur-sm border border-white/10 hover:bg-black/30"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        >
+          {isMobileMenuOpen ? (
+            <X className="h-6 w-6 text-white" />
+          ) : (
+            <MenuIcon className="h-6 w-6 text-white" />
+          )}
+        </Button>
+      </div>
 
-        <div className="flex items-center h-[40px] gap-25 justify-between">
+      
+      {/* Desktop Navigation */}
+      <div className="hidden md:block">
+        <Menu setActive={setActive}>
+        <div className="flex items-center h-[40px] gap-6 md:gap-28 justify-between w-full max-w-6xl mx-auto">
         <MenuItem setActive={setActive} active={active} item="About">
-          <div className="flex flex-col space-y-4 text-sm">
+          <div className="flex flex-col space-y-3 md:space-y-4 text-sm">
             <HoveredLink href="/hobby">Hobby</HoveredLink>
             <HoveredLink href="/individual">Individual</HoveredLink>
             <HoveredLink href="/team">Team</HoveredLink>
@@ -33,7 +66,7 @@ export function NavMenu({ className }: { className?: string }) {
           </div>
         </MenuItem>
         <MenuItem setActive={setActive} active={active} item="Services">
-          <div className="flex flex-col space-y-4 text-sm">
+          <div className="flex flex-col space-y-3 md:space-y-4 text-sm">
             <HoveredLink href="/web-dev">Web Development</HoveredLink>
             <HoveredLink href="/interface-design">Interface Design</HoveredLink>
             <HoveredLink href="/seo">Search Engine Optimization</HoveredLink>
@@ -41,7 +74,7 @@ export function NavMenu({ className }: { className?: string }) {
           </div>
         </MenuItem>
         <MenuItem setActive={setActive} active={active} item="Projects">
-          <div className="  text-sm grid grid-cols-2 gap-10 p-4">
+          <div className="text-sm grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 p-4">
             <ProductItem
               title="Algochurn"
               href="https://algochurn.com"
@@ -68,7 +101,7 @@ export function NavMenu({ className }: { className?: string }) {
             />
           </div>
         </MenuItem>
-        <div className="w-full h-full relative left-5 flex flex-row gap-5 items-center container justify-start">
+        <div className="w-full h-full relative left-2 md:left-5 flex flex-row gap-3 md:gap-5 items-center container justify-start">
             <Link href="/" className="flex items-center flex-row gap-4 w-full justify-start">
                   <img
                     src={overtureLogo.src}
@@ -78,12 +111,12 @@ export function NavMenu({ className }: { className?: string }) {
                     className=" object-cover w-6 h-6"
                   />
                   <div className="flex flex-col items-start w-full">
-                  <span className={`${syncopate.className} text-white text-left dark:text-white font-bold text-sm tracking-widest`}>Overture</span>
+                  <span className={`${tektur.className} text-white text-left dark:text-white font-semibold text-sm md:text-md tracking-widest`}>Overture</span>
                   </div>
               </Link>
           </div>
           <MenuItem setActive={setActive} active={active} item="Pricing">
-          <div className="flex flex-col space-y-4 text-sm">
+          <div className="flex flex-col space-y-3 md:space-y-4 text-sm">
             <HoveredLink href="/hobby">Hobby</HoveredLink>
             <HoveredLink href="/individual">Individual</HoveredLink>
             <HoveredLink href="/team">Team</HoveredLink>
@@ -91,17 +124,17 @@ export function NavMenu({ className }: { className?: string }) {
           </div>
         </MenuItem>
         <MenuItem setActive={setActive} active={active} item="Insights">
-          <div className="flex flex-col space-y-4 text-sm">
+          <div className="flex flex-col space-y-3 md:space-y-4 text-sm">
             <HoveredLink href="/blog">Newsletter</HoveredLink>
             <HoveredLink href="/reports">Reports</HoveredLink>
             <HoveredLink href="/resources">Resources</HoveredLink>
             <HoveredLink href="/webinars">Webinars</HoveredLink>
           </div>
         </MenuItem>
-          <div className="flex gap-3 w-fit items-center">
-            <div className="bg-white/30 dark:bg-black/30 p-2 px-3 rounded-full">
+          <div className="flex gap-2 md:gap-3 w-fit items-center">
+            <div className="bg-white/30 dark:bg-black/30 p-1 px-2 md:px-4 rounded-full">
               <MenuItem setActive={setActive} active={active} item="Contact">
-              <div className="flex flex-col space-y-4 text-sm">
+              <div className="flex flex-col space-y-3 md:space-y-4 text-sm">
                 <HoveredLink href="/contact">Send an Email</HoveredLink>
                 <HoveredLink href="/contact">Book a call</HoveredLink>
                 <HoveredLink href="/contact">Chat</HoveredLink>
@@ -112,6 +145,155 @@ export function NavMenu({ className }: { className?: string }) {
           </div>
         </div>
       </Menu>
+      </div>
+      
+      {/* Mobile Navigation */}
+      <div className={`md:hidden fixed inset-0 bg-black/95 backdrop-blur-sm z-40 transition-all duration-300 ${isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
+        <div className="flex flex-col h-full pt-16 px-4 md:px-6 pb-6 overflow-y-auto max-w-md mx-auto w-full">
+          {/* Logo */}
+          <div className="flex items-center justify-center mb-6">
+            <Link href="/" className="flex items-center flex-row gap-4" onClick={() => setIsMobileMenuOpen(false)}>
+              <img
+                src={overtureLogo.src}
+                alt="Overture Logo"
+                width={50}
+                height={50}
+                className="object-cover w-8 h-8"
+              />
+              <div className="flex flex-col items-start">
+                <span className={`${tektur.className} text-white text-left font-semibold text-lg tracking-widest`}>Overture</span>
+              </div>
+            </Link>
+          </div>
+          
+          {/* Mobile Menu Items */}
+          <div className="space-y-4">
+            {/* About */}
+            <div className="space-y-3">
+              <button 
+                className="text-white text-lg font-medium w-full text-left"
+                onClick={() => setActive(active === 'About' ? null : 'About')}
+              >
+                About
+              </button>
+              {active === 'About' && (
+                <div className="ml-4 space-y-2">
+                  <Link href="/hobby" className="block text-gray-300 hover:text-white transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Hobby</Link>
+                  <Link href="/individual" className="block text-gray-300 hover:text-white transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Individual</Link>
+                  <Link href="/team" className="block text-gray-300 hover:text-white transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Team</Link>
+                  <Link href="/enterprise" className="block text-gray-300 hover:text-white transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Enterprise</Link>
+                </div>
+              )}
+            </div>
+            
+            {/* Services */}
+            <div className="space-y-3">
+              <button 
+                className="text-white text-lg font-medium w-full text-left"
+                onClick={() => setActive(active === 'Services' ? null : 'Services')}
+              >
+                Services
+              </button>
+              {active === 'Services' && (
+                <div className="ml-4 space-y-2">
+                  <Link href="/web-dev" className="block text-gray-300 hover:text-white transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Web Development</Link>
+                  <Link href="/interface-design" className="block text-gray-300 hover:text-white transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Interface Design</Link>
+                  <Link href="/seo" className="block text-gray-300 hover:text-white transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Search Engine Optimization</Link>
+                  <Link href="/branding" className="block text-gray-300 hover:text-white transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Branding</Link>
+                </div>
+              )}
+            </div>
+            
+            {/* Projects */}
+            <div className="space-y-3">
+              <button 
+                className="text-white text-lg font-medium w-full text-left"
+                onClick={() => setActive(active === 'Projects' ? null : 'Projects')}
+              >
+                Projects
+              </button>
+              {active === 'Projects' && (
+                <div className="ml-4 space-y-4">
+                  <Link href="https://algochurn.com" className="block text-gray-300 hover:text-white transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
+                    <div className="font-medium">Algochurn</div>
+                    <div className="text-sm text-gray-400">Prepare for tech interviews like never before.</div>
+                  </Link>
+                  <Link href="https://tailwindmasterkit.com" className="block text-gray-300 hover:text-white transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
+                    <div className="font-medium">Tailwind Master Kit</div>
+                    <div className="text-sm text-gray-400">Production ready Tailwind css components for your next project</div>
+                  </Link>
+                  <Link href="https://gomoonbeam.com" className="block text-gray-300 hover:text-white transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
+                    <div className="font-medium">Moonbeam</div>
+                    <div className="text-sm text-gray-400">Never write from scratch again. Go from idea to blog in minutes.</div>
+                  </Link>
+                  <Link href="https://userogue.com" className="block text-gray-300 hover:text-white transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
+                    <div className="font-medium">Rogue</div>
+                    <div className="text-sm text-gray-400">Respond to government RFPs, RFIs and RFQs 10x faster using AI</div>
+                  </Link>
+                </div>
+              )}
+            </div>
+            
+            {/* Pricing */}
+            <div className="space-y-3">
+              <button 
+                className="text-white text-lg font-medium w-full text-left"
+                onClick={() => setActive(active === 'Pricing' ? null : 'Pricing')}
+              >
+                Pricing
+              </button>
+              {active === 'Pricing' && (
+                <div className="ml-4 space-y-2">
+                  <Link href="/hobby" className="block text-gray-300 hover:text-white transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Hobby</Link>
+                  <Link href="/individual" className="block text-gray-300 hover:text-white transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Individual</Link>
+                  <Link href="/team" className="block text-gray-300 hover:text-white transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Team</Link>
+                  <Link href="/enterprise" className="block text-gray-300 hover:text-white transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Enterprise</Link>
+                </div>
+              )}
+            </div>
+            
+            {/* Insights */}
+            <div className="space-y-3">
+              <button 
+                className="text-white text-lg font-medium w-full text-left"
+                onClick={() => setActive(active === 'Insights' ? null : 'Insights')}
+              >
+                Insights
+              </button>
+              {active === 'Insights' && (
+                <div className="ml-4 space-y-2">
+                  <Link href="/blog" className="block text-gray-300 hover:text-white transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Newsletter</Link>
+                  <Link href="/reports" className="block text-gray-300 hover:text-white transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Reports</Link>
+                  <Link href="/resources" className="block text-gray-300 hover:text-white transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Resources</Link>
+                  <Link href="/webinars" className="block text-gray-300 hover:text-white transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Webinars</Link>
+                </div>
+              )}
+            </div>
+            
+            {/* Contact */}
+            <div className="space-y-3">
+              <button 
+                className="text-white text-lg font-medium w-full text-left"
+                onClick={() => setActive(active === 'Contact' ? null : 'Contact')}
+              >
+                Contact
+              </button>
+              {active === 'Contact' && (
+                <div className="ml-4 space-y-2">
+                  <Link href="/contact" className="block text-gray-300 hover:text-white transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Send an Email</Link>
+                  <Link href="/contact" className="block text-gray-300 hover:text-white transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Book a call</Link>
+                  <Link href="/contact" className="block text-gray-300 hover:text-white transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Chat</Link>
+                </div>
+              )}
+            </div>
+          </div>
+          
+          {/* Theme Toggle */}
+          <div className="mt-8 flex justify-center">
+            <ThemeToggle />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
