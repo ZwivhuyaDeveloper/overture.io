@@ -53,7 +53,7 @@ export function TechStack() {
             `}>
             Our Technology Stack
         </h1>
-        <h3 className={`${afacad.className} text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl justify-center font-regular flex text-center text-gray-500 max-w-3xl mx-auto px-4 sm:px-6 md:px-8`}>
+        <h3 className={`${afacad.className} text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl justify-center font-regular flex text-center dark:text-gray-300 text-gray-500 max-w-3xl mx-auto px-4 sm:px-6 md:px-8`}>
             We leverage cutting-edge technologies and industry-leading tools to build scalable, secure, and high-performance digital solutions that drive innovation and deliver exceptional user experiences.
         </h3>
         </div>

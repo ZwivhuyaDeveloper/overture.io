@@ -44,15 +44,15 @@ export default function FeaturesSectionDemo1() {
             className="relative bg-gradient-to-b dark:from-neutral-900 from-neutral-100 dark:to-neutral-950 to-white p-4 sm:p-5 md:p-6 rounded-2xl sm:rounded-3xl overflow-hidden"
           >
             <AnimatedContent
-              distance={100}
+              distance={50}
               direction="vertical"
               reverse={false}
-              duration={0.8}
+              duration={0.6}
               ease="power3.out"
               initialOpacity={0.0}
               animateOpacity
               scale={0.5}
-              threshold={0.2}
+              threshold={0.1}
               delay={0}
               onComplete={() => {}}
             >
@@ -60,7 +60,7 @@ export default function FeaturesSectionDemo1() {
             <h3 className={`${syncopate.className} text-xs sm:text-sm tracking-tight font-bold text-neutral-800 dark:text-white relative z-20`}>
               {feature.title}
             </h3>
-            <h4 className={`${afacad.className} text-neutral-600 dark:text-neutral-400 mt-2 sm:mt-3 md:mt-4 text-xs sm:text-sm md:text-base font-normal relative z-20`}>
+            <h4 className={`${afacad.className} text-neutral-600 dark:text-neutral-400 mt-2  sm:mt-3 md:mt-4 text-sm sm:text-sm md:text-base font-normal relative z-20`}>
               {feature.description}
             </h4>
             </AnimatedContent>
@@ -129,7 +129,7 @@ export const Grid = ({
     [Math.floor(Math.random() * 4) + 7, Math.floor(Math.random() * 6) + 1],
   ];
   return (
-    <div className="pointer-events-none absolute left-1/2 top-0  -ml-20 -mt-2 h-full w-full [mask-image:linear-gradient(white,transparent)]">
+    <div className="pointer-events-none absolute left-1/2 -top-5  -ml-20 -mt-2 h-full w-full [mask-image:linear-gradient(white,transparent)]">
       <div className="absolute inset-0 bg-gradient-to-r  [mask-image:radial-gradient(farthest-side_at_top,white,transparent)] dark:from-zinc-900/30 from-zinc-100/30 to-zinc-300/30 dark:to-zinc-900/30 opacity-100">
         <GridPattern
           width={size ?? 20}

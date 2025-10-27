@@ -55,14 +55,14 @@ export function Hero({
       </div>
 
       {/* Content */}
-      <div className="container gap-8 sm:gap-12 md:gap-16 lg:gap-96 backdrop-blur-sm lg:backdrop-blur-none pb-6 sm:pb-8 md:pb-12 lg:pb-20 mt-20 sm:mt-22 md:mt-24 lg:mt-1 relative z-10 flex flex-col lg:flex-row justify-center items-center lg:justify-between lg:items-end min-h-screen w-full lg:w-[85%] mx-auto px-4 sm:px-6 md:px-8 lg:px-0">
+      <div className="container gap-8 sm:gap-12 md:gap-16 lg:gap-96 backdrop-blur-sm  lg:backdrop-blur-none pb-6 sm:pb-8 md:pb-12 lg:pb-20 mt-20 pt-100 sm:pt-80 md:pt-30 lg:pt-24 sm:mt-20 md:mt-24 lg:mt-1 relative z-10 flex flex-col lg:flex-row justify-center items-center lg:justify-between lg:items-end  min-h-screen w-full lg:w-[85%] mx-auto px-4 sm:px-6 md:px-8 lg:px-0">
         
-        <div className="w-full lg:w-1/2 mb-6 sm:mb-8 md:mb-10 lg:mb-0 text-center lg:text-left">
+        <div className="w-full lg:w-1/2 mb-0 sm:mb-0 md:mb-10 flex flex-col lg:mb-0 text-center lg:text-left">
           <h1 className={`${syncopate.className} mb-4 sm:mb-5 md:mb-6 lg:mb-8 text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl`}>
             <TextGenerateEffect words={title} />
           </h1>
           <FadeContent blur={true} duration={1000} easing="ease-in-out" delay={500} initialOpacity={0.5} >
-            <p className={`${afacad.className} text-sm sm:text-base md:text-lg lg:text-xl px-0 lg:px-0 w-full lg:w-5/6 tracking-wide sm:tracking-wider text-white mb-4 sm:mb-5 md:mb-6 lg:mb-8`}>
+            <p className={`${afacad.className} text-lg sm:text-md md:text-lg lg:text-xl px-0 lg:px-0 w-full lg:w-5/6 md:w-4/2 sm:w-4/2 tracking-wide sm:tracking-wider text-center text-white mb-4 sm:mb-5 md:mb-6 lg:mb-8`}>
               {description}
             </p>
           </FadeContent>
@@ -79,7 +79,7 @@ export function Hero({
 
           <FadeContent blur={true} duration={1000} 
             easing="ease-in-out" delay={900} initialOpacity={0.5} 
-            className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-5 lg:gap-6 w-full items-center justify-center lg:justify-start">
+            className="flex flex-row sm:flex-row gap-3 sm:gap-4 md:gap-5 lg:gap-6 w-full items-center justify-center lg:justify-start">
 
             <div className="flex flex-row gap-1.5 sm:gap-2 items-center">
               <Button variant="default" className='bg-white text-black font-semibold rounded-full text-xs sm:text-sm md:text-base px-3 sm:px-4 md:px-5 lg:px-6 py-1.5 sm:py-2 lg:py-2.5'>Book a call</Button>

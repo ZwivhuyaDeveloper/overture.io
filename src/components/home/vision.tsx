@@ -61,16 +61,16 @@ export function Vision() {
             delay={0.1}
             onComplete={() => {}}
           >
-            <div className="flex flex-col justify-center mt-3 sm:mt-4 md:mt-5 mb-6 sm:mb-8 md:mb-10 items-center gap-2 sm:gap-3 md:gap-4">
-          <h1 className={`${syncopate.className} 
-                tracking-widest relative text-center w-full max-w-4xl px-4 z-10 text-base sm:text-xl md:text-2xl lg:text-3xl font-bold 
-                `}>
-                Crafting Digital Experiences That Transform Businesses
-          </h1>
-          <h2 className={`${afacad.className} text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl justify-self-center font-regular text-center text-gray-500 max-w-3xl mx-auto px-4 sm:px-6 md:px-8`}> 
-            We envision a digital landscape where innovative design meets cutting-edge technology to create meaningful connections 
-            between brands and their audiences, driving growth and success in the ever-evolving digital world.
-          </h2>
+          <div className="flex flex-col lg:flex-col md:flex-col sm:flex-col justify-center mt-3 sm:mt-4 md:mt-5 mb-6 sm:mb-8 md:mb-10 items-center gap-2 sm:gap-3 md:gap-4">
+            <h1 className={`${syncopate.className} 
+              tracking-widest relative text-center w-full max-w-4xl px-4 z-10 text-base sm:text-xl md:text-2xl lg:text-3xl font-bold text-black dark:text-white
+            `}>
+              Crafting Digital Experiences That Transform Businesses
+            </h1>
+            <h2 className={`${afacad.className} text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl justify-self-center font-regular text-center dark:text-gray-300 text-gray-500 max-w-3xl mx-auto px-4 sm:px-6 md:px-8`}> 
+              We envision a digital landscape where innovative design meets cutting-edge technology to create meaningful connections 
+              between brands and their audiences, driving growth and success in the ever-evolving digital world.
+            </h2>
           </div>
           </AnimatedContent>
         </div>
@@ -94,25 +94,25 @@ export function Vision() {
           delay={0}
           onComplete={() => {}}
         >
-        <div className="max-w-xs gap-4 flex flex-col">
+        <div className="max-w-xs gap-4 lg:p-1 md:p-2 sm:p-2 p-2 flex flex-col">
           <h2 className={`${syncopate.className} 
           tracking-widest relative text-left z-10 text-md sm:text-xl font-bold text-black dark:text-white`}>
           Your next BIG step on the web
           </h2>
           <p className={`${afacad.className} 
           tracking-normal relative text-left z-10 text-sm sm:text-base md:text-lg text-black dark:text-white`}>
-          Beyond pixels and code, our designs are built on a foundation of empathy and understanding. Explore our work to see how we create digital experiences that resonate with users.
+            Beyond pixels and code, our designs are built on a foundation of empathy and understanding. Explore our work to see how we create digital experiences that resonate with users.
           </p>
           <Button variant="default" className="w-fit rounded-full text-xs sm:text-sm md:text-base px-3 sm:px-4 md:px-6 py-1.5 sm:py-2">View our work</Button>
         </div>
-        <div  className=" flex px-0 mx-auto -translate-x-20 transform perspective-900 -rotate-y-45 rotate-x-25 translate-z-60 ">
+        <div className="flex px-0 mx-auto -translate-x-10 lg:-translate-x-20 md:-translate-x-8 sm:-translate-x-0 lg:translate-y-0 md:translate-y-8 sm:translate-y-20 translate-y-8 transform perspective-900 -rotate-y-45 rotate-x-25 translate-z-60 relative">
           <Image
             src={web2}
             width={350}
             height={350}
             quality={100}
             alt="linear demo image"
-            className="absolute -right-2 lg:-right-[10%]  -bottom-10 object-contain rounded-2xl"
+            className="absolute -right-[5%] lg:-right-[10%] xl:w-[350px] xl:h-[200px] lg:w-[300px] lg:h-[170px] md:w-[250px] md:h-[140px] sm:w-[200px] sm:h-[110px] w-[150px] h-[85px] lg:-bottom-10 md:-bottom-10 sm:-bottom-10 -bottom-10 object-contain rounded-2xl"
           />
           <Image
             src={web}
@@ -120,7 +120,7 @@ export function Vision() {
             height={350}
             quality={100}
             alt="linear demo image"
-            className="absolute -right-2 lg:-right-[20%]  -bottom-20 object-contain rounded-2xl"
+            className="absolute -right-[10%] lg:-right-[20%] xl:w-[350px] xl:h-[200px] lg:w-[300px] lg:h-[170px] md:w-[250px] md:h-[140px] sm:w-[200px] sm:h-[110px] w-[150px] h-[85px] lg:-bottom-20 md:-bottom-20 sm:-bottom-20 -bottom-15 object-contain rounded-2xl"
           />
           <Image
             src={web4}
@@ -128,7 +128,7 @@ export function Vision() {
             height={350}
             quality={100}
             alt="linear demo image"
-            className="absolute -right-2 lg:-right-[30%]  -bottom-30 object-contain rounded-2xl"
+            className="absolute -right-[15%] lg:-right-[30%] xl:w-[350px] xl:h-[200px] lg:w-[300px] lg:h-[170px] md:w-[250px] md:h-[140px] sm:w-[200px] sm:h-[110px] w-[150px] h-[85px] lg:-bottom-30 md:-bottom-24 sm:-bottom-20 -bottom-20 object-contain rounded-xl"
           />
           <Image
             src={web3}
@@ -136,7 +136,7 @@ export function Vision() {
             height={350}
             quality={100}
             alt="linear demo image"
-            className="absolute -right-2 lg:-right-[40%]  -bottom-40 object-contain rounded-2xl"
+            className="absolute -right-[20%] lg:-right-[40%] xl:w-[350px] xl:h-[200px] lg:w-[300px] lg:h-[170px] md:w-[250px] md:h-[140px] sm:w-[200px] sm:h-[110px] w-[150px] h-[85px] lg:-bottom-40 md:-bottom-32 sm:-bottom-28 -bottom-25 object-contain rounded-2xl"
           />
         </div>
         
@@ -158,7 +158,7 @@ export function Vision() {
           delay={0}
           onComplete={() => {}}
         >
-          <div className="flex flex-col gap-2 w-full h-full">
+          <div className="flex flex-col lg:p-1 md:p-2 sm:p-3 p-3 gap-2 w-full h-full">
             <h2 className={`${syncopate.className} 
             tracking-widest relative text-left z-10 text-sm sm:text-base md:text-lg lg:text-xl mb-3 sm:mb-4 md:mb-5 font-bold text-white`}>
               Explore our Pricing
@@ -189,10 +189,11 @@ export function Vision() {
           delay={0}
           onComplete={() => {}}
         >
-          <h2 className={`${syncopate.className} 
-          tracking-widest relative text-left z-10 mb-3 sm:mb-4 md:mb-5 text-sm sm:text-base md:text-lg lg:text-xl font-bold text-white`}>
-            Our Services
-          </h2>
+          <div className="flex flex-col lg:p-1 md:p-2 sm:p-3 p-3 gap-2 w-full h-full">
+            <h2 className={`${syncopate.className} 
+            tracking-widest relative text-left z-10 mb-3 sm:mb-4 md:mb-5 text-sm sm:text-base md:text-lg lg:text-xl font-bold text-white`}>
+              Our Services
+            </h2>
         <p className={`${afacad.className} 
         tracking-normal relative text-left z-10 text-sm sm:text-base md:text-lg text-white`}>
           We deliver comprehensive digital solutions that elevate your brand presence, streamline operations, and drive measurable growth across all digital touchpoints.
@@ -200,6 +201,7 @@ export function Vision() {
         <div className="flex items-center w-full mt-4">
           <Button variant="default" className="w-fit bg-white text-black rounded-full text-xs sm:text-sm md:text-base px-3 sm:px-4 md:px-6 py-1.5 sm:py-2">Browse our services</Button>
         </div>
+          </div>
         </AnimatedContent>
       </WobbleCard>
       {/*card 4*/}
@@ -220,7 +222,7 @@ export function Vision() {
           delay={0}
           onComplete={() => {}}
         >
-        <div className="max-w-xs gap-4 flex flex-col">
+        <div className="max-w-xs gap-4 lg:p-1 md:p-2 sm:p-3 p-3 flex flex-col">
           <h2 className={`${syncopate.className} 
           tracking-widest relative text-left z-10 text-md sm:text-xl font-bold text-black dark:text-white`}>
           Transform Your Digital Presence
@@ -231,20 +233,20 @@ export function Vision() {
             creating powerful connections between your brand and your audience that drive meaningful engagement and sustainable growth.
           </p>
         </div>
-        <div className="flex px-0 mx-auto -translate-x-20 translate-y-20 transform perspective-1500 rotate-y-10 rotate-x-45 -rotate-z-40 translate-z-40">
+        <div className="flex px-0 mx-auto -translate-x-20 lg:-translate-x-25 md:-translate-x-20 sm:-translate-x-20 lg:translate-y-20 md:translate-y-15 sm:translate-y-10 translate-y-20   transform perspective-1500 rotate-y-10 rotate-x-45 -rotate-z-40 translate-z-40">
           <Image
           src={web4}
           width={300}
           height={300}
           alt="linear demo image"
-          className="absolute -right-2 lg:-right-[10%]  -bottom-20 object-contain rounded-2xl"
+          className="absolute -right-[5%] lg:-right-[10%]  lg:w-[300px] lg:h-[200px]  md:w-[250px] md:h-[140px] sm:w-[200px] sm:h-[110px] w-[150px] h-[85px] -bottom-20 object-contain rounded-2xl"
         />
           <Image
           src={web2}
           width={300}
           height={300}
           alt="linear demo image"
-          className="absolute -right-2 lg:-right-[20%]  -bottom-10 object-contain rounded-2xl"
+          className="absolute -right-[10%] lg:-right-[20%]  lg:w-[300px] lg:h-[200px]  md:w-[250px] md:h-[140px] sm:w-[200px] sm:h-[110px] w-[150px] h-[85px] -bottom-10 object-contain rounded-2xl"
         />
         </div>
         </AnimatedContent>
@@ -264,7 +266,7 @@ export function Vision() {
           delay={0}
           onComplete={() => {}}
         >
-        <div className="max-w-md">
+        <div className="max-w-md lg:p-1 md:p-2 sm:p-3 p-3">
           <h2 className={`${syncopate.className} 
           tracking-widest relative text-left z-10 text-sm sm:text-base md:text-lg lg:text-xl font-bold text-white dark:text-white`}>
             Ready to Transform Your Digital Future?
@@ -287,7 +289,7 @@ export function Vision() {
           width={500}
           height={500}
           alt="consultation demo image"
-          className="absolute -right-2 z-20 md:-right-[5%] lg:-right-[1%] -bottom-10 object-contain rounded-2xl"
+          className="absolute -translate-y-40 hidden lg:block md:block lg:-translate-y-40 md:-translate-y-40 sm:-translate-y-40 flex -right-2 z-20 md:-right-[5%] lg:-right-[1%] xl:-right-[2%] lg:w-[500px] lg:h-[300px] md:w-[400px] md:h-[200px] sm:w-[80px] sm:h-[20px] w-[60px] h-[10px] -bottom-10 object-contain rounded-2xl"
         />
         <BackgroundBeams />
         </AnimatedContent>

@@ -44,7 +44,7 @@ export function AboutUs({ className }: { className?: string }) {
       <div className="max-w-7xl items-center h-full my-8 md:my-45 gap-6 z-30 flex flex-col w-full mx-auto px-4 md:px-0">
         <div className="w-fit h-fit p-2 bg-zinc-200 dark:bg-zinc-800 rounded-full px-4">
             <h2 className={`${tektur.className} 
-                tracking-widest relative text-left z-10 text-md sm:text-sm text-black dark:text-white`}>
+                tracking-widest relative text-left z-10 text-xs sm:text-sm md:text-lg lg:text-xl text-black dark:text-white`}>
                 About Us
             </h2>
         </div>
