@@ -3,8 +3,29 @@
 
 const nextConfig = {
   images: {
-    domains: ['assets.aceternity.com', 'images.unsplash.com', 'cdn.sanity.io']
-  }
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'assets.aceternity.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn.sanity.io',
+        port: '',
+        pathname: '/**',
+      },
+    ],
+  },
+  // Add empty turbopack config to resolve webpack/turbopack conflict
+  turbopack: {},
 }
 
 const withVideos = require('next-videos')

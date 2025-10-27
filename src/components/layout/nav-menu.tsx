@@ -7,8 +7,20 @@ import overtureLogo from "@/assets/OVERTURE LOGO.png";
 import Link from 'next/link';
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { Tektur } from "next/font/google";
-import { Menu as MenuIcon, X } from "lucide-react";
+import { 
+  Menu as MenuIcon, 
+  X, 
+  Users, 
+  Briefcase, 
+  FolderOpen, 
+  DollarSign, 
+  Lightbulb, 
+  Mail,
+  ChevronDown,
+  ChevronRight
+} from "lucide-react";
 import { Button } from "../ui/button";
+import Image from "next/image";
 
 const tektur = Tektur({
   variable: "--font-tektur",
@@ -27,17 +39,17 @@ export function NavMenu({ className }: { className?: string }) {
       {/* Mobile Menu Button and logo */}
       <div className="md:hidden flex flex-row items-center justify-between w-full max-w-md sm:max-w-lg">
         <Link href="/" className="flex items-center flex-row gap-2 sm:gap-3">
-              <img
-                src={overtureLogo.src}
-                alt="Overture Logo"
-                width={50}
-                height={50}
-                className="object-cover w-5 h-5 sm:w-6 sm:h-6"
-              />
-              <div className="flex flex-col items-start">
+            <Image
+              src={overtureLogo.src}
+              alt="Overture Logo"
+              width={50}
+              height={50}
+              className="object-cover w-5 h-5 sm:w-6 sm:h-6"
+            />
+            <div className="flex flex-col items-start">
               <span className={`${tektur.className} text-white text-left dark:text-white font-semibold text-sm sm:text-base tracking-widest`}>Overture</span>
-              </div>
-          </Link>
+            </div>
+         </Link>
         <Button
           variant="ghost"
           size="icon"
@@ -148,70 +160,116 @@ export function NavMenu({ className }: { className?: string }) {
       </div>
       
       {/* Mobile Navigation */}
-      <div className={`md:hidden fixed inset-0 bg-black/95 backdrop-blur-sm z-40 transition-all duration-300 ${isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
-        <div className="flex flex-col h-full pt-14 sm:pt-16 px-4 sm:px-6 pb-6 overflow-y-auto max-w-md sm:max-w-lg mx-auto w-full">
+      <div className={`md:hidden fixed inset-0 bg-gradient-to-br from-black/30 via-black/20 to-black/30 backdrop-blur-xl z-40 transition-all duration-300 ${isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
+        <div className="flex flex-col h-full pt-14 sm:pt-16 px-4 sm:px-6 pb-6 overflow-y-auto max-w-md sm:max-w-lg mx-auto w-full bg-black/40 backdrop-blur-sm rounded-l-3xl border-l border-white/10">
           {/* Logo */}
-          <div className="flex items-center justify-center mb-5 sm:mb-6">
+          <div className="flex items-center justify-center mb-8 sm:mb-10 p-4 bg-white/5 rounded-2xl border border-white/10">
             <Link href="/" className="flex items-center flex-row gap-3 sm:gap-4" onClick={() => setIsMobileMenuOpen(false)}>
-              <img
+              <Image
                 src={overtureLogo.src}
                 alt="Overture Logo"
                 width={50}
                 height={50}
-                className="object-cover w-7 h-7 sm:w-8 sm:h-8"
+                className="object-cover w-8 h-8 sm:w-10 sm:h-10"
               />
               <div className="flex flex-col items-start">
-                <span className={`${tektur.className} text-white text-left font-semibold text-base sm:text-lg tracking-widest`}>Overture</span>
+                <span className={`${tektur.className} text-white text-left font-bold text-lg sm:text-xl tracking-widest`}>Overture</span>
+                <span className="text-gray-400 text-xs tracking-wide">Digital Agency</span>
               </div>
             </Link>
           </div>
           
           {/* Mobile Menu Items */}
-          <div className="space-y-3 sm:space-y-4">
+          <div className="space-y-2 sm:space-y-3">
             {/* About */}
             <div className="space-y-2 sm:space-y-3">
-              <button 
-                className="text-white text-base sm:text-lg font-medium w-full text-left"
+              <Button 
+                variant="ghost"
+                className="text-white hover:bg-white/10 text-base sm:text-lg font-medium w-full justify-start p-4 h-auto rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm transition-all duration-300 hover:border-white/20"
                 onClick={() => setActive(active === 'About' ? null : 'About')}
               >
-                About
-              </button>
+                <span className="flex flex-row items-center justify-between w-full">
+                  <span className="flex items-center gap-3">
+                    <Users className="w-5 h-5 text-blue-400" />
+                    <span>About</span>
+                  </span>
+                  {active === 'About' ? <ChevronDown className="w-4 h-4" /> : <ChevronRight className="w-4 h-4" />}
+                </span>
+              </Button>
               {active === 'About' && (
-                <div className="ml-3 sm:ml-4 space-y-1.5 sm:space-y-2 text-sm sm:text-base">
-                  <Link href="/hobby" className="block text-gray-300 hover:text-white transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Hobby</Link>
-                  <Link href="/individual" className="block text-gray-300 hover:text-white transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Individual</Link>
-                  <Link href="/team" className="block text-gray-300 hover:text-white transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Team</Link>
-                  <Link href="/enterprise" className="block text-gray-300 hover:text-white transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Enterprise</Link>
+                <div className="ml-2 space-y-2 p-3 bg-white/5 rounded-lg border border-white/10">
+                  <Link href="/hobby" className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors p-2 rounded-lg hover:bg-white/10" onClick={() => setIsMobileMenuOpen(false)}>
+                    <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                    <span className="text-sm sm:text-base">Our Story</span>
+                  </Link>
+                  <Link href="/individual" className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors p-2 rounded-lg hover:bg-white/10" onClick={() => setIsMobileMenuOpen(false)}>
+                    <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                    <span className="text-sm sm:text-base">Team</span>
+                  </Link>
+                  <Link href="/team" className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors p-2 rounded-lg hover:bg-white/10" onClick={() => setIsMobileMenuOpen(false)}>
+                    <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                    <span className="text-sm sm:text-base">Culture</span>
+                  </Link>
+                  <Link href="/enterprise" className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors p-2 rounded-lg hover:bg-white/10" onClick={() => setIsMobileMenuOpen(false)}>
+                    <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                    <span className="text-sm sm:text-base">Careers</span>
+                  </Link>
                 </div>
               )}
             </div>
             
             {/* Services */}
             <div className="space-y-2 sm:space-y-3">
-              <button 
-                className="text-white text-base sm:text-lg font-medium w-full text-left"
+              <Button 
+                variant="ghost"
+                className="text-white hover:bg-white/10 text-base sm:text-lg font-medium w-full justify-start p-4 h-auto rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm transition-all duration-300 hover:border-white/20"
                 onClick={() => setActive(active === 'Services' ? null : 'Services')}
               >
-                Services
-              </button>
+                <span className="flex flex-row items-center justify-between w-full">
+                  <span className="flex items-center gap-3">
+                    <Briefcase className="w-5 h-5 text-green-400" />
+                    <span>Services</span>
+                  </span>
+                  {active === 'Services' ? <ChevronDown className="w-4 h-4" /> : <ChevronRight className="w-4 h-4" />}
+                </span>
+              </Button>
               {active === 'Services' && (
-                <div className="ml-3 sm:ml-4 space-y-1.5 sm:space-y-2 text-sm sm:text-base">
-                  <Link href="/web-dev" className="block text-gray-300 hover:text-white transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Web Development</Link>
-                  <Link href="/interface-design" className="block text-gray-300 hover:text-white transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Interface Design</Link>
-                  <Link href="/seo" className="block text-gray-300 hover:text-white transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Search Engine Optimization</Link>
-                  <Link href="/branding" className="block text-gray-300 hover:text-white transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Branding</Link>
+                <div className="ml-2 space-y-2 p-3 bg-white/5 rounded-lg border border-white/10">
+                  <Link href="/web-dev" className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors p-2 rounded-lg hover:bg-white/10" onClick={() => setIsMobileMenuOpen(false)}>
+                    <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                    <span className="text-sm sm:text-base">Web Development</span>
+                  </Link>
+                  <Link href="/mobile-dev" className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors p-2 rounded-lg hover:bg-white/10" onClick={() => setIsMobileMenuOpen(false)}>
+                    <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                    <span className="text-sm sm:text-base">Mobile Development</span>
+                  </Link>
+                  <Link href="/ui-ux" className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors p-2 rounded-lg hover:bg-white/10" onClick={() => setIsMobileMenuOpen(false)}>
+                    <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                    <span className="text-sm sm:text-base">UI/UX Design</span>
+                  </Link>
+                  <Link href="/consulting" className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors p-2 rounded-lg hover:bg-white/10" onClick={() => setIsMobileMenuOpen(false)}>
+                    <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                    <span className="text-sm sm:text-base">Consulting</span>
+                  </Link>
                 </div>
               )}
             </div>
             
             {/* Projects */}
             <div className="space-y-2 sm:space-y-3">
-              <button 
-                className="text-white text-base sm:text-lg font-medium w-full text-left"
+              <Button 
+                variant="ghost"
+                className="text-white hover:bg-white/10 text-base sm:text-lg font-medium w-full justify-start p-4 h-auto rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm transition-all duration-300 hover:border-white/20"
                 onClick={() => setActive(active === 'Projects' ? null : 'Projects')}
               >
-                Projects
-              </button>
+                <span className="flex flex-row items-center justify-between w-full">
+                  <span className="flex items-center gap-3">
+                    <FolderOpen className="w-5 h-5 text-purple-400" />
+                    <span>Projects</span>
+                  </span>
+                  {active === 'Projects' ? <ChevronDown className="w-4 h-4" /> : <ChevronRight className="w-4 h-4" />}
+                </span>
+              </Button>
               {active === 'Projects' && (
                 <div className="ml-3 sm:ml-4 space-y-3 sm:space-y-4">
                   <Link href="https://algochurn.com" className="block text-gray-300 hover:text-white transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
@@ -236,61 +294,122 @@ export function NavMenu({ className }: { className?: string }) {
             
             {/* Pricing */}
             <div className="space-y-2 sm:space-y-3">
-              <button 
-                className="text-white text-base sm:text-lg font-medium w-full text-left"
+              <Button 
+                variant="ghost"
+                className="text-white hover:bg-white/10 text-base sm:text-lg font-medium w-full justify-start p-4 h-auto rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm transition-all duration-300 hover:border-white/20"
                 onClick={() => setActive(active === 'Pricing' ? null : 'Pricing')}
               >
-                Pricing
-              </button>
+                <span className="flex flex-row items-center justify-between w-full">
+                  <span className="flex items-center gap-3">
+                    <DollarSign className="w-5 h-5 text-yellow-400" />
+                    <span>Pricing</span>
+                  </span>
+                  {active === 'Pricing' ? <ChevronDown className="w-4 h-4" /> : <ChevronRight className="w-4 h-4" />}
+                </span>
+              </Button>
               {active === 'Pricing' && (
-                <div className="ml-3 sm:ml-4 space-y-1.5 sm:space-y-2 text-sm sm:text-base">
-                  <Link href="/hobby" className="block text-gray-300 hover:text-white transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Hobby</Link>
-                  <Link href="/individual" className="block text-gray-300 hover:text-white transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Individual</Link>
-                  <Link href="/team" className="block text-gray-300 hover:text-white transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Team</Link>
-                  <Link href="/enterprise" className="block text-gray-300 hover:text-white transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Enterprise</Link>
+                <div className="ml-2 space-y-2 p-3 bg-white/5 rounded-lg border border-white/10">
+                  <Link href="/hobby" className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors p-2 rounded-lg hover:bg-white/10" onClick={() => setIsMobileMenuOpen(false)}>
+                    <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
+                    <span className="text-sm sm:text-base">Starter</span>
+                  </Link>
+                  <Link href="/individual" className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors p-2 rounded-lg hover:bg-white/10" onClick={() => setIsMobileMenuOpen(false)}>
+                    <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
+                    <span className="text-sm sm:text-base">Professional</span>
+                  </Link>
+                  <Link href="/team" className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors p-2 rounded-lg hover:bg-white/10" onClick={() => setIsMobileMenuOpen(false)}>
+                    <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
+                    <span className="text-sm sm:text-base">Business</span>
+                  </Link>
+                  <Link href="/enterprise" className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors p-2 rounded-lg hover:bg-white/10" onClick={() => setIsMobileMenuOpen(false)}>
+                    <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
+                    <span className="text-sm sm:text-base">Enterprise</span>
+                  </Link>
                 </div>
               )}
             </div>
             
             {/* Insights */}
             <div className="space-y-2 sm:space-y-3">
-              <button 
-                className="text-white text-base sm:text-lg font-medium w-full text-left"
+              <Button 
+                variant="ghost"
+                className="text-white hover:bg-white/10 text-base sm:text-lg font-medium w-full justify-start p-4 h-auto rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm transition-all duration-300 hover:border-white/20"
                 onClick={() => setActive(active === 'Insights' ? null : 'Insights')}
               >
-                Insights
-              </button>
+                <span className="flex flex-row items-center justify-between w-full">
+                  <span className="flex items-center gap-3">
+                    <Lightbulb className="w-5 h-5 text-orange-400" />
+                    <span>Insights</span>
+                  </span>
+                  {active === 'Insights' ? <ChevronDown className="w-4 h-4" /> : <ChevronRight className="w-4 h-4" />}
+                </span>
+              </Button>
               {active === 'Insights' && (
-                <div className="ml-3 sm:ml-4 space-y-1.5 sm:space-y-2 text-sm sm:text-base">
-                  <Link href="/blog" className="block text-gray-300 hover:text-white transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Newsletter</Link>
-                  <Link href="/reports" className="block text-gray-300 hover:text-white transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Reports</Link>
-                  <Link href="/resources" className="block text-gray-300 hover:text-white transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Resources</Link>
-                  <Link href="/webinars" className="block text-gray-300 hover:text-white transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Webinars</Link>
+                <div className="ml-2 space-y-2 p-3 bg-white/5 rounded-lg border border-white/10">
+                  <Link href="/blog" className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors p-2 rounded-lg hover:bg-white/10" onClick={() => setIsMobileMenuOpen(false)}>
+                    <div className="w-2 h-2 bg-orange-400 rounded-full"></div>
+                    <span className="text-sm sm:text-base">Blog</span>
+                  </Link>
+                  <Link href="/case-studies" className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors p-2 rounded-lg hover:bg-white/10" onClick={() => setIsMobileMenuOpen(false)}>
+                    <div className="w-2 h-2 bg-orange-400 rounded-full"></div>
+                    <span className="text-sm sm:text-base">Case Studies</span>
+                  </Link>
+                  <Link href="/resources" className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors p-2 rounded-lg hover:bg-white/10" onClick={() => setIsMobileMenuOpen(false)}>
+                    <div className="w-2 h-2 bg-orange-400 rounded-full"></div>
+                    <span className="text-sm sm:text-base">Resources</span>
+                  </Link>
+                  <Link href="/events" className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors p-2 rounded-lg hover:bg-white/10" onClick={() => setIsMobileMenuOpen(false)}>
+                    <div className="w-2 h-2 bg-orange-400 rounded-full"></div>
+                    <span className="text-sm sm:text-base">Newsletter</span>
+                  </Link>
                 </div>
               )}
             </div>
             
             {/* Contact */}
             <div className="space-y-2 sm:space-y-3">
-              <button 
-                className="text-white text-base sm:text-lg font-medium w-full text-left"
+              <Button 
+                variant="ghost"
+                className="text-white hover:bg-white/10 text-base sm:text-lg font-medium w-full justify-start p-4 h-auto rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm transition-all duration-300 hover:border-white/20"
                 onClick={() => setActive(active === 'Contact' ? null : 'Contact')}
               >
-                Contact
-              </button>
+                <span className="flex flex-row items-center justify-between w-full">
+                  <span className="flex items-center gap-3">
+                    <Mail className="w-5 h-5 text-red-400" />
+                    <span>Contact</span>
+                  </span>
+                  {active === 'Contact' ? <ChevronDown className="w-4 h-4" /> : <ChevronRight className="w-4 h-4" />}
+                </span>
+              </Button>
               {active === 'Contact' && (
-                <div className="ml-3 sm:ml-4 space-y-1.5 sm:space-y-2 text-sm sm:text-base">
-                  <Link href="/contact" className="block text-gray-300 hover:text-white transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Send an Email</Link>
-                  <Link href="/contact" className="block text-gray-300 hover:text-white transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Book a call</Link>
-                  <Link href="/contact" className="block text-gray-300 hover:text-white transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Chat</Link>
+                <div className="ml-2 space-y-2 p-3 bg-white/5 rounded-lg border border-white/10">
+                  <Link href="/contact" className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors p-2 rounded-lg hover:bg-white/10" onClick={() => setIsMobileMenuOpen(false)}>
+                    <div className="w-2 h-2 bg-red-400 rounded-full"></div>
+                    <span className="text-sm sm:text-base">Send an Email</span>
+                  </Link>
+                  <Link href="/schedule" className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors p-2 rounded-lg hover:bg-white/10" onClick={() => setIsMobileMenuOpen(false)}>
+                    <div className="w-2 h-2 bg-red-400 rounded-full"></div>
+                    <span className="text-sm sm:text-base">Schedule a Call</span>
+                  </Link>
+                  <Link href="/support" className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors p-2 rounded-lg hover:bg-white/10" onClick={() => setIsMobileMenuOpen(false)}>
+                    <div className="w-2 h-2 bg-red-400 rounded-full"></div>
+                    <span className="text-sm sm:text-base">Support</span>
+                  </Link>
+                  <Link href="/locations" className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors p-2 rounded-lg hover:bg-white/10" onClick={() => setIsMobileMenuOpen(false)}>
+                    <div className="w-2 h-2 bg-red-400 rounded-full"></div>
+                    <span className="text-sm sm:text-base">Office Locations</span>
+                  </Link>
                 </div>
               )}
             </div>
           </div>
           
           {/* Theme Toggle */}
-          <div className="mt-6 sm:mt-8 flex justify-center">
-            <ThemeToggle />
+          <div className="mt-8 w-full sm:mt-10 p-4 bg-white/5 rounded-xl border border-white/10">
+            <div className="flex items-center justify-between">
+              <span className="text-white font-medium">Theme</span>
+              <ThemeToggle />
+            </div>
           </div>
         </div>
       </div>

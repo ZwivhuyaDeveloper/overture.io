@@ -7,7 +7,8 @@ import { ArrowRightIcon, ArrowUpRight } from 'lucide-react';
 import { BackgroundBeams } from '../ui/background-beams';
 import FadeContent from '../FadeContent';
 import Video from 'next-video';
-import backgroundVideo from '/videos/0000-0231.mp4';
+// Use public directory path for video - more compatible with Turbopack
+const backgroundVideoSrc = '/0000-0231.mp4';
 
 const tektur = Tektur({
   weight: ["700","400"],
@@ -40,10 +41,9 @@ export function Hero({
 }: HeroProps) {
   return (
     <section className={cn("relative w-full min-h-screen -mt-20 overflow-hidden", className)}>
-      {/* Background Image */}
+      {/* Background Video */}
       <div className="absolute inset-0 -z-10">
-      {/* eslint-disable-next-line @typescript-eslint/no-require-imports */}
-        <video src={require("../../assets/0000-0231.mp4")} 
+        <video src={backgroundVideoSrc} 
           className='object-cover h-full w-full overlay ' 
           controls={false}
           autoPlay

@@ -19,9 +19,14 @@ export function HomeProjectCard({ project }: HomeProjectCardProps) {
   return (
     <div className='flex flex-col items-start h-full w-full justify-center'>
       <h1 className='tracking-wide py-2 relative text-left z-10 text-lg sm:text-lg text-black'>
-        <span className={`${syncopate.className} text-primary text-xl font-bold`}>{project.title}</span> - <span className={`${afacad.className} text-gray-500 font-regular tracking-tight text-xl`}>{project.excerpt}</span>
+        <span className={`${syncopate.className} text-primary tracking-tight  lg:text-lg md:text-lg sm:text-md text-md font-bold`}>
+          {project.title}
+        </span> - 
+        <span className={`${afacad.className} text-gray-500 font-regular tracking-tight lg:text-xl md:text-lg sm:text-md text-md`}>
+          {project.excerpt}
+        </span>
       </h1>
-      <div className='grid grid-cols-2 items-center gap-2 h-full w-full justify-center'>
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 items-center gap-2 h-full w-full justify-center'>
         <Card className="w-full h-full z-10 p-0 bg-transparent border-none shadow-none">
           {project.mainImage && (
             <Image 
@@ -30,11 +35,11 @@ export function HomeProjectCard({ project }: HomeProjectCardProps) {
               height={1000} 
               quality={100} 
               alt={project.mainImage.alt || project.title}
-              className="object-fill w-full h-65 rounded-2xl"
+              className="object-cover w-full h-65 rounded-2xl"
             />
           )}
         </Card>
-        <Card className='flex flex-col items-center w-full h-full pt-8 justify-between rounded-3xl border-none bg-zinc-100 p-5 py-6'>
+        <Card className='hidden lg:block md:block  flex-col items-center w-full h-full pt-8 justify-between rounded-3xl border-none bg-zinc-100 p-5 py-6'>
           <h1 className={`${syncopate.className} text-black text-left w-full font-bold text-lg capitalize`}>
             {project.title}
           </h1>

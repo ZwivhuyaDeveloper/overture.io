@@ -67,7 +67,7 @@ export function Vision() {
             `}>
               Crafting Digital Experiences That Transform Businesses
             </h1>
-            <h2 className={`${afacad.className} text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl justify-self-center font-regular text-center dark:text-gray-300 text-gray-500 max-w-3xl mx-auto px-4 sm:px-6 md:px-8`}> 
+            <h2 className={`${afacad.className} text-md sm:text-md md:text-lg lg:text-xl xl:text-2xl justify-self-center font-regular text-center dark:text-gray-300 text-gray-500 max-w-3xl mx-auto px-4 sm:px-6 md:px-8`}> 
               We envision a digital landscape where innovative design meets cutting-edge technology to create meaningful connections 
               between brands and their audiences, driving growth and success in the ever-evolving digital world.
             </h2>

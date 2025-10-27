@@ -67,7 +67,7 @@ export default function PortfolioSection() {
               tracking-widest relative text-center w-full max-w-2xl px-4 z-10 text-base sm:text-xl md:text-2xl lg:text-3xl font-bold text-black`}>
               Projects that speak for themselves
         </h1>
-        <p className={`${afacad.className} text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl justify-self-center text-center text-gray-500 max-w-3xl mx-auto px-4 sm:px-6 md:px-8`}>
+        <p className={`${afacad.className} text-md sm:text-md md:text-lg lg:text-xl xl:text-2xl justify-self-center text-center text-gray-500 max-w-3xl mx-auto px-4 sm:px-6 md:px-8`}>
             We showcase our portfolio to highlight our expertise in creating innovative and impactful digital experiences.
         </p>
         </div>

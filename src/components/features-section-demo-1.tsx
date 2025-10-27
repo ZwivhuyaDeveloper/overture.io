@@ -33,7 +33,7 @@ export default function FeaturesSectionDemo1() {
                 tracking-widest relative text-center w-full max-w-2xl px-4 z-10 text-base sm:text-xl md:text-2xl lg:text-3xl font-bold text-black`}>
                 Our Digital Toolbox
           </h1>
-          <h3 className={`${afacad.className} text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl justify-center font-regular flex text-center text-gray-500 max-w-xl mx-auto px-4 sm:px-6 md:px-8`}>
+          <h3 className={`${afacad.className} text-md sm:text-md md:text-lg lg:text-xl xl:text-2xl justify-center font-regular flex text-center text-gray-500 max-w-xl mx-auto px-4 sm:px-6 md:px-8`}>
             Every project is unique, but they all start with a foundation of powerful, user-centric features. 
           </h3>
         </div>
@@ -57,10 +57,10 @@ export default function FeaturesSectionDemo1() {
               onComplete={() => {}}
             >
             <Grid size={20} />
-            <h3 className={`${syncopate.className} text-xs sm:text-sm tracking-tight font-bold text-neutral-800 dark:text-white relative z-20`}>
+            <h3 className={`${syncopate.className} px-2 pt-4 text-md sm:text-md md:text-md lg:text-md xl:text-lg tracking-tight font-bold text-neutral-800 dark:text-white relative z-20`}>
               {feature.title}
             </h3>
-            <h4 className={`${afacad.className} text-neutral-600 dark:text-neutral-400 mt-2  sm:mt-3 md:mt-4 text-sm sm:text-sm md:text-base font-normal relative z-20`}>
+            <h4 className={`${afacad.className} px-2 pb-6 text-neutral-600 dark:text-neutral-400 mt-2  sm:mt-3 md:mt-4 text-md sm:text-md md:text-md lg:text-md xl:text-lg font-normal relative z-20`}>
               {feature.description}
             </h4>
             </AnimatedContent>

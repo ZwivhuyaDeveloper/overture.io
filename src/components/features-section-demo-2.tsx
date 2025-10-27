@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-key */
 import { cn } from "@/lib/utils";
 import {
   IconAdjustmentsBolt,
@@ -10,7 +9,6 @@ import {
   IconRouteAltLeft,
   IconTerminal2,
 } from "@tabler/icons-react";
-import { div } from "motion/react-client";
 
 import { Tektur, Syncopate } from "next/font/google";
 import AnimatedContent from "./AnimatedContent";
@@ -91,6 +89,7 @@ export default function FeaturesSectionDemo2() {
         
         {features.map((feature, index) => (
           <AnimatedContent
+            key={feature.title}
             distance={100}
             direction="vertical"
             reverse={false}
@@ -103,7 +102,7 @@ export default function FeaturesSectionDemo2() {
             delay={0}
             onComplete={() => {}}
           >
-          <Feature key={feature.title} {...feature} index={index} />
+          <Feature {...feature} index={index} />
           </AnimatedContent>
         ))}
       </div>

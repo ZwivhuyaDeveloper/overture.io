@@ -244,7 +244,9 @@ export function AboutUs({ className }: { className?: string }) {
                         onComplete={() => {}}
                     >
                         <p className={`${afacad.className} 
-                        tracking-wide relative text-left text-black dark:text-white w-full max-w-full text-sm sm:text-base md:text-lg lg:text-xl mt-8 sm:mt-10 md:mt-12 lg:mt-20 my-2 z-10`}>With a team of experienced developers and designers, we are dedicated to delivering high-quality solutions that meet your needs. 
+                        tracking-wide relative text-left text-black dark:text-white w-full max-w-full text-md 
+                        sm:text-md md:text-lg lg:text-xl mt-8 sm:mt-10 md:mt-12 lg:mt-20 my-2 z-10`}>
+                        With a team of experienced developers and designers, we are dedicated to delivering high-quality solutions that meet your needs. 
                         We use the latest technologies and best practices to ensure that your project is completed on time and to the highest standard.
                         </p>
                     </AnimatedContent>

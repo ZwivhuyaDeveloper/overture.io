@@ -17,7 +17,7 @@ const generateRandomColors = (count: number) => {
   
   // Define base hues for our theme colors
   const baseHues = [
-    30,   // Orange
+   // Orange
     210,  // Blue  
     270   // Purple
   ];
@@ -28,7 +28,7 @@ const generateRandomColors = (count: number) => {
     
     // Create variations by adding/subtracting up to 30 degrees for gradient shades
     const hueVariation = (i % 7) - 3; // -3 to +3
-    const hue = (baseHue + hueVariation * 10 + 360) % 360;
+    const hue = (baseHue + hueVariation * 1 + 360) % 360;
     
     // Vary saturation and lightness for more variety
     const saturation = 70 + (i % 4) * 8;  // 70-102% (capped at 100%)
@@ -190,7 +190,7 @@ export function ServicesSection() {
                   tracking-widest relative text-center w-full max-w-4xl px-4 z-10 text-base sm:text-xl md:text-2xl lg:text-3xl font-bold text-black dark:text-white`}>
                   Comprehensive Digital Solutions for Modern Businesses
               </h1>
-              <p className="text-sm sm:text-base md:text-lg lg:text-xl justify-self-center text-center text-gray-500 max-w-3xl mx-auto px-4 sm:px-6 md:px-8">
+              <p className="text-md sm:text-md md:text-lg lg:text-xl justify-self-center text-center text-gray-500 max-w-3xl mx-auto px-4 sm:px-6 md:px-8">
                 From concept to execution, we deliver end-to-end digital services that transform your ideas into powerful, scalable, 
                 and engaging experiences that captivate your audience and drive measurable business results.
               </p>
@@ -228,7 +228,7 @@ export function ServicesSection() {
                   src={card.src}
                   alt={card.title}
                   quality={100}
-                  className="h-40 w-40 sm:h-50 sm:w-50 md:h-20 md:w-20 rounded-lg object-cover object-top mx-auto md:mx-0"
+                  className="h-40 w-full sm:h-50 sm:w-full md:h-20 md:w-20 rounded-lg object-cover object-top mx-auto md:mx-0"
                 />
               </motion.div>
               <div className="">

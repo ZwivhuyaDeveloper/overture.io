@@ -49,7 +49,7 @@ export default function Pricing() {
       period: billingCycle === 'monthly' ? '/month' : '/month',
       description: 'Perfect for startups and small businesses',
       icon: Rocket,
-      color: 'from-blue-500 to-cyan-500',
+      color: 'from-primary to-secondary',
       features: [
         'Custom Website Design',
         'Responsive Development',
@@ -76,7 +76,7 @@ export default function Pricing() {
       period: billingCycle === 'monthly' ? '/month' : '/month',
       description: 'Ideal for growing businesses',
       icon: Crown,
-      color: 'from-purple-500 to-pink-500',
+      color: 'from-primary to-secondary',
       features: [
         'Custom Website Design',
         'Responsive Development',
@@ -105,7 +105,7 @@ export default function Pricing() {
       period: billingCycle === 'monthly' ? '/month' : '/month',
       description: 'For large organizations and enterprises',
       icon: Star,
-      color: 'from-orange-500 to-red-500',
+      color: 'from-primary to-secondary',
       features: [
         'Custom Website Design',
         'Responsive Development',
@@ -255,32 +255,32 @@ export default function Pricing() {
               tracking-widest relative text-center w-full max-w-4xl px-4 z-10 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-black mb-4 sm:mb-5 md:mb-6`}>
               Transparent Pricing for Exceptional Results
           </h1>
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-500 max-w-2xl mx-auto px-4 sm:px-6 md:px-8">
+          <p className="text-md sm:text-md md:text-lg lg:text-xl text-gray-500 max-w-2xl mx-auto px-4 sm:px-6 md:px-8">
             Choose the perfect plan for your business. No hidden fees, just transparent pricing for world-class web development services.
           </p>
           
           {/* Billing Toggle */}
           <div className="flex items-center justify-center mt-6 sm:mt-7 md:mt-8 space-x-2 sm:space-x-3 md:space-x-4">
-            <button
+            <Button
               onClick={() => setBillingCycle('monthly')}
-              className={`px-4 sm:px-5 md:px-6 py-1.5 sm:py-2 rounded-lg transition-all duration-300 text-xs sm:text-sm md:text-base ${
+              className={`px-4 sm:px-5 md:px-6 py-1.5 sm:py-2 rounded-lg transition-all duration-300 text-SM sm:text-sm md:text-base ${
                 billingCycle === 'monthly' 
                   ? 'bg-blue-500 text-white dark:bg-blue-600 dark:text-white' 
                   : 'bg-black/10 text-gray-300 hover:bg-white/20'
               }`}
             >
               Monthly
-            </button>
-            <button
+            </Button>
+            <Button
               onClick={() => setBillingCycle('yearly')}
-              className={`px-4 sm:px-5 md:px-6 py-1.5 sm:py-2 rounded-lg transition-all duration-300 text-xs sm:text-sm md:text-base ${
+              className={`px-4 sm:px-5 md:px-6 py-1.5 sm:py-2 rounded-lg transition-all duration-300 text-SM sm:text-sm md:text-base ${
                 billingCycle === 'yearly' 
                   ? 'bg-blue-500 text-white dark:bg-blue-600 dark:text-white' 
                   : 'bg-zinc-400/10 text-gray-500 hover:bg-white/20'
               }`}
             >
-              Yearly <span className="text-green-400 ml-1">(Save 17%)</span>
-            </button>
+              Yearly <span className="text-green-500 ml-1">(Save 17%)</span>
+            </Button>
           </div>
         </motion.div>
 
@@ -318,10 +318,10 @@ export default function Pricing() {
                     <CardTitle className={`${syncopate.className} text-lg sm:text-xl md:text-2xl font-bold text-black`}>
                       {tier.name}
                     </CardTitle>
-                    <p className={`${afacad.className} text-gray-500 text-sm sm:text-base md:text-lg mt-1 sm:mt-2 px-2 sm:px-0`}>{tier.description}</p>
+                    <p className={`${afacad.className} text-gray-500 text-md sm:text-md md:text-lg mt-1 sm:mt-2 px-2 sm:px-0`}>{tier.description}</p>
                     <div className="mt-3 sm:mt-4">
-                      <span className={`${afacad.className} text-3xl sm:text-4xl md:text-5xl font-bold text-black`}>{tier.price}</span>
-                      <span className={`${afacad.className} text-gray-400 text-sm sm:text-base md:text-lg`}>{tier.period}</span>
+                      <span className={`${afacad.className} text-4xl sm:text-6xl md:text-5xl font-bold text-black`}>{tier.price}</span>
+                      <span className={`${afacad.className} text-gray-400 text-md sm:text-md md:text-lg`}>{tier.period}</span>
                     </div>
                   </CardHeader>
                   
@@ -330,14 +330,14 @@ export default function Pricing() {
                       {tier.features.map((feature, featureIndex) => (
                         <div key={featureIndex} className="flex items-center space-x-2 sm:space-x-3">
                           <Check className="w-4 h-4 sm:w-5 sm:h-5 text-green-400 flex-shrink-0" />
-                          <span className={`${afacad.className} text-gray-500 text-sm sm:text-base md:text-lg`}>{feature}</span>
+                          <span className={`${afacad.className} text-gray-500 text-lg`}>{feature}</span>
                         </div>
                       ))}
                       
                       {tier.notIncluded.map((feature, featureIndex) => (
                         <div key={featureIndex} className="flex items-center space-x-2 sm:space-x-3 opacity-60">
                           <X className="w-4 h-4 sm:w-5 sm:h-5 text-red-400 flex-shrink-0" />
-                          <span className={`${afacad.className} text-gray-400 line-through text-sm sm:text-base md:text-lg`}>{feature}</span>
+                          <span className={`${afacad.className} text-gray-400 line-through text-lg`}>{feature}</span>
                         </div>
                       ))}
                     </div>
@@ -345,7 +345,7 @@ export default function Pricing() {
                     <Button 
                       className={`w-full mt-4 sm:mt-5 md:mt-6 text-xs sm:text-sm md:text-base px-4 sm:px-6 py-2 sm:py-2.5 ${
                         tier.popular 
-                          ? 'bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600' 
+                          ? 'bg-gradient-to-r from-primary   to-secondary hover:from-primary hover:to-secondary' 
                           : 'bg-white/10 hover:bg-white/20'
                       } ${afacad.className} text-white font-semibold transition-all duration-300`}
                     >
@@ -367,55 +367,55 @@ export default function Pricing() {
           transition={{ duration: 0.5 }}
         >
           <div className="text-center mb-12">
-            <h2 className={`${syncopate.className} text-xl sm:text-2xl md:text-3xl font-bold text-black mb-3 sm:mb-4 px-4`}>
+            <h2 className={`${syncopate.className} text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-black mb-3 sm:mb-4 px-4`}>
               Why Choose Overture?
             </h2>
-            <p className={`${afacad.className} text-gray-500 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl max-w-2xl mx-auto px-4 sm:px-6 md:px-8`}>
+            <p className={`${afacad.className} text-gray-500 text-md sm:text-md md:text-lg lg:text-xl xl:text-2xl max-w-2xl mx-auto px-4 sm:px-6 md:px-8`}>
               See how we compare to other web development agencies. We believe in transparency and delivering superior value.
             </p>
           </div>
           
-          <div className="overflow-x-auto">
-            <div className="min-w-[800px] inline-block">
+          <div className="overflow-x-auto lg:justify-center lg:items-center flex">
+            <div className="min-w-[600px] max-w-full  inline-block">
               <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 overflow-hidden">
                 <div className="grid grid-cols-5 gap-0">
                   {/* Header Row */}
                   <div className="p-2 sm:p-3 md:p-4 bg-zinc-500/20 border-r border-white/10">
-                    <h3 className="font-semibold text-white text-xs sm:text-sm md:text-base">Features</h3>
+                    <h3 className="font-semibold text-zinc-500 dark:text-zinc-400 text-xs sm:text-sm md:text-base">Features</h3>
                   </div>
                   <div className="p-2 sm:p-3 md:p-4 bg-gradient-to-r from-blue-500/20 to-blue-500/20 border-r border-white/10">
                     <div className="flex items-center space-x-1 sm:space-x-2">
                       <Zap className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400" />
-                      <h3 className="font-semibold text-white text-xs sm:text-sm md:text-base">Overture</h3>
+                      <h3 className="font-semibold text-primary dark:text-zinc-400 text-xs sm:text-sm md:text-base">Overture</h3>
                     </div>
                   </div>
                   <div className="p-2 sm:p-3 md:p-4 bg-white/5 border-r border-white/10">
-                    <h3 className="font-semibold text-gray-300 text-xs sm:text-sm md:text-base">Competitor A</h3>
+                    <h3 className="font-semibold text-zinc-500 dark:text-zinc-400 text-xs sm:text-sm md:text-base">Competitor A</h3>
                   </div>
                   <div className="p-2 sm:p-3 md:p-4 bg-white/5 border-r border-white/10">
-                    <h3 className="font-semibold text-gray-300 text-xs sm:text-sm md:text-base">Competitor B</h3>
+                    <h3 className="font-semibold text-zinc-500 dark:text-zinc-400 text-xs sm:text-sm md:text-base">Competitor B</h3>
                   </div>
                   <div className="p-2 sm:p-3 md:p-4 bg-white/5">
-                    <h3 className="font-semibold text-gray-300 text-xs sm:text-sm md:text-base">Competitor C</h3>
+                    <h3 className="font-semibold text-zinc-500 dark:text-zinc-400 text-xs sm:text-sm md:text-base">Competitor C</h3>
                   </div>
                   
                   {/* Feature Rows */}
                   {competitorComparison.map((row, index) => (
                     <React.Fragment key={index}>
                       <div className={`p-2 sm:p-3 md:p-4 border-r border-white/10 ${index % 2 === 0 ? 'bg-white/5' : 'bg-transparent'}`}>
-                        <span className="text-gray-300 text-xs sm:text-sm">{row.feature}</span>
+                        <span className="text-gray-400 dark:text-gray-300 text-xs sm:text-sm">{row.feature}</span>
                       </div>
-                      <div className={`p-2 sm:p-3 md:p-4 border-r border-white/10 ${index % 2 === 0 ? 'bg-purple-500/10' : 'bg-transparent'}`}>
-                        <span className="text-green-400 font-medium text-xs sm:text-sm">{row.overture}</span>
-                      </div>
-                      <div className={`p-2 sm:p-3 md:p-4 border-r border-white/10 ${index % 2 === 0 ? 'bg-white/5' : 'bg-transparent'}`}>
-                        <span className="text-gray-300 text-xs sm:text-sm">{row.competitorA}</span>
+                      <div className={`p-2 sm:p-3 md:p-4 border-r border-white/10 ${index % 2 === 0 ? 'bg-primary/10' : 'bg-transparent'}`}>
+                        <span className="text-primary dark:text-secondary font-medium text-xs sm:text-sm">{row.overture}</span>
                       </div>
                       <div className={`p-2 sm:p-3 md:p-4 border-r border-white/10 ${index % 2 === 0 ? 'bg-white/5' : 'bg-transparent'}`}>
-                        <span className="text-gray-300 text-xs sm:text-sm">{row.competitorB}</span>
+                        <span className="text-gray-400 dark:text-gray-300 text-xs sm:text-sm">{row.competitorA}</span>
+                      </div>
+                      <div className={`p-2 sm:p-3 md:p-4 border-r border-white/10 ${index % 2 === 0 ? 'bg-white/5' : 'bg-transparent'}`}>
+                        <span className="text-gray-400 dark:text-gray-300 text-xs sm:text-sm">{row.competitorB}</span>
                       </div>
                       <div className={`p-2 sm:p-3 md:p-4 ${index % 2 === 0 ? 'bg-white/5' : 'bg-transparent'}`}>
-                        <span className="text-gray-300 text-xs sm:text-sm">{row.competitorC}</span>
+                        <span className="text-gray-400 dark:text-gray-300 text-xs sm:text-sm">{row.competitorC}</span>
                       </div>
                     </React.Fragment>
                   ))}
@@ -435,7 +435,7 @@ export default function Pricing() {
             <h2 className={`${syncopate.className} text-xl sm:text-2xl md:text-3xl font-bold text-white mb-3 sm:mb-4 px-4`}>
               Additional Services
             </h2>
-            <p className="text-gray-300 max-w-2xl mx-auto text-sm sm:text-base px-4 sm:px-6 md:px-8">
+            <p className="text-gray-400 max-w-2xl mx-auto text-md sm:text-md md:text-lg lg:text-xl xl:text-2xl px-4 sm:px-6 md:px-8">
               Enhance your project with our premium add-on services designed to maximize your online presence.
             </p>
           </div>
@@ -450,33 +450,33 @@ export default function Pricing() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
-                  <Card className="bg-white/5 backdrop-blur-sm border-white/10 hover:border-purple-500/50 transition-all duration-300 h-full">
+                  <Card className="bg-white/5 backdrop-blur-sm border-white/10 hover:border-primary/50 transition-all duration-300 h-full">
                     <CardHeader className="pb-4">
                       <div className="flex items-center space-x-2 sm:space-x-3 mb-2 sm:mb-3">
-                        <div className="w-10 h-10 sm:w-12 sm:h-12 bg-purple-500/20 rounded-lg flex items-center justify-center">
-                          <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-purple-400" />
+                        <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary/20 rounded-lg flex items-center justify-center">
+                          <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
                         </div>
                         <div>
-                          <CardTitle className="text-sm sm:text-base md:text-lg font-semibold text-white">
+                          <CardTitle className="text-md sm:text-md md:text-lg font-semibold text-black">
                             {service.title}
                           </CardTitle>
-                          <p className="text-purple-400 font-medium text-xs sm:text-sm">{service.price}</p>
+                          <p className="text-primary font-medium text-sm sm:text-sm">{service.price}</p>
                         </div>
                       </div>
-                      <p className="text-gray-300 text-xs sm:text-sm">{service.description}</p>
+                      <p className="text-gray-400 text-md sm:text-md">{service.description}</p>
                     </CardHeader>
                     <CardContent>
                       <ul className="space-y-2">
                         {service.features.map((feature, featureIndex) => (
                           <li key={featureIndex} className="flex items-center space-x-2">
-                            <Check className="w-3 h-3 sm:w-4 sm:h-4 text-green-400 flex-shrink-0" />
-                            <span className="text-gray-300 text-xs sm:text-sm">{feature}</span>
+                            <Check className="w-3 h-3 sm:w-4 sm:h-4 text-green-500 flex-shrink-0" />
+                            <span className="text-gray-400 text-sm sm:text-sm">{feature}</span>
                           </li>
                         ))}
                       </ul>
                       <Button 
                         variant="outline" 
-                        className="w-full mt-3 sm:mt-4 border-purple-500/50 text-purple-400 hover:bg-purple-500/20 text-xs sm:text-sm px-3 sm:px-4 py-1.5 sm:py-2"
+                        className="w-full mt-3 sm:mt-4 border-primary/50 text-primary hover:bg-primary/20 text-xs sm:text-sm px-3 sm:px-4 py-1.5 sm:py-2"
                       >
                         Learn More
                         <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 ml-1 sm:ml-2" />
@@ -496,17 +496,17 @@ export default function Pricing() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <div className="bg-gradient-to-r from-purple-500/20 to-pink-500/20 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 border border-purple-500/30">
+          <div className="bg-gradient-to-r from-primary/40 to-secondary/40 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 border border-primary/30">
             <h2 className={`${syncopate.className} text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white mb-3 sm:mb-4 px-4`}>
               Ready to Transform Your Online Presence?
             </h2>
-            <p className="text-gray-300 mb-4 sm:mb-5 md:mb-6 max-w-2xl mx-auto text-sm sm:text-base px-4 sm:px-6 md:px-8">
+            <p className="text-zinc-50  mb-4 sm:mb-5 md:mb-6 max-w-2xl mx-auto text-sm sm:text-base px-4 sm:px-6 md:px-8">
               Let&rsquo;s discuss your project and create a custom solution that drives results for your business.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <Button 
                 size="lg" 
-                className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-semibold text-xs sm:text-sm md:text-base px-4 sm:px-6 py-2 sm:py-2.5"
+                className="bg-gradient-to-r from-primary to-secondary hover:from-primary/80 hover:to-secondary/80 text-white font-semibold text-xs sm:text-sm md:text-base px-4 sm:px-6 py-2 sm:py-2.5"
               >
                 Schedule a Consultation
                 <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-1 sm:ml-2" />
@@ -514,7 +514,7 @@ export default function Pricing() {
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="border-purple-500/50 text-purple-400 hover:bg-purple-500/20 text-xs sm:text-sm md:text-base px-4 sm:px-6 py-2 sm:py-2.5"
+                className="border-primary/50 text-primary hover:bg-primary/20 text-xs sm:text-sm md:text-base px-4 sm:px-6 py-2 sm:py-2.5"
               >
                 View Our Portfolio
               </Button>
