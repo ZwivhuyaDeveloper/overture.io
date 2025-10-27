@@ -40,12 +40,12 @@ export default function PortfolioSection() {
   }, []);
 
   return (
-    <div className='flex flex-col items-center justify-center gap-5'>
+    <div className='flex flex-col items-center justify-center gap-3 sm:gap-4 md:gap-5 px-4 sm:px-6 md:px-8'>
       {/* Header Section */}
-      <div className="w-full gap-4 flex flex-col items-center justify-center mb-20 max-w-7xl mx-auto">
-        <div className="w-fit h-fit p-2 bg-zinc-200 rounded-full px-4">
+      <div className="w-full gap-2 sm:gap-3 md:gap-4 flex flex-col items-center justify-center mb-12 sm:mb-16 md:mb-20 max-w-7xl mx-auto">
+        <div className="w-fit h-fit p-1.5 sm:p-2 bg-zinc-200 rounded-full px-3 sm:px-4">
           <h2 className={`${tektur.className} 
-              tracking-widest relative text-left z-10 text-md sm:text-sm text-black`}>
+              tracking-widest relative text-left z-10 text-xs sm:text-sm md:text-md text-black`}>
               Portfolio  
           </h2>
         </div>
@@ -62,12 +62,12 @@ export default function PortfolioSection() {
           delay={0.1}
           onComplete={() => {}}
         >
-        <div className="flex flex-col justify-center mt-5 items-center gap-4">
+        <div className="flex flex-col justify-center mt-3 sm:mt-4 md:mt-5 items-center gap-2 sm:gap-3 md:gap-4">
         <h1 className={`${syncopate.className} 
-              tracking-widest relative text-center w-2xl z-10 text-md sm:text-3xl font-bold text-black`}>
+              tracking-widest relative text-center w-full max-w-2xl px-4 z-10 text-base sm:text-xl md:text-2xl lg:text-3xl font-bold text-black`}>
               Projects that speak for themselves
         </h1>
-        <p className={`${afacad.className} text-2xl justify-self-center text-center text-gray-500 max-w-3xl mx-auto`}>
+        <p className={`${afacad.className} text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl justify-self-center text-center text-gray-500 max-w-3xl mx-auto px-4 sm:px-6 md:px-8`}>
             We showcase our portfolio to highlight our expertise in creating innovative and impactful digital experiences.
         </p>
         </div>
@@ -75,7 +75,7 @@ export default function PortfolioSection() {
       </div>
 
       {/* Projects Grid */}
-      <div className='w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+      <div className='w-full max-w-7xl mx-auto'>
         {loading ? (
           <div className="flex items-center justify-center h-64">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
@@ -96,9 +96,9 @@ export default function PortfolioSection() {
             <p className="text-gray-600">No projects available at the moment.</p>
           </div>
         ) : (
-          <div className='flex flex-col gap-8 w-full'>
+          <div className='flex flex-col gap-4 sm:gap-6 md:gap-8 w-full'>
             {/* First row - 2 projects */}
-            <section className='flex flex-row items-center gap-2 justify-center w-full h-full'>
+            <section className='flex flex-col sm:flex-row items-center gap-2 sm:gap-2 justify-center w-full h-full'>
               {projects.slice(0, 2).map((project) => (
                 <Link 
                   key={project._id} 
@@ -114,7 +114,7 @@ export default function PortfolioSection() {
             
             {/* Second row - remaining 2 projects */}
             {projects.length > 2 && (
-              <section className='flex flex-row items-center gap-1 justify-center w-full h-full'>
+              <section className='flex flex-col sm:flex-row items-center gap-1 sm:gap-1 justify-center w-full h-full'>
                 {projects.slice(2, 4).map((project) => (
                   <Link 
                     key={project._id} 
@@ -132,14 +132,14 @@ export default function PortfolioSection() {
         )}
 
         {/* View All Projects Button */}
-        <div className="text-center mt-12">
+        <div className="text-center mt-8 sm:mt-10 md:mt-12">
           <Link href="/projects">
             <Button 
               variant="default" 
-              className="text-white p-2 rounded-full gap-2"
+              className="text-white p-1.5 sm:p-2 rounded-full gap-1.5 sm:gap-2 text-xs sm:text-sm md:text-base px-3 sm:px-4 md:px-6"
             >
               View All Projects
-              <ArrowRight strokeWidth={3} className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              <ArrowRight strokeWidth={3} className="h-3 w-3 sm:h-4 sm:w-4 transition-transform group-hover:translate-x-1" />
             </Button>
           </Link>
         </div>

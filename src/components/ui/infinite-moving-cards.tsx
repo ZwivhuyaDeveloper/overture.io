@@ -74,21 +74,21 @@ export const InfiniteMovingCards = ({
     <div
       ref={containerRef}
       className={cn(
-        "scroller relative z-20 max-w-7xl overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
+        "scroller relative z-20 w-full max-w-full sm:max-w-2xl md:max-w-4xl lg:max-w-6xl xl:max-w-7xl overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
         className,
       )}
     >
       <ul
         ref={scrollerRef}
         className={cn(
-          "flex w-max min-w-full shrink-0 flex-nowrap gap-12 py-4",
+          "flex w-max min-w-full shrink-0 flex-nowrap gap-4 sm:gap-6 md:gap-8 lg:gap-10 xl:gap-12 py-2 sm:py-3 md:py-4",
           start && "animate-scroll",
           pauseOnHover && "hover:[animation-play-state:paused]",
         )}
       >
         {items.map((item, idx) => (
           <li
-            className="relative w-fit max-w-full shrink-0 rounded-xl bg-transparent px-4 py-4 md:w-fit dark:bg-transparent"
+            className="relative w-fit max-w-full shrink-0 rounded-lg sm:rounded-xl bg-transparent px-2 sm:px-3 md:px-4 py-2 sm:py-3 md:py-4 dark:bg-transparent"
             key={`${item.name}-${idx}`}
           >
             <blockquote>
@@ -102,7 +102,7 @@ export const InfiniteMovingCards = ({
                   alt={item.name} 
                   width={28}
                   height={28}
-                  className="object-fill w-12 h-12"
+                  className="object-fill w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12"
                 />
               </div>
             </blockquote>

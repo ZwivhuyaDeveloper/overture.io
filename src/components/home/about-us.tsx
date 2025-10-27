@@ -53,30 +53,30 @@ export function AboutUs({ className }: { className?: string }) {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 mt-0">
             <Card className="w-full h-auto md:h-[60vh] z-10 shadow-none border-none bg-transparent">
                 <CardContent>
-                <AnimatedContent
-                    distance={100}
-                    direction="vertical"
-                    reverse={false}
-                    duration={0.8}
-                    ease="power3.out"
-                    initialOpacity={0.2}
-                    animateOpacity
-                    scale={0}
-                    threshold={0.1}
-                    delay={0}
-                    onComplete={() => {}}
-                >
-                    <div className="relative items-center flex flex-row">
-                        <h1 className={`${syncopate.className} 
-                        tracking-widest relative text-left font-bold bg-clip-text bg-gradient-to-r from-black dark:from-white via-zinc-500 dark:via-zinc-300 to-zinc-400 dark:to-zinc-400  text-transparent   w-full max-w-full text-xl md:text-2xl my-2 z-10`}>
-                            Design studio focused on 
-                        </h1>
-                    </div>
-                </AnimatedContent>
+                    <AnimatedContent
+                        distance={100}
+                        direction="vertical"
+                        reverse={false}
+                        duration={0.8}
+                        ease="power3.out"
+                        initialOpacity={0.2}
+                        animateOpacity
+                        scale={0}
+                        threshold={0.1}
+                        delay={0}
+                        onComplete={() => {}}
+                    >
+                        <div className="relative items-center flex flex-row">
+                            <h1 className={`${syncopate.className} 
+                            tracking-widest relative text-left font-bold bg-clip-text bg-gradient-to-r from-black dark:from-white via-zinc-500 dark:via-zinc-300 to-zinc-400 dark:to-zinc-400  text-transparent   w-full max-w-full text-base sm:text-lg md:text-xl lg:text-2xl my-2 z-10`}>
+                                Design studio focused on 
+                            </h1>
+                        </div>
+                    </AnimatedContent>
 
-                <div className="relative items-center flex flex-row">
+                   <div className="relative items-center flex flex-row">
                         <h1 className={`${syncopate.className} 
-                        tracking-widest flex flex-row items-center gap-4 relative text-left font-bold text-black w-full max-w-full text-xl md:text-2xl my-2 z-10`}>
+                        tracking-widest flex flex-row items-center gap-2 sm:gap-3 md:gap-4 relative text-left font-bold text-black w-full max-w-full text-base sm:text-lg md:text-xl lg:text-2xl my-2 z-10`}>
                         <AnimatedContent
                             distance={100}
                             direction="vertical"
@@ -106,12 +106,12 @@ export function AboutUs({ className }: { className?: string }) {
                             delay={0.5}
                             onComplete={() => {}}
                         >
-                            <div className="relative flex flex-col gap-1 shadow-lg bg-white dark:bg-zinc-800 rotate-25  w-25 h-15 p-1 rounded-md z-10">
-                                <div className="w-full h-3 bg-blue-500 rounded-[3px]"/>
-                                <div className="w-full h-2 bg-zinc-200 dark:bg-zinc-700 rounded-[3px]"/>
-                                <div className="h-full w-full flex flex-row gap-1">
-                                    <div className="w-full h-full bg-zinc-200 dark:bg-zinc-700 rounded-[4px]"/>
-                                    <div className="w-full h-full bg-zinc-200 dark:bg-zinc-700 rounded-[4px]"/>
+                            <div className="relative flex flex-col gap-0.5 sm:gap-1 shadow-lg bg-white dark:bg-zinc-800 rotate-25 w-16 h-10 sm:w-20 sm:h-12 md:w-25 md:h-15 p-0.5 sm:p-1 rounded-sm sm:rounded-md z-10">
+                                <div className="w-full h-2 sm:h-2.5 md:h-3 bg-blue-500 rounded-[2px] sm:rounded-[3px]"/>
+                                <div className="w-full h-1.5 sm:h-2 bg-zinc-200 dark:bg-zinc-700 rounded-[2px] sm:rounded-[3px]"/>
+                                <div className="h-full w-full flex flex-row gap-0.5 sm:gap-1">
+                                    <div className="w-full h-full bg-zinc-200 dark:bg-zinc-700 rounded-[3px] sm:rounded-[4px]"/>
+                                    <div className="w-full h-full bg-zinc-200 dark:bg-zinc-700 rounded-[3px] sm:rounded-[4px]"/>
                                 </div>
                             </div> 
                         </AnimatedContent>
@@ -149,7 +149,7 @@ export function AboutUs({ className }: { className?: string }) {
                             onComplete={() => {}}
                         >
                             <h1 className={`${syncopate.className} 
-                            tracking-widest relative flex flex-row gap-4 w-full text-left  font-bold bg-clip-text bg-gradient-to-r from-black dark:from-white via-zinc-600 dark:via-zinc-300 to-zinc-500 dark:to-zinc-400  text-transparent max-w-full text-xl md:text-2xl my-2 z-10`}>
+                            tracking-widest relative flex flex-row gap-2 sm:gap-3 md:gap-4 w-full text-left  font-bold bg-clip-text bg-gradient-to-r from-black dark:from-white via-zinc-600 dark:via-zinc-300 to-zinc-500 dark:to-zinc-400  text-transparent max-w-full text-base sm:text-lg md:text-xl lg:text-2xl my-2 z-10`}>
                                 <AnimatedContent
                                     distance={100}
                                     direction="horizontal"
@@ -163,12 +163,12 @@ export function AboutUs({ className }: { className?: string }) {
                                     delay={0}
                                     onComplete={() => {}}
                                 >
-                                    <div className="relative -left-5 flex flex-col gap-1 shadow-lg bg-white dark:bg-zinc-800 -rotate-25  w-25 h-15 p-1 rounded-md z-10">
-                                        <div className="w-full h-3 bg-orange-500 rounded-[3px]"/>
-                                        <div className="w-full h-2 bg-zinc-200 dark:bg-zinc-700 rounded-[3px]"/>
-                                        <div className="h-full w-full flex flex-row gap-1">
-                                            <div className="w-full h-full bg-zinc-200 dark:bg-zinc-700 rounded-[4px]"/>
-                                            <div className="w-full h-full bg-zinc-200 dark:bg-zinc-700 rounded-[4px]"/>
+                                    <div className="relative -left-2 sm:-left-3 md:-left-5 flex flex-col gap-0.5 sm:gap-1 shadow-lg bg-white dark:bg-zinc-800 -rotate-25 w-16 h-10 sm:w-20 sm:h-12 md:w-25 md:h-15 p-0.5 sm:p-1 rounded-sm sm:rounded-md z-10">
+                                        <div className="w-full h-2 sm:h-2.5 md:h-3 bg-orange-500 rounded-[2px] sm:rounded-[3px]"/>
+                                        <div className="w-full h-1.5 sm:h-2 bg-zinc-200 dark:bg-zinc-700 rounded-[2px] sm:rounded-[3px]"/>
+                                        <div className="h-full w-full flex flex-row gap-0.5 sm:gap-1">
+                                            <div className="w-full h-full bg-zinc-200 dark:bg-zinc-700 rounded-[3px] sm:rounded-[4px]"/>
+                                            <div className="w-full h-full bg-zinc-200 dark:bg-zinc-700 rounded-[3px] sm:rounded-[4px]"/>
                                         </div>
                                     </div>
                                 </AnimatedContent>
@@ -191,13 +191,13 @@ export function AboutUs({ className }: { className?: string }) {
                                         delay={0}                                    
                                         onComplete={() => {}}
                                     >
-                                        <div className="relative flex flex-col gap-1 shadow-lg bg-white dark:bg-zinc-800 w-15 h-20 p-1 rounded-md z-10">
-                                            <div className="w-full h-full bg-zinc-200 dark:bg-zinc-700 rounded-[3px]"/>
-                                            <div className="h-full w-full flex flex-row gap-1">
-                                                <div className="w-full h-full bg-zinc-200 dark:bg-zinc-700 rounded-[4px]"/>
-                                                <div className="w-full h-full bg-zinc-200 dark:bg-zinc-700 rounded-[4px]"/>
+                                        <div className="relative flex flex-col gap-0.5 sm:gap-1 shadow-lg bg-white dark:bg-zinc-800 w-10 h-14 sm:w-12 sm:h-16 md:w-15 md:h-20 p-0.5 sm:p-1 rounded-sm sm:rounded-md z-10">
+                                            <div className="w-full h-full bg-zinc-200 dark:bg-zinc-700 rounded-[2px] sm:rounded-[3px]"/>
+                                            <div className="h-full w-full flex flex-row gap-0.5 sm:gap-1">
+                                                <div className="w-full h-full bg-zinc-200 dark:bg-zinc-700 rounded-[3px] sm:rounded-[4px]"/>
+                                                <div className="w-full h-full bg-zinc-200 dark:bg-zinc-700 rounded-[3px] sm:rounded-[4px]"/>
                                             </div>
-                                            <div className="w-full h-5 bg-blue-500 rounded-[3px]"/>
+                                            <div className="w-full h-4 sm:h-5 bg-blue-500 rounded-[2px] sm:rounded-[3px]"/>
                                         </div>
                                     </AnimatedContent>
                                     <AnimatedContent
@@ -213,13 +213,13 @@ export function AboutUs({ className }: { className?: string }) {
                                         delay={0.2}
                                         onComplete={() => {}}
                                     >
-                                        <div className="absolute justify-center -top-11 -right-8 flex flex-col gap-1 shadow-lg bg-white dark:bg-zinc-800 w-15 h-20 p-1 rounded-md z-10">
-                                            <div className="w-full h-3 bg-zinc-200 dark:bg-zinc-700 rounded-[3px]"/>
-                                            <div className="h-full w-full flex flex-row gap-1">
-                                                <div className="w-full h-full bg-zinc-200 dark:bg-zinc-700 rounded-[4px]"/>
-                                                <div className="w-full h-full bg-zinc-200 dark:bg-zinc-700 rounded-[4px]"/>
+                                        <div className="absolute justify-center -top-8 -right-4 sm:-top-9 sm:-right-6 md:-top-11 md:-right-8 flex flex-col gap-0.5 sm:gap-1 shadow-lg bg-white dark:bg-zinc-800 w-10 h-14 sm:w-12 sm:h-16 md:w-15 md:h-20 p-0.5 sm:p-1 rounded-sm sm:rounded-md z-10">
+                                            <div className="w-full h-2 sm:h-2.5 md:h-3 bg-zinc-200 dark:bg-zinc-700 rounded-[2px] sm:rounded-[3px]"/>
+                                            <div className="h-full w-full flex flex-row gap-0.5 sm:gap-1">
+                                                <div className="w-full h-full bg-zinc-200 dark:bg-zinc-700 rounded-[3px] sm:rounded-[4px]"/>
+                                                <div className="w-full h-full bg-zinc-200 dark:bg-zinc-700 rounded-[3px] sm:rounded-[4px]"/>
                                             </div>
-                                            <div className="w-full h-3 bg-purple-500 rounded-[3px]"/>
+                                            <div className="w-full h-2 sm:h-2.5 md:h-3 bg-purple-500 rounded-[2px] sm:rounded-[3px]"/>
                                         </div>   
                                     </AnimatedContent>
                                 </div>
@@ -244,7 +244,7 @@ export function AboutUs({ className }: { className?: string }) {
                         onComplete={() => {}}
                     >
                         <p className={`${afacad.className} 
-                        tracking-wide relative text-left text-black dark:text-white w-full max-w-full text-lg md:text-2xl mt-12 md:mt-20 my-2 z-10`}>With a team of experienced developers and designers, we are dedicated to delivering high-quality solutions that meet your needs. 
+                        tracking-wide relative text-left text-black dark:text-white w-full max-w-full text-sm sm:text-base md:text-lg lg:text-xl mt-8 sm:mt-10 md:mt-12 lg:mt-20 my-2 z-10`}>With a team of experienced developers and designers, we are dedicated to delivering high-quality solutions that meet your needs. 
                         We use the latest technologies and best practices to ensure that your project is completed on time and to the highest standard.
                         </p>
                     </AnimatedContent>

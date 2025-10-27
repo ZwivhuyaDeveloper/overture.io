@@ -40,11 +40,11 @@ const syncopate = Syncopate({
 
 export function Vision() {
   return (
-    <div className="gap-16 mb-10 h-full flex flex-col items-center bg-white dark:bg-zinc-900">
-        <div className="w-full gap-4 flex flex-col items-center justify-center max-w-7xl mx-auto">
-          <div className="w-fit h-fit p-2 bg-zinc-200 dark:bg-zinc-800 rounded-full px-4">
+    <div className="gap-8 sm:gap-12 md:gap-16 mb-6 sm:mb-8 md:mb-10 h-full flex flex-col items-center bg-white dark:bg-zinc-900 px-4 sm:px-6 md:px-8">
+        <div className="w-full gap-2 sm:gap-3 md:gap-4 flex flex-col items-center justify-center max-w-7xl mx-auto">
+          <div className="w-fit h-fit p-1.5 sm:p-2 bg-zinc-200 dark:bg-zinc-800 rounded-full px-3 sm:px-4">
             <h2 className={`${tektur.className} 
-                tracking-widest relative text-left z-10 text-md sm:text-sm text-black dark:text-white`}>
+                tracking-widest relative text-left z-10 text-xs sm:text-sm md:text-md text-black dark:text-white`}>
                 Vision  
             </h2>
           </div>
@@ -61,24 +61,24 @@ export function Vision() {
             delay={0.1}
             onComplete={() => {}}
           >
-            <div className="flex flex-col justify-center mt-5 mb-10 items-center gap-4">
+            <div className="flex flex-col justify-center mt-3 sm:mt-4 md:mt-5 mb-6 sm:mb-8 md:mb-10 items-center gap-2 sm:gap-3 md:gap-4">
           <h1 className={`${syncopate.className} 
-                tracking-widest relative text-center w-4xl z-10 text-md sm:text-3xl font-bold 
+                tracking-widest relative text-center w-full max-w-4xl px-4 z-10 text-base sm:text-xl md:text-2xl lg:text-3xl font-bold 
                 `}>
                 Crafting Digital Experiences That Transform Businesses
           </h1>
-          <h2 className={`${afacad.className} text-2xl justify-self-center font-regular text-center text-gray-500 max-w-3xl mx-auto`}> 
+          <h2 className={`${afacad.className} text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl justify-self-center font-regular text-center text-gray-500 max-w-3xl mx-auto px-4 sm:px-6 md:px-8`}> 
             We envision a digital landscape where innovative design meets cutting-edge technology to create meaningful connections 
             between brands and their audiences, driving growth and success in the ever-evolving digital world.
           </h2>
           </div>
           </AnimatedContent>
         </div>
-    <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 max-w-7xl mx-auto w-full h-full mb-20">
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-3 sm:gap-4 max-w-7xl mx-auto w-full h-full mb-12 sm:mb-16 md:mb-20">
       {/*card 1*/}
 
       <WobbleCard
-        containerClassName="col-span-1 lg:col-span-2 h-full bg-zinc-200 dark:bg-zinc-800 min-h-[500px] lg:min-h-[300px]"
+        containerClassName="col-span-1 lg:col-span-2 h-full bg-zinc-200 dark:bg-zinc-800 min-h-[400px] sm:min-h-[450px] md:min-h-[500px] lg:min-h-[300px]"
         className=""
       >
         <AnimatedContent
@@ -100,10 +100,10 @@ export function Vision() {
           Your next BIG step on the web
           </h2>
           <p className={`${afacad.className} 
-          tracking-normal relative text-left z-10 text-lg sm:text-xl text-black dark:text-white`}>
+          tracking-normal relative text-left z-10 text-sm sm:text-base md:text-lg text-black dark:text-white`}>
           Beyond pixels and code, our designs are built on a foundation of empathy and understanding. Explore our work to see how we create digital experiences that resonate with users.
           </p>
-          <Button variant="default" className="w-fit rounded-full">View our work</Button>
+          <Button variant="default" className="w-fit rounded-full text-xs sm:text-sm md:text-base px-3 sm:px-4 md:px-6 py-1.5 sm:py-2">View our work</Button>
         </div>
         <div  className=" flex px-0 mx-auto -translate-x-20 transform perspective-900 -rotate-y-45 rotate-x-25 translate-z-60 ">
           <Image
@@ -160,17 +160,17 @@ export function Vision() {
         >
           <div className="flex flex-col gap-2 w-full h-full">
             <h2 className={`${syncopate.className} 
-            tracking-widest relative text-left z-10 text-md mb-5 sm:text-xl font-bold text-white`}>
+            tracking-widest relative text-left z-10 text-sm sm:text-base md:text-lg lg:text-xl mb-3 sm:mb-4 md:mb-5 font-bold text-white`}>
               Explore our Pricing
             </h2>
             <p className={`${afacad.className} 
-            tracking-normal relative text-left z-10 text-md mb-10 sm:text-xl text-white`}>
+            tracking-normal relative text-left z-10 text-sm sm:text-base md:text-lg mb-6 sm:mb-8 md:mb-10 text-white`}>
             Discover transparent pricing models tailored to your unique business needs, ensuring exceptional 
             value without compromising on quality or innovation.
             </p>
           </div>
           <div className="flex items-center w-full">
-            <Button variant="default" className="w-fit bg-white text-black rounded-full">View our pricing</Button>
+            <Button variant="default" className="w-fit bg-white text-black rounded-full text-xs sm:text-sm md:text-base px-3 sm:px-4 md:px-6 py-1.5 sm:py-2">View our pricing</Button>
           </div>
         </AnimatedContent>
       </WobbleCard>
@@ -190,21 +190,21 @@ export function Vision() {
           onComplete={() => {}}
         >
           <h2 className={`${syncopate.className} 
-          tracking-widest relative text-left z-10 mb-5 text-md sm:text-xl font-bold text-white`}>
+          tracking-widest relative text-left z-10 mb-3 sm:mb-4 md:mb-5 text-sm sm:text-base md:text-lg lg:text-xl font-bold text-white`}>
             Our Services
           </h2>
         <p className={`${afacad.className} 
-        tracking-normal relative text-left z-10 text-md sm:text-xl text-white`}>
+        tracking-normal relative text-left z-10 text-sm sm:text-base md:text-lg text-white`}>
           We deliver comprehensive digital solutions that elevate your brand presence, streamline operations, and drive measurable growth across all digital touchpoints.
         </p>
         <div className="flex items-center w-full mt-4">
-          <Button variant="default" className="w-fit bg-white text-black rounded-full">Browse our services</Button>
+          <Button variant="default" className="w-fit bg-white text-black rounded-full text-xs sm:text-sm md:text-base px-3 sm:px-4 md:px-6 py-1.5 sm:py-2">Browse our services</Button>
         </div>
         </AnimatedContent>
       </WobbleCard>
       {/*card 4*/}
       <WobbleCard
-        containerClassName="col-span-1 lg:col-span-2 h-full bg-zinc-200 dark:bg-zinc-800 min-h-[500px] lg:min-h-[300px]"
+        containerClassName="col-span-1 lg:col-span-2 h-full bg-zinc-200 dark:bg-zinc-800 min-h-[400px] sm:min-h-[450px] md:min-h-[500px] lg:min-h-[300px]"
         className=""
       >
         <AnimatedContent
@@ -226,7 +226,7 @@ export function Vision() {
           Transform Your Digital Presence
           </h2>
           <p className={`${afacad.className} 
-          tracking-normal relative text-left z-10 text-md sm:text-xl text-black dark:text-white`}>
+          tracking-normal relative text-left z-10 text-sm sm:text-base md:text-lg text-black dark:text-white`}>
             We craft strategic digital experiences that combine cutting-edge technology with human-centered design, 
             creating powerful connections between your brand and your audience that drive meaningful engagement and sustainable growth.
           </p>
@@ -250,7 +250,7 @@ export function Vision() {
         </AnimatedContent>
       </WobbleCard>
       {/*card 5*/}
-      <WobbleCard containerClassName="col-span-1 lg:col-span-3 bg-purple-500 dark:bg-purple-700 min-h-[500px] lg:min-h-[600px] xl:min-h-[300px]">
+      <WobbleCard containerClassName="col-span-1 lg:col-span-3 bg-purple-500 dark:bg-purple-700 min-h-[400px] sm:min-h-[450px] md:min-h-[500px] lg:min-h-[600px] xl:min-h-[300px]">
         <AnimatedContent
           distance={100}
           direction="vertical"
@@ -266,19 +266,19 @@ export function Vision() {
         >
         <div className="max-w-md">
           <h2 className={`${syncopate.className} 
-          tracking-widest relative text-left z-10 text-md sm:text-xl font-bold text-white dark:text-white`}>
+          tracking-widest relative text-left z-10 text-sm sm:text-base md:text-lg lg:text-xl font-bold text-white dark:text-white`}>
             Ready to Transform Your Digital Future?
           </h2>
           <p className={`${afacad.className} 
-          tracking-normal relative text-left z-10 text-md sm:text-xl text-white dark:text-white mb-6`}>
+          tracking-normal relative text-left z-10 text-sm sm:text-base md:text-lg text-white dark:text-white mb-4 sm:mb-5 md:mb-6`}>
             Let&apos;s discuss how our expertise can help you achieve your business goals. Schedule a free consultation with our team of digital experts today.
           </p>
-          <div className="flex flex-col space-y-4">
-            <Button variant="default" className="w-fit bg-white text-black rounded-full">
+          <div className="flex flex-col space-y-2 sm:space-y-3 md:space-y-4">
+            <Button variant="default" className="w-fit bg-white text-black rounded-full text-xs sm:text-sm md:text-base px-3 sm:px-4 md:px-6 py-1.5 sm:py-2">
               Schedule a Meeting
             </Button>
             <div className="flex items-center space-x-2">
-              <span className="text-white text-sm">Available: Mon - Fri, 9:00 AM - 6:00 PM EST</span>
+              <span className="text-white text-xs sm:text-sm">Available: Mon - Fri, 9:00 AM - 6:00 PM EST</span>
             </div>
           </div>
         </div>

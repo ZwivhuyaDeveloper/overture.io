@@ -21,27 +21,27 @@ const syncopate = Syncopate({
 
 export default function FeaturesSectionDemo1() {
   return (
-    <div className="py-30 lg:py-50">
-        <div className="w-full gap-4 flex flex-col items-center justify-center mb-30 max-w-7xl mx-auto">
-          <div className="w-fit h-fit p-2 bg-zinc-200 rounded-full px-4">
+    <div className="py-12 sm:py-16 md:py-20 lg:py-30 xl:py-50 px-4 sm:px-6 md:px-8">
+        <div className="w-full gap-2 sm:gap-3 md:gap-4 flex flex-col items-center justify-center mb-12 sm:mb-16 md:mb-20 lg:mb-30 max-w-7xl mx-auto">
+          <div className="w-fit h-fit p-1.5 sm:p-2 bg-zinc-200 rounded-full px-3 sm:px-4">
             <h2 className={`${tektur.className} 
-                tracking-widest relative text-left z-10 text-md sm:text-sm text-black`}>
+                tracking-widest relative text-left z-10 text-xs sm:text-sm md:text-md text-black`}>
                 Features  
             </h2>
           </div>
           <h1 className={`${syncopate.className} 
-                tracking-widest relative text-center w-2xl z-10 text-md sm:text-3xl font-bold text-black`}>
+                tracking-widest relative text-center w-full max-w-2xl px-4 z-10 text-base sm:text-xl md:text-2xl lg:text-3xl font-bold text-black`}>
                 Our Digital Toolbox
           </h1>
-          <h3 className={`${afacad.className} text-2xl justify-center font-regular flex text-center text-gray-500 max-w-xl mx-auto`}>
+          <h3 className={`${afacad.className} text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl justify-center font-regular flex text-center text-gray-500 max-w-xl mx-auto px-4 sm:px-6 md:px-8`}>
             Every project is unique, but they all start with a foundation of powerful, user-centric features. 
           </h3>
         </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 md:gap-2 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-4 lg:gap-2 max-w-7xl mx-auto">
         {grid.map((feature) => (
           <div
             key={feature.title}
-            className="relative bg-gradient-to-b dark:from-neutral-900 from-neutral-100 dark:to-neutral-950 to-white p-6 rounded-3xl overflow-hidden"
+            className="relative bg-gradient-to-b dark:from-neutral-900 from-neutral-100 dark:to-neutral-950 to-white p-4 sm:p-5 md:p-6 rounded-2xl sm:rounded-3xl overflow-hidden"
           >
             <AnimatedContent
               distance={100}
@@ -57,10 +57,10 @@ export default function FeaturesSectionDemo1() {
               onComplete={() => {}}
             >
             <Grid size={20} />
-            <h3 className={`${syncopate.className} text-sm tracking-tight font-bold text-neutral-800 dark:text-white relative z-20`}>
+            <h3 className={`${syncopate.className} text-xs sm:text-sm tracking-tight font-bold text-neutral-800 dark:text-white relative z-20`}>
               {feature.title}
             </h3>
-            <h4 className={`${afacad.className} text-neutral-600 dark:text-neutral-400 mt-4 text-base font-normal relative z-20`}>
+            <h4 className={`${afacad.className} text-neutral-600 dark:text-neutral-400 mt-2 sm:mt-3 md:mt-4 text-xs sm:text-sm md:text-base font-normal relative z-20`}>
               {feature.description}
             </h4>
             </AnimatedContent>

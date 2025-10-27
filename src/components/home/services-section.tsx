@@ -107,7 +107,7 @@ export function ServicesSection() {
             <motion.div
               layoutId={`card-${active.title}-${id}`}
               ref={ref}
-              className="w-full max-w-[700px]  h-full md:h-fit md:max-h-[90%]  flex flex-col bg-white dark:bg-neutral-900 sm:rounded-3xl overflow-hidden"
+              className="w-full max-w-[90vw] sm:max-w-[700px] h-full md:h-fit md:max-h-[90%] flex flex-col bg-white dark:bg-neutral-900 rounded-lg sm:rounded-3xl overflow-hidden mx-4 sm:mx-0"
             >
               <motion.div layoutId={`image-${active.title}-${id}`}>
                 <Image
@@ -116,22 +116,22 @@ export function ServicesSection() {
                   src={active.src}
                   alt={active.title}
                   quality={100}
-                  className="w-full h-80 lg:h-80 sm:rounded-tr-lg sm:rounded-tl-lg object-cover object-top"
+                  className="w-full h-60 sm:h-70 md:h-80 lg:h-80 rounded-tr-lg rounded-tl-lg object-cover object-top"
                 />
               </motion.div>
 
               <div>
-                <div className="flex justify-between items-start p-4">
+                <div className="flex flex-col sm:flex-row justify-between items-start p-3 sm:p-4 gap-3 sm:gap-0">
                   <div className="">
                     <motion.h3
                       layoutId={`title-${active.title}-${id}`}
-                      className={`${syncopate.className} font-bold text-lg text-neutral-700 dark:text-neutral-200`}
+                      className={`${syncopate.className} font-bold text-base sm:text-lg text-neutral-700 dark:text-neutral-200`}
                     >
                       {active.title}
                     </motion.h3>
                     <motion.p
                       layoutId={`lowercase-description-${active.description}-${id}`}
-                      className={`${tektur.className} text-neutral-600 text-lg dark:text-neutral-400 lowercase`}
+                      className={`${tektur.className} text-neutral-600 text-sm sm:text-base md:text-lg dark:text-neutral-400 lowercase`}
                     >
                       {active.description}
                     </motion.p>
@@ -141,18 +141,18 @@ export function ServicesSection() {
                     layoutId={`button-${active.title}-${id}`}
                     href={active.ctaLink}
                     target="_blank"
-                    className={`${afacad.className} text-sm px-4 py-3 rounded-full font-bold bg-blue-500 dark:bg-blue-400 text-white`}
+                    className={`${afacad.className} text-xs sm:text-sm px-3 sm:px-4 py-2 sm:py-3 rounded-full font-bold bg-blue-500 dark:bg-blue-400 text-white w-full sm:w-auto text-center`}
                   >
                     {active.ctaText}
                   </motion.a>
                 </div>
-                <div className="pt-4 relative px-4">
+                <div className="pt-3 sm:pt-4 relative px-3 sm:px-4">
                   <motion.div
                     layout
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className={`${afacad.className}  text-neutral-600 text-sm md:text-lg lg:text-lg h-40 md:h-fit pb-10 flex flex-col items-start gap-4 overflow-auto dark:text-neutral-400 [mask:linear-gradient(to_bottom,white,white,transparent)] [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch]`}
+                    className={`${afacad.className} text-neutral-600 text-xs sm:text-sm md:text-base lg:text-lg h-32 sm:h-40 md:h-fit pb-8 sm:pb-10 flex flex-col items-start gap-2 sm:gap-3 md:gap-4 overflow-auto dark:text-neutral-400 [mask:linear-gradient(to_bottom,white,white,transparent)] [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch]`}
                   >
                     {typeof active.content === "function"
                       ? active.content()
@@ -164,11 +164,11 @@ export function ServicesSection() {
           </div>
         ) : null}
       </AnimatePresence>
-      <div className="max-w-6xl mx-auto w-full gap-4 my-20 py-20">
-      <div className="w-full gap-4 flex flex-col items-center justify-center mb-20   max-w-7xl mx-auto">
-          <div className="w-fit h-fit p-2 bg-zinc-200 rounded-full px-4">
+      <div className="max-w-6xl mx-auto w-full gap-2 sm:gap-3 md:gap-4 my-12 sm:my-16 md:my-20 py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8">
+      <div className="w-full gap-2 sm:gap-3 md:gap-4 flex flex-col items-center justify-center mb-12 sm:mb-16 md:mb-20 max-w-7xl mx-auto">
+          <div className="w-fit h-fit p-1.5 sm:p-2 bg-zinc-200 rounded-full px-3 sm:px-4">
             <h2 className={`${tektur.className} 
-                tracking-widest relative text-left z-10 text-md sm:text-sm text-black`}>
+                tracking-widest relative text-left z-10 text-xs sm:text-sm md:text-md text-black`}>
                 Services  
             </h2>
           </div>
@@ -185,12 +185,12 @@ export function ServicesSection() {
             delay={0}
             onComplete={() => {}}
           >
-            <div className="justify-center items-center mt-5 mb-10 gap-5 flex flex-col">
+            <div className="justify-center items-center mt-3 sm:mt-4 md:mt-5 mb-6 sm:mb-8 md:mb-10 gap-3 sm:gap-4 md:gap-5 flex flex-col">
               <h1 className={`${syncopate.className} 
-                  tracking-widest relative text-center w-4xl z-10 text-md sm:text-3xl font-bold text-black dark:text-white`}>
+                  tracking-widest relative text-center w-full max-w-4xl px-4 z-10 text-base sm:text-xl md:text-2xl lg:text-3xl font-bold text-black dark:text-white`}>
                   Comprehensive Digital Solutions for Modern Businesses
               </h1>
-              <p className="text-xl justify-self-center text-center text-gray-500 max-w-3xl mx-auto">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl justify-self-center text-center text-gray-500 max-w-3xl mx-auto px-4 sm:px-6 md:px-8">
                 From concept to execution, we deliver end-to-end digital services that transform your ideas into powerful, scalable, 
                 and engaging experiences that captivate your audience and drive measurable business results.
               </p>
@@ -215,12 +215,12 @@ export function ServicesSection() {
             layoutId={`card-${card.title}-${id}`}
             key={`card-${card.title}-${id}`}
             onClick={() => setActive(card)}
-            className="p-4 flex flex-col md:flex-row space-y-1  mt-2  justify-between items-center rounded-xl cursor-pointer transition-all duration-300 relative overflow-hidden"
+            className="p-3 sm:p-4 flex flex-col md:flex-row space-y-2 sm:space-y-1 mt-2 justify-between items-center rounded-lg sm:rounded-xl cursor-pointer transition-all duration-300 relative overflow-hidden"
             style={{
               background: `linear-gradient(60deg, ${cardColors[index]} 90%, rgba(255, 255, 255, 0.1) 100%)`
             }}
           >
-            <div className="flex gap-4 flex-col md:flex-row ">
+            <div className="flex gap-2 sm:gap-3 md:gap-4 flex-col md:flex-row w-full md:w-auto">
               <motion.div layoutId={`image-${card.title}-${id}`}>
                 <Image
                   width={1000}
@@ -228,19 +228,19 @@ export function ServicesSection() {
                   src={card.src}
                   alt={card.title}
                   quality={100}
-                  className="h-60 w-60 md:h-20 md:w-20 rounded-lg object-cover object-top"
+                  className="h-40 w-40 sm:h-50 sm:w-50 md:h-20 md:w-20 rounded-lg object-cover object-top mx-auto md:mx-0"
                 />
               </motion.div>
               <div className="">
                 <motion.h3
                   layoutId={`title-${card.title}-${id}`}
-                  className={`${syncopate.className} font-bold text-white text-lg dark:text-neutral-200 text-center md:text-left`}
+                  className={`${syncopate.className} font-bold text-white text-sm sm:text-base md:text-lg dark:text-neutral-200 text-center md:text-left`}
                 >
                   {card.title}
                 </motion.h3>
                 <motion.p
                   layoutId={`description-${card.description}-${id}`}
-                  className={`${afacad.className} normal-case text-white text-lg dark:text-neutral-400  text-center md:text-left`}
+                  className={`${afacad.className} normal-case text-white text-xs sm:text-sm md:text-base lg:text-lg dark:text-neutral-400 text-center md:text-left`}
                 >
                   {card.description}
                 </motion.p>
@@ -248,7 +248,7 @@ export function ServicesSection() {
             </div>
             <motion.button
               layoutId={`button-${card.title}-${id}`}
-              className="px-4 py-2 text-sm rounded-full font-bold bg-white/90 hover:bg-white text-gray-800 backdrop-blur-sm border border-white/30 mt-4 md:mt-0 shadow-md"
+              className="px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm rounded-full font-bold bg-white/90 hover:bg-white text-gray-800 backdrop-blur-sm border border-white/30 mt-3 sm:mt-4 md:mt-0 shadow-md w-full sm:w-auto text-center"
             >
               {card.ctaText}
             </motion.button>
